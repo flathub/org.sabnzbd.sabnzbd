@@ -64,13 +64,12 @@ modules:
       - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation
     sources:
       - cargo-sources.json
-      - type: archive
-        url: https://github.com/pyca/cryptography/archive/refs/tags/41.0.1.tar.gz
-        sha256: c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99
+      - type: file
+        url: https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz
+        sha256: d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006
         x-checker-data:
-          type: anitya
-          project-id: 5532
-          url-template: https://github.com/pyca/cryptography/archive/refs/tags/$version.tar.gz
+          type: pypi
+          name: cryptography
   - name: p7zip
     no-autogen: true
     make-args:
