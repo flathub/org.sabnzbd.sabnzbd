@@ -36,7 +36,7 @@ modules:
     sources:
       - type: archive
         url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.15.6/dbus-dbus-1.15.6.tar.gz
-        sha256: dc31de363ae150d3caef7a5b5afd0b1205c74a743fe17a446a2f049a1dde5e60
+        sha256: 614d61cda795280065f743ed05bbec0ff7ac036a9eb828cb5fb865465fc2d61a
         x-checker-data:
           type: anitya
           project-id: 5356
@@ -89,7 +89,7 @@ modules:
     sources:
       - type: archive
         url: https://www.rarlab.com/rar/unrarsrc-6.2.8.tar.gz
-        sha256: 0c2d4cbc8b34d0e3bec7b474e0f52bbcc6c4320ec089b4141223ee355f63c318
+        sha256: 1777e3d3b073815ff68a411ddb1ab76d0a4e1f58ecc7080035b27b52967ff911
   - name: par2cmdline
     buildsystem: autotools
     sources:
@@ -107,4 +107,4 @@ modules:
     sources:
       - type: archive
         url: https://github.com/sabnzbd/sabnzbd/releases/download/4.0.2/SABnzbd-4.0.2-src.tar.gz
-        sha256: 3b9a9f939227feeadc39ba09b6765ff778f95cff3f9afd4807b14667c661f415
+        sha256: 2783f225057031869dff74f7eb191f54f35e8abe60906fcaaa94ab7772166c4e
