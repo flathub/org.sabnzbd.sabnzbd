@@ -7,13 +7,13 @@
             "name": "python3-sabctools",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sabctools==7.1.0\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sabctools==7.0.2\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/90/8f/5eb537d16f38763424d1ce4856a7c1b443b0e2d7d5b9d701f1b6c7a0de7d/sabctools-7.1.0.tar.gz",
-                    "sha256": "9f496b1acef3ccdd965da2a1bb2b98bf98a53f8ae7b0e849942cbfd1ab5c3a03"
+                    "url": "https://files.pythonhosted.org/packages/1c/9a/b07d285cb8d094e2ccc8a71b9f58cf8089ba2857cb13e9899e83be373b4f/sabctools-7.0.2.tar.gz",
+                    "sha256": "001e7f31cb8e203921bbbaed6f79c56aa393c77cf09bddbedcd1271f91e3cc1a"
                 }
             ]
         },
