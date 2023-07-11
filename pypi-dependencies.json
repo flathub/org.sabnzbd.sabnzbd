@@ -7,13 +7,13 @@
             "name": "python3-sabctools",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sabctools==7.0.2\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sabctools==7.1.0\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/1c/9a/b07d285cb8d094e2ccc8a71b9f58cf8089ba2857cb13e9899e83be373b4f/sabctools-7.0.2.tar.gz",
-                    "sha256": "001e7f31cb8e203921bbbaed6f79c56aa393c77cf09bddbedcd1271f91e3cc1a"
+                    "url": "https://files.pythonhosted.org/packages/90/8f/5eb537d16f38763424d1ce4856a7c1b443b0e2d7d5b9d701f1b6c7a0de7d/sabctools-7.1.0.tar.gz",
+                    "sha256": "9f496b1acef3ccdd965da2a1bb2b98bf98a53f8ae7b0e849942cbfd1ab5c3a03"
                 }
             ]
         },
@@ -115,18 +115,18 @@
             "name": "python3-cheroot",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cheroot==9.0.0\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cheroot==10.0.0\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/3b/15/38d6b098fe874406b7de0fa6dec300e233f6d321ee74e8150e23438adf3f/cheroot-9.0.0-py2.py3-none-any.whl",
-                    "sha256": "fa4231fdb42d7720df118ff62a79371e406369f49e6f867c63ad649cfb4e466c"
+                    "url": "https://files.pythonhosted.org/packages/81/52/ca26d1964531e823961f761026138189f630aaf49fb959c8ab6e1262dc74/cheroot-10.0.0-py3-none-any.whl",
+                    "sha256": "8f65dd38ad3d56419cfe2d1b5e4b4e3282b1d58758ca2a336231641a80cf0717"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ae/3f/40ab9df938e670e71a03cc80c383015cbb79db21fea4dd5f48713d965b14/jaraco.functools-3.6.0-py3-none-any.whl",
-                    "sha256": "f43fdb95a9b96e85eb2a5126481cb7c96cf342dc9ff4d4d45d322186d33720b8"
+                    "url": "https://files.pythonhosted.org/packages/b3/dc/c365684d34633ae3cd1a6672b6d35baa3d233376f5480cf29bd7f305284e/jaraco.functools-3.8.0-py3-none-any.whl",
+                    "sha256": "49f070d49b6cd131aa203e65d86fb4924bbec76fa70ab66fce06442193e2f826"
                 },
                 {
                     "type": "file",
@@ -149,13 +149,13 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/3b/15/38d6b098fe874406b7de0fa6dec300e233f6d321ee74e8150e23438adf3f/cheroot-9.0.0-py2.py3-none-any.whl",
-                    "sha256": "fa4231fdb42d7720df118ff62a79371e406369f49e6f867c63ad649cfb4e466c"
+                    "url": "https://files.pythonhosted.org/packages/81/52/ca26d1964531e823961f761026138189f630aaf49fb959c8ab6e1262dc74/cheroot-10.0.0-py3-none-any.whl",
+                    "sha256": "8f65dd38ad3d56419cfe2d1b5e4b4e3282b1d58758ca2a336231641a80cf0717"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/31/00/792a9fb87c1398c9a73b5fded60d170019ffd4c028e3fb6d257a375fc7fb/jaraco.collections-4.1.0-py3-none-any.whl",
-                    "sha256": "50df4efbacb296d9e03c7f9387af0ecb01fab5ae37349499da4881c5fb1a56ec"
+                    "url": "https://files.pythonhosted.org/packages/2f/cb/e9f18c1d344395c7b40685ff6b30b1c32754d2d6f1d7ac61d1e815bb5ded/jaraco.collections-4.3.0-py3-none-any.whl",
+                    "sha256": "d8dbb518c6d7a3ac9a10130fc7578439c32ac0cdbeb57451dd6345fcb5191660"
                 },
                 {
                     "type": "file",
@@ -164,8 +164,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ae/3f/40ab9df938e670e71a03cc80c383015cbb79db21fea4dd5f48713d965b14/jaraco.functools-3.6.0-py3-none-any.whl",
-                    "sha256": "f43fdb95a9b96e85eb2a5126481cb7c96cf342dc9ff4d4d45d322186d33720b8"
+                    "url": "https://files.pythonhosted.org/packages/b3/dc/c365684d34633ae3cd1a6672b6d35baa3d233376f5480cf29bd7f305284e/jaraco.functools-3.8.0-py3-none-any.whl",
+                    "sha256": "49f070d49b6cd131aa203e65d86fb4924bbec76fa70ab66fce06442193e2f826"
                 },
                 {
                     "type": "file",
@@ -179,8 +179,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/5e/d5/55f51adaa23038c8533cde602c79e314edd6525d1f7f6a15a1995abec91e/portend-3.1.0-py3-none-any.whl",
-                    "sha256": "9e735cee3a5c1961f09e3f3ba6dc498198c2d70b473d98d0d1504b8d1e7a3d61"
+                    "url": "https://files.pythonhosted.org/packages/a3/c5/7041b39bcad182a37ec6ea92e7e478a460db6277c542e6d417e34246bdac/portend-3.2.0-py3-none-any.whl",
+                    "sha256": "8b3fe3f78779df906559a21d9eaa6e21c8fa5a7a8cc76362cbbe1e16777399cf"
                 },
                 {
                     "type": "file",
@@ -189,13 +189,13 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/86/fa/3f956372b84f977f8f4e9181d42fa2ba8459f8d8f056dcd2f91358571559/tempora-5.2.2-py3-none-any.whl",
-                    "sha256": "003873654acaa49ecca810cee44665d827301134422505386e76f7b080461edb"
+                    "url": "https://files.pythonhosted.org/packages/3f/8c/db20cbcd6c8bcd06fe6a893fbb437e68e9962542f77ea273cb47109347e8/tempora-5.5.0-py3-none-any.whl",
+                    "sha256": "defd976c9144fc9f20432ed0d75926c1c48dd0c7c701b3493e02d5316598e8fe"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/31/25/5abcd82372d3d4a3932e1fa8c3dbf9efac10cc7c0d16e78467460571b404/typing_extensions-4.5.0-py3-none-any.whl",
-                    "sha256": "fb33085c39dd998ac16d1431ebc293a8b3eedd00fd4a32de0ff79002c19511b4"
+                    "url": "https://files.pythonhosted.org/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl",
+                    "sha256": "440d5dd3af93b060174bf433bccd69b0babc3b15b1a8dca43789fd7f61514b36"
                 },
                 {
                     "type": "file",
@@ -208,13 +208,13 @@
             "name": "python3-jaraco.functools",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"jaraco.functools==3.6.0\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"jaraco.functools==3.8.0\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ae/3f/40ab9df938e670e71a03cc80c383015cbb79db21fea4dd5f48713d965b14/jaraco.functools-3.6.0-py3-none-any.whl",
-                    "sha256": "f43fdb95a9b96e85eb2a5126481cb7c96cf342dc9ff4d4d45d322186d33720b8"
+                    "url": "https://files.pythonhosted.org/packages/b3/dc/c365684d34633ae3cd1a6672b6d35baa3d233376f5480cf29bd7f305284e/jaraco.functools-3.8.0-py3-none-any.whl",
+                    "sha256": "49f070d49b6cd131aa203e65d86fb4924bbec76fa70ab66fce06442193e2f826"
                 },
                 {
                     "type": "file",
@@ -227,13 +227,13 @@
             "name": "python3-jaraco.collections",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"jaraco.collections==4.1.0\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"jaraco.collections==4.3.0\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/31/00/792a9fb87c1398c9a73b5fded60d170019ffd4c028e3fb6d257a375fc7fb/jaraco.collections-4.1.0-py3-none-any.whl",
-                    "sha256": "50df4efbacb296d9e03c7f9387af0ecb01fab5ae37349499da4881c5fb1a56ec"
+                    "url": "https://files.pythonhosted.org/packages/2f/cb/e9f18c1d344395c7b40685ff6b30b1c32754d2d6f1d7ac61d1e815bb5ded/jaraco.collections-4.3.0-py3-none-any.whl",
+                    "sha256": "d8dbb518c6d7a3ac9a10130fc7578439c32ac0cdbeb57451dd6345fcb5191660"
                 },
                 {
                     "type": "file",
@@ -242,8 +242,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ae/3f/40ab9df938e670e71a03cc80c383015cbb79db21fea4dd5f48713d965b14/jaraco.functools-3.6.0-py3-none-any.whl",
-                    "sha256": "f43fdb95a9b96e85eb2a5126481cb7c96cf342dc9ff4d4d45d322186d33720b8"
+                    "url": "https://files.pythonhosted.org/packages/b3/dc/c365684d34633ae3cd1a6672b6d35baa3d233376f5480cf29bd7f305284e/jaraco.functools-3.8.0-py3-none-any.whl",
+                    "sha256": "49f070d49b6cd131aa203e65d86fb4924bbec76fa70ab66fce06442193e2f826"
                 },
                 {
                     "type": "file",
@@ -257,8 +257,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/31/25/5abcd82372d3d4a3932e1fa8c3dbf9efac10cc7c0d16e78467460571b404/typing_extensions-4.5.0-py3-none-any.whl",
-                    "sha256": "fb33085c39dd998ac16d1431ebc293a8b3eedd00fd4a32de0ff79002c19511b4"
+                    "url": "https://files.pythonhosted.org/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl",
+                    "sha256": "440d5dd3af93b060174bf433bccd69b0babc3b15b1a8dca43789fd7f61514b36"
                 }
             ]
         },
@@ -276,8 +276,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ae/3f/40ab9df938e670e71a03cc80c383015cbb79db21fea4dd5f48713d965b14/jaraco.functools-3.6.0-py3-none-any.whl",
-                    "sha256": "f43fdb95a9b96e85eb2a5126481cb7c96cf342dc9ff4d4d45d322186d33720b8"
+                    "url": "https://files.pythonhosted.org/packages/b3/dc/c365684d34633ae3cd1a6672b6d35baa3d233376f5480cf29bd7f305284e/jaraco.functools-3.8.0-py3-none-any.whl",
+                    "sha256": "49f070d49b6cd131aa203e65d86fb4924bbec76fa70ab66fce06442193e2f826"
                 },
                 {
                     "type": "file",
@@ -295,13 +295,13 @@
             "name": "python3-jaraco.classes",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"jaraco.classes==3.2.3\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"jaraco.classes==3.3.0\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/60/28/220d3ae0829171c11e50dded4355d17824d60895285631d7eb9dee0ab5e5/jaraco.classes-3.2.3-py3-none-any.whl",
-                    "sha256": "2353de3288bc6b82120752201c6b1c1a14b058267fa424ed5ce5984e3b922158"
+                    "url": "https://files.pythonhosted.org/packages/c7/6b/1bc8fa93ea85146e08f0e0883bc579b7c7328364ed7df90b1628dcb36e10/jaraco.classes-3.3.0-py3-none-any.whl",
+                    "sha256": "10afa92b6743f25c0cf5f37c6bb6e18e2c5bb84a16527ccfc0040ea377e7aaeb"
                 },
                 {
                     "type": "file",
@@ -370,13 +370,13 @@
             "name": "python3-tempora",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"tempora==5.2.2\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"tempora==5.5.0\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ae/3f/40ab9df938e670e71a03cc80c383015cbb79db21fea4dd5f48713d965b14/jaraco.functools-3.6.0-py3-none-any.whl",
-                    "sha256": "f43fdb95a9b96e85eb2a5126481cb7c96cf342dc9ff4d4d45d322186d33720b8"
+                    "url": "https://files.pythonhosted.org/packages/b3/dc/c365684d34633ae3cd1a6672b6d35baa3d233376f5480cf29bd7f305284e/jaraco.functools-3.8.0-py3-none-any.whl",
+                    "sha256": "49f070d49b6cd131aa203e65d86fb4924bbec76fa70ab66fce06442193e2f826"
                 },
                 {
                     "type": "file",
@@ -390,8 +390,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/86/fa/3f956372b84f977f8f4e9181d42fa2ba8459f8d8f056dcd2f91358571559/tempora-5.2.2-py3-none-any.whl",
-                    "sha256": "003873654acaa49ecca810cee44665d827301134422505386e76f7b080461edb"
+                    "url": "https://files.pythonhosted.org/packages/3f/8c/db20cbcd6c8bcd06fe6a893fbb437e68e9962542f77ea273cb47109347e8/tempora-5.5.0-py3-none-any.whl",
+                    "sha256": "defd976c9144fc9f20432ed0d75926c1c48dd0c7c701b3493e02d5316598e8fe"
                 }
             ]
         },
@@ -427,13 +427,13 @@
             "name": "python3-portend",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"portend==3.1.0\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"portend==3.2.0\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ae/3f/40ab9df938e670e71a03cc80c383015cbb79db21fea4dd5f48713d965b14/jaraco.functools-3.6.0-py3-none-any.whl",
-                    "sha256": "f43fdb95a9b96e85eb2a5126481cb7c96cf342dc9ff4d4d45d322186d33720b8"
+                    "url": "https://files.pythonhosted.org/packages/b3/dc/c365684d34633ae3cd1a6672b6d35baa3d233376f5480cf29bd7f305284e/jaraco.functools-3.8.0-py3-none-any.whl",
+                    "sha256": "49f070d49b6cd131aa203e65d86fb4924bbec76fa70ab66fce06442193e2f826"
                 },
                 {
                     "type": "file",
@@ -442,8 +442,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/5e/d5/55f51adaa23038c8533cde602c79e314edd6525d1f7f6a15a1995abec91e/portend-3.1.0-py3-none-any.whl",
-                    "sha256": "9e735cee3a5c1961f09e3f3ba6dc498198c2d70b473d98d0d1504b8d1e7a3d61"
+                    "url": "https://files.pythonhosted.org/packages/a3/c5/7041b39bcad182a37ec6ea92e7e478a460db6277c542e6d417e34246bdac/portend-3.2.0-py3-none-any.whl",
+                    "sha256": "8b3fe3f78779df906559a21d9eaa6e21c8fa5a7a8cc76362cbbe1e16777399cf"
                 },
                 {
                     "type": "file",
@@ -452,8 +452,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/86/fa/3f956372b84f977f8f4e9181d42fa2ba8459f8d8f056dcd2f91358571559/tempora-5.2.2-py3-none-any.whl",
-                    "sha256": "003873654acaa49ecca810cee44665d827301134422505386e76f7b080461edb"
+                    "url": "https://files.pythonhosted.org/packages/3f/8c/db20cbcd6c8bcd06fe6a893fbb437e68e9962542f77ea273cb47109347e8/tempora-5.5.0-py3-none-any.whl",
+                    "sha256": "defd976c9144fc9f20432ed0d75926c1c48dd0c7c701b3493e02d5316598e8fe"
                 }
             ]
         },
@@ -574,13 +574,13 @@
             "name": "python3-pycairo",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pycairo==1.23.0\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pycairo==1.24.0\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/69/ca/9e9fa2e8be0876a9bbf046a1be7ee33e61d4fdfbd1fd25c76c1bdfddf8c4/pycairo-1.23.0.tar.gz",
-                    "sha256": "9b61ac818723adc04367301317eb2e814a83522f07bbd1f409af0dada463c44c"
+                    "url": "https://files.pythonhosted.org/packages/a2/dd/bc2c9ee9485308a29c18b1241329e677917af25c60b127857f0fb23d0c6e/pycairo-1.24.0.tar.gz",
+                    "sha256": "1444d52f1bb4cc79a4a0c0fe2ccec4bd78ff885ab01ebe1c0f637d8392bcafb6"
                 }
             ]
         },
@@ -598,8 +598,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/69/ca/9e9fa2e8be0876a9bbf046a1be7ee33e61d4fdfbd1fd25c76c1bdfddf8c4/pycairo-1.23.0.tar.gz",
-                    "sha256": "9b61ac818723adc04367301317eb2e814a83522f07bbd1f409af0dada463c44c"
+                    "url": "https://files.pythonhosted.org/packages/a2/dd/bc2c9ee9485308a29c18b1241329e677917af25c60b127857f0fb23d0c6e/pycairo-1.24.0.tar.gz",
+                    "sha256": "1444d52f1bb4cc79a4a0c0fe2ccec4bd78ff885ab01ebe1c0f637d8392bcafb6"
                 }
             ]
         },
@@ -607,13 +607,13 @@
             "name": "python3-meson-python",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"meson-python==0.13.1\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"meson-python==0.13.2\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/9f/af/5f941f57dc516e72b018183a38fbcfb018a7e83afd3c756ecfba82f21c65/meson_python-0.13.1-py3-none-any.whl",
-                    "sha256": "e33ea3efbadecc15768c205d03b905c7b3bf72afae1e1ebd84b438c4a3ed3393"
+                    "url": "https://files.pythonhosted.org/packages/5e/ad/c51b346930e7050cae81bb9f360986da30e27e1bffd28a8495fcbe84ec73/meson_python-0.13.2-py3-none-any.whl",
+                    "sha256": "7943955b890897543be1d768beee53c436d7838483dc6773655cd8243c5e7a3b"
                 },
                 {
                     "type": "file",
@@ -651,8 +651,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/31/25/5abcd82372d3d4a3932e1fa8c3dbf9efac10cc7c0d16e78467460571b404/typing_extensions-4.5.0-py3-none-any.whl",
-                    "sha256": "fb33085c39dd998ac16d1431ebc293a8b3eedd00fd4a32de0ff79002c19511b4"
+                    "url": "https://files.pythonhosted.org/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl",
+                    "sha256": "440d5dd3af93b060174bf433bccd69b0babc3b15b1a8dca43789fd7f61514b36"
                 }
             ]
         }
