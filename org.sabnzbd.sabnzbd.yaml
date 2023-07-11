@@ -1,7 +1,7 @@
 app-id: org.sabnzbd.sabnzbd
 command: SABnzbd.py
 runtime: org.freedesktop.Platform
-runtime-version: "22.08"
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -23,8 +23,8 @@ finish-args:
   - --filesystem=/run/media
   - --persist=.sabnzbd
 cleanup:
-  - "*.a"
-  - "*.la"
+  - '*.a'
+  - '*.la'
   - /include
   - /lib/pkgconfig
   - /man
@@ -32,11 +32,11 @@ modules:
   - pypi-dependencies.json
   - name: dbus-run-session
     buildsystem: autotools
-    cleanup: ["*"]
+    cleanup: ['*']
     sources:
       - type: archive
-        url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.15.6/dbus-dbus-1.15.6.tar.gz
-        sha256: 614d61cda795280065f743ed05bbec0ff7ac036a9eb828cb5fb865465fc2d61a
+        url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.14.8/dbus-dbus-1.14.8.tar.gz
+        sha256: 273718fe5150a1a44fe77abcf442dc64082f7375fdc15fcbd80b84316f897326
         x-checker-data:
           type: anitya
           project-id: 5356
@@ -57,16 +57,17 @@ modules:
       append-path: /usr/lib/sdk/rust-stable/bin
       env:
         CARGO_HOME: /run/build/python3-cryptography/cargo
-        CARGO_NET_OFFLINE: "true"
-        RUST_BACKTRACE: "1"
+        CARGO_NET_OFFLINE: 'true'
+        RUST_BACKTRACE: '1'
     buildsystem: simple
     build-commands:
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation
     sources:
       - cargo-sources.json
       - type: file
-        url: https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz
-        sha256: c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99
+        url: https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz
+        sha256: 7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c
         x-checker-data:
           type: pypi
           name: cryptography
