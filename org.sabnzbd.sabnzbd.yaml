@@ -89,7 +89,7 @@ modules:
       - type: archive
         url: https://www.rarlab.com/rar/unrarsrc-6.2.11.tar.gz
         sha256: a805e150d56445770f71a85c3fbdc9ab4b04fbe61b01cb57182d86fe3e7e6cec
-  - name: par2cmdline
+  - name: par2cmdline-turbo
     buildsystem: autotools
     sources:
       - type: archive
