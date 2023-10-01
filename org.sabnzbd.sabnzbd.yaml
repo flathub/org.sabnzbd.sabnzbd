@@ -35,8 +35,8 @@ modules:
     cleanup: ["*"]
     sources:
       - type: archive
-        url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.15.6/dbus-dbus-1.15.6.tar.gz
-        sha256: 614d61cda795280065f743ed05bbec0ff7ac036a9eb828cb5fb865465fc2d61a
+        url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.15.6/dbus-dbus-1.15.8.tar.gz
+        sha256: a44a8e9cc5a25587397d32f96292bb267622a5b6aea87899b9b18bb8f3abe1cd
         x-checker-data:
           type: anitya
           project-id: 5356
@@ -65,8 +65,8 @@ modules:
     sources:
       - cargo-sources.json
       - type: file
-        url: https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz
-        sha256: c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99
+        url: https://files.pythonhosted.org/packages/ef/33/87512644b788b00a250203382e40ee7040ae6fa6b4c4a31dcfeeaa26043b/cryptography-41.0.4.tar.gz
+        sha256: 7febc3094125fc126a7f6fb1f420d0da639f3f32cb15c8ff0dc3997c4549f51a
         x-checker-data:
           type: pypi
           name: cryptography
@@ -87,14 +87,20 @@ modules:
       - DESTDIR=$(FLATPAK_DEST)
     sources:
       - type: archive
-        url: https://www.rarlab.com/rar/unrarsrc-6.2.8.tar.gz
-        sha256: 1777e3d3b073815ff68a411ddb1ab76d0a4e1f58ecc7080035b27b52967ff911
-  - name: par2cmdline
+        url: https://www.rarlab.com/rar/unrarsrc-6.2.11.tar.gz
+        sha256: a805e150d56445770f71a85c3fbdc9ab4b04fbe61b01cb57182d86fe3e7e6cec
+  - name: par2cmdline-turbo
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://github.com/Parchive/par2cmdline/releases/download/v0.8.1/par2cmdline-0.8.1.tar.gz
-        sha256: 7b2fcc19b54c7080939fc2cbaca33ae40ac33759a526292933c94a85ba850d11
+        url: https://github.com/animetosho/par2cmdline-turbo/archive/refs/tags/v1.1.0.tar.gz
+        sha256: 78d92b18a935e1b822df8539e17c476095be8ab2d853ea642f8f20e17719a9b5
+      - type: script
+        dest-filename: autogen.sh
+        commands:
+          - aclocal
+          - automake --force-missing --add-missing --foreign
+          - autoconf
   - name: sabnzbdplus
     buildsystem: simple
     build-commands:
@@ -105,5 +111,5 @@ modules:
       - desktop-file-edit --set-key=Exec --set-value="SABnzbd.py --browser 1 %F" /app/share/applications/sabnzbd.desktop
     sources:
       - type: archive
-        url: https://github.com/sabnzbd/sabnzbd/releases/download/4.0.3/SABnzbd-4.0.3-src.tar.gz
-        sha256: dfb92a91b6f466c31c9fc9ffc1a1d4b3e6352698674c5ad30913d7a69fefa221
+        url: https://github.com/sabnzbd/sabnzbd/releases/download/4.1.0/SABnzbd-4.1.0-src.tar.gz
+        sha256: 24cdc711a9a9425b65b53dd5c084f78cc0f6d978c5c712481b7031751d569588
