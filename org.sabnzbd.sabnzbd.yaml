@@ -1,7 +1,7 @@
 app-id: org.sabnzbd.sabnzbd
 command: SABnzbd.py
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: "23.08"
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -23,8 +23,8 @@ finish-args:
   - --filesystem=/run/media
   - --persist=.sabnzbd
 cleanup:
-  - '*.a'
-  - '*.la'
+  - "*.a"
+  - "*.la"
   - /include
   - /lib/pkgconfig
   - /man
@@ -32,15 +32,14 @@ modules:
   - pypi-dependencies.json
   - name: dbus-run-session
     buildsystem: autotools
-    cleanup: ['*']
+    cleanup: ["*"]
     sources:
       - type: archive
-        url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.15.6/dbus-dbus-1.15.8.tar.gz
+        url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.15.8/dbus-dbus-1.15.8.tar.gz
         sha256: a44a8e9cc5a25587397d32f96292bb267622a5b6aea87899b9b18bb8f3abe1cd
         x-checker-data:
           type: anitya
           project-id: 5356
-          stable-only: true
           url-template: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-$version/dbus-dbus-$version.tar.gz
   - name: dbus-python
     buildsystem: autotools
@@ -57,16 +56,16 @@ modules:
       append-path: /usr/lib/sdk/rust-stable/bin
       env:
         CARGO_HOME: /run/build/python3-cryptography/cargo
-        CARGO_NET_OFFLINE: 'true'
-        RUST_BACKTRACE: '1'
+        CARGO_NET_OFFLINE: "true"
+        RUST_BACKTRACE: "1"
     buildsystem: simple
     build-commands:
       - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation
     sources:
       - cargo-sources.json
       - type: file
-        url: https://files.pythonhosted.org/packages/ef/33/87512644b788b00a250203382e40ee7040ae6fa6b4c4a31dcfeeaa26043b/cryptography-41.0.4.tar.gz
-        sha256: 7febc3094125fc126a7f6fb1f420d0da639f3f32cb15c8ff0dc3997c4549f51a
+        url: https://files.pythonhosted.org/packages/ce/b3/13a12ea7edb068de0f62bac88a8ffd92cc2901881b391839851846b84a81/cryptography-41.0.7.tar.gz
+        sha256: 13f93ce9bea8016c253b34afc6bd6a75993e5c40672ed5405a9c832f0d4a00bc
         x-checker-data:
           type: pypi
           name: cryptography
@@ -87,14 +86,14 @@ modules:
       - DESTDIR=$(FLATPAK_DEST)
     sources:
       - type: archive
-        url: https://www.rarlab.com/rar/unrarsrc-6.2.11.tar.gz
-        sha256: a805e150d56445770f71a85c3fbdc9ab4b04fbe61b01cb57182d86fe3e7e6cec
+        url: https://www.rarlab.com/rar/unrarsrc-6.2.12.tar.gz
+        sha256: a008b5f949bca9bb4ffa1bebbfc8b3c14b89df10a10354809b845232d5f582e5
   - name: par2cmdline-turbo
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://github.com/animetosho/par2cmdline-turbo/archive/refs/tags/v1.1.0.tar.gz
-        sha256: 78d92b18a935e1b822df8539e17c476095be8ab2d853ea642f8f20e17719a9b5
+        url: https://github.com/animetosho/par2cmdline-turbo/archive/refs/tags/v1.1.1.tar.gz
+        sha256: df2ed7c0ab4eb70347d2fe6c7ed36a0bd5b4b750e7dbdb842d89c51409c716fc
       - type: script
         dest-filename: autogen.sh
         commands:
@@ -111,5 +110,5 @@ modules:
       - desktop-file-edit --set-key=Exec --set-value="SABnzbd.py --browser 1 %F" /app/share/applications/sabnzbd.desktop
     sources:
       - type: archive
-        url: https://github.com/sabnzbd/sabnzbd/releases/download/4.1.0/SABnzbd-4.1.0-src.tar.gz
-        sha256: 24cdc711a9a9425b65b53dd5c084f78cc0f6d978c5c712481b7031751d569588
+        url: https://github.com/sabnzbd/sabnzbd/releases/download/4.2.1/SABnzbd-4.2.1-src.tar.gz
+        sha256: 0d59eefd883774fcb9e3f58a073f4e53467341b34026db08dce506625052ab49

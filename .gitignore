@@ -2,3 +2,4 @@
 /.flatpak-builder
 /.idea
 /.vscode
+Cargo.lock
