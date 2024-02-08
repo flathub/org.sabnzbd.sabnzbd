@@ -111,4 +111,4 @@ modules:
     sources:
       - type: archive
         url: https://github.com/sabnzbd/sabnzbd/releases/download/4.2.2/SABnzbd-4.2.2-src.tar.gz
-        sha256: 0d59eefd883774fcb9e3f58a073f4e53467341b34026db08dce506625052ab49
+        sha256: c4996a2ba65f279af81c93b1330591d8a58c2144b718d134972878cf4b527cd1
