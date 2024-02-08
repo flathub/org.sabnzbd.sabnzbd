@@ -64,8 +64,8 @@ modules:
     sources:
       - cargo-sources.json
       - type: file
-        url: https://files.pythonhosted.org/packages/ce/b3/13a12ea7edb068de0f62bac88a8ffd92cc2901881b391839851846b84a81/cryptography-41.0.7.tar.gz
-        sha256: 13f93ce9bea8016c253b34afc6bd6a75993e5c40672ed5405a9c832f0d4a00bc
+        url: https://files.pythonhosted.org/packages/0f/6f/40f1b5c6bafc809dd21a9e577458ecc1d8062a7e10148d140f402b535eaa/cryptography-42.0.2.tar.gz
+        sha256: e0ec52ba3c7f1b7d813cd52649a5b3ef1fc0d433219dc8c93827c57eab6cf888
         x-checker-data:
           type: pypi
           name: cryptography
@@ -110,5 +110,5 @@ modules:
       - desktop-file-edit --set-key=Exec --set-value="SABnzbd.py --browser 1 %F" /app/share/applications/sabnzbd.desktop
     sources:
       - type: archive
-        url: https://github.com/sabnzbd/sabnzbd/releases/download/4.2.1/SABnzbd-4.2.1-src.tar.gz
+        url: https://github.com/sabnzbd/sabnzbd/releases/download/4.2.2/SABnzbd-4.2.2-src.tar.gz
         sha256: 0d59eefd883774fcb9e3f58a073f4e53467341b34026db08dce506625052ab49
