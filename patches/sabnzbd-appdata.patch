@@ -1,21 +1,13 @@
-diff --git a/linux/org.sabnzbd.sabnzbd.appdata.xml b/linux/org.sabnzbd.sabnzbd.appdata.xml
-index 0edcc21..3135648 100644
---- a/linux/org.sabnzbd.sabnzbd.appdata.xml      
+diff --git a/linux/org.sabnzbd.sabnzbd.appdata.orig.xml b/linux/org.sabnzbd.sabnzbd.appdata.xml
+index 600436a..7050956 100644
+--- a/linux/org.sabnzbd.sabnzbd.appdata.orig.xml
 +++ b/linux/org.sabnzbd.sabnzbd.appdata.xml
-@@ -30,6 +30,7 @@
-   <url type="faq">https://sabnzbd.org/wiki/faq</url>
-   <url type="contact">https://sabnzbd.org/live-chat.html</url>
-   <releases>
-+    <release version="4.2.3" date="2024-03-18" type="stable"/>
-     <release version="4.2.2" date="2024-02-01" type="stable"/>
-     <release version="4.2.1" date="2024-01-05" type="stable"/>
-     <release version="4.2.0" date="2024-01-03" type="stable"/>
-@@ -51,7 +52,7 @@
+@@ -52,7 +52,7 @@
      <control>touch</control>
    </supports>
    <recommends>
 -    <display_length compare="ge">small</display_length>
-+    <display_length compare="ge">480</display_length>
++    <display_length compare="ge">640</display_length>
      <internet>always</internet>
    </recommends>
    <project_license>GPL-2.0-or-later</project_license>
