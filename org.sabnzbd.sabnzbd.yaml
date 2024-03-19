@@ -112,3 +112,6 @@ modules:
       - type: archive
         url: https://github.com/sabnzbd/sabnzbd/releases/download/4.2.3/SABnzbd-4.2.3-src.tar.gz
         sha256: f16314cf4032dcaccfd0b4af4d0e67a55c37f31870af3ca90f80d5f547ed8c25
+      - type: patch
+        path: patches/sabnzbd-appdata.patch
+        sha256: cf722b623cca88e18cb6a15ff5498916d719f35673289c02e4290fba77cce1a9
