@@ -1,6 +1,6 @@
-diff --git a/linux/org.sabnzbd.sabnzbd.appdata.orig.xml b/linux/org.sabnzbd.sabnzbd.appdata.xml
+diff --git a/linux/org.sabnzbd.sabnzbd.appdata.xml b/linux/org.sabnzbd.sabnzbd.appdata.xml
 index 600436a..7050956 100644
---- a/linux/org.sabnzbd.sabnzbd.appdata.orig.xml
+--- a/linux/org.sabnzbd.sabnzbd.appdata.xml
 +++ b/linux/org.sabnzbd.sabnzbd.appdata.xml
 @@ -52,7 +52,7 @@
      <control>touch</control>
