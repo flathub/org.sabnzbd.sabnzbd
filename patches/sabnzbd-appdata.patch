@@ -1,7 +1,7 @@
-diff --git a/develop/linux/org.sabnzbd.sabnzbd.appdata.xml b/develop/linux/org.sabnzbd.sabnzbd.appdata.xml
+diff --git a/linux/org.sabnzbd.sabnzbd.appdata.xml b/linux/org.sabnzbd.sabnzbd.appdata.xml
 index 0edcc21..3135648 100644
---- a/develop/linux/org.sabnzbd.sabnzbd.appdata.xml      
-+++ b/develop/linux/org.sabnzbd.sabnzbd.appdata.xml
+--- a/linux/org.sabnzbd.sabnzbd.appdata.xml      
++++ b/linux/org.sabnzbd.sabnzbd.appdata.xml
 @@ -30,6 +30,7 @@
    <url type="faq">https://sabnzbd.org/wiki/faq</url>
    <url type="contact">https://sabnzbd.org/live-chat.html</url>
