@@ -1,6 +1,14 @@
-sabctools==8.1.0
+# Flatpak requirements
+setuptools_rust==1.9.0
+setuptools_scm==8.0.4
+meson-python==0.15.0
 sabyenc3==5.4.4
-cheetah3==3.2.6.post1
+
+# Main requirements
+# Note that not all sub-dependencies are listed, but only ones we know could cause trouble
+apprise==1.7.4
+sabctools==8.1.0
+CT3==3.3.3.post1
 cffi==1.16.0
 pycparser==2.21
 feedparser==6.0.11
@@ -11,23 +19,47 @@ cherrypy==18.9.0
 jaraco.functools==4.0.0
 jaraco.collections==5.0.0
 jaraco.text==3.8.1
-jaraco.classes==3.3.0
+jaraco.classes==3.3.1
 jaraco.context==4.3.0
 more-itertools==10.2.0
 zc.lockfile==3.0.post1
-python-dateutil==2.8.2
-tempora==5.5.0
-pytz==2023.3.post1
+python-dateutil==2.9.0.post0
+tempora==5.5.1
+pytz==2024.1
 sgmllib3k==1.0.0
 portend==3.2.0
 chardet==5.2.0
 PySocks==1.7.1
-puremagic==1.15
+puremagic==1.21
 guessit==3.8.0
 babelfish==0.6.0
 rebulk==3.2.0
+
+# Recent cryptography versions require Rust. If you run into issues compiling this
+# SABnzbd will also work with older pre-Rust versions such as cryptography==3.3.2
+# cryptography==42.0.5
+
+# We recommend using "orjson" as it is 2x as fast as "ujson". However, it requires
+# Rust so SABnzbd works just as well with "ujson" or the Python built in "json" module
+ujson==5.9.0
+
+# Linux notifications + tray
 notify2==0.3.1
-pycairo==1.25.1
-pygobject==3.46.0
-meson-python==0.15.0
-setuptools_rust==1.8.1
+pycairo==1.26.0
+pygobject==3.48.1
+
+# Apprise Requirements
+requests==2.31.0
+requests-oauthlib==1.4.0
+PyYAML==6.0.1
+markdown==3.6
+paho-mqtt==2.0.0
+
+# Requests Requirements
+charset_normalizer==3.3.2
+idna==3.6
+urllib3==2.2.1
+certifi==2024.2.2
+oauthlib==3.2.2
+PyJWT==2.8.0
+blinker==1.7.0

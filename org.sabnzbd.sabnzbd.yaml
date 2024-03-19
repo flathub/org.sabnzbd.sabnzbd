@@ -64,8 +64,8 @@ modules:
     sources:
       - cargo-sources.json
       - type: file
-        url: https://files.pythonhosted.org/packages/0f/6f/40f1b5c6bafc809dd21a9e577458ecc1d8062a7e10148d140f402b535eaa/cryptography-42.0.2.tar.gz
-        sha256: e0ec52ba3c7f1b7d813cd52649a5b3ef1fc0d433219dc8c93827c57eab6cf888
+        url: https://files.pythonhosted.org/packages/13/9e/a55763a32d340d7b06d045753c186b690e7d88780cafce5f88cb931536be/cryptography-42.0.5.tar.gz
+        sha256: 6fe07eec95dfd477eb9530aef5bead34fec819b3aaf6c5bd6d20565da607bfe1
         x-checker-data:
           type: pypi
           name: cryptography
@@ -86,8 +86,8 @@ modules:
       - DESTDIR=$(FLATPAK_DEST)
     sources:
       - type: archive
-        url: https://www.rarlab.com/rar/unrarsrc-6.2.12.tar.gz
-        sha256: a008b5f949bca9bb4ffa1bebbfc8b3c14b89df10a10354809b845232d5f582e5
+        url: https://www.rarlab.com/rar/unrarsrc-7.0.7.tar.gz
+        sha256: da95829c7e66fe461c06eb4bea8145e58d88d76909432d0875cd1ff86669f728
   - name: par2cmdline-turbo
     buildsystem: autotools
     sources:
@@ -110,5 +110,8 @@ modules:
       - desktop-file-edit --set-key=Exec --set-value="SABnzbd.py --browser 1 %F" /app/share/applications/sabnzbd.desktop
     sources:
       - type: archive
-        url: https://github.com/sabnzbd/sabnzbd/releases/download/4.2.2/SABnzbd-4.2.2-src.tar.gz
-        sha256: c4996a2ba65f279af81c93b1330591d8a58c2144b718d134972878cf4b527cd1
+        url: https://github.com/sabnzbd/sabnzbd/releases/download/4.2.3/SABnzbd-4.2.3-src.tar.gz
+        sha256: f16314cf4032dcaccfd0b4af4d0e67a55c37f31870af3ca90f80d5f547ed8c25
+      - type: patch
+        path: patches/sabnzbd-appdata.patch
+        sha256: cf722b623cca88e18cb6a15ff5498916d719f35673289c02e4290fba77cce1a9
