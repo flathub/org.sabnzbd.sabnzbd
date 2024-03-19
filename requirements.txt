@@ -1,6 +1,7 @@
 # Flatpak requirements
 setuptools_rust==1.9.0
 setuptools_scm==8.0.4
+meson-python==0.15.0
 sabyenc3==5.4.4
 
 # Main requirements
