@@ -301,6 +301,19 @@
     {
         "type": "archive",
         "archive-type": "tar-gzip",
+        "url": "https://static.crates.io/crates/portable-atomic/portable-atomic-1.6.0.crate",
+        "sha256": "7170ef9988bc169ba16dd36a7fa041e5c4cbeb6a35b76d4c03daded371eae7c0",
+        "dest": "cargo/vendor/portable-atomic-1.6.0"
+    },
+    {
+        "type": "inline",
+        "contents": "{\"package\": \"7170ef9988bc169ba16dd36a7fa041e5c4cbeb6a35b76d4c03daded371eae7c0\", \"files\": {}}",
+        "dest": "cargo/vendor/portable-atomic-1.6.0",
+        "dest-filename": ".cargo-checksum.json"
+    },
+    {
+        "type": "archive",
+        "archive-type": "tar-gzip",
         "url": "https://static.crates.io/crates/proc-macro2/proc-macro2-1.0.78.crate",
         "sha256": "e2422ad645d89c99f8f3e6b88a9fdeca7fabeac836b1002371c4367c8f984aae",
         "dest": "cargo/vendor/proc-macro2-1.0.78"
@@ -314,66 +327,66 @@
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://static.crates.io/crates/pyo3/pyo3-0.20.2.crate",
-        "sha256": "9a89dc7a5850d0e983be1ec2a463a171d20990487c3cfcd68b5363f1ee3d6fe0",
-        "dest": "cargo/vendor/pyo3-0.20.2"
+        "url": "https://static.crates.io/crates/pyo3/pyo3-0.20.3.crate",
+        "sha256": "53bdbb96d49157e65d45cc287af5f32ffadd5f4761438b527b055fb0d4bb8233",
+        "dest": "cargo/vendor/pyo3-0.20.3"
     },
     {
         "type": "inline",
-        "contents": "{\"package\": \"9a89dc7a5850d0e983be1ec2a463a171d20990487c3cfcd68b5363f1ee3d6fe0\", \"files\": {}}",
-        "dest": "cargo/vendor/pyo3-0.20.2",
+        "contents": "{\"package\": \"53bdbb96d49157e65d45cc287af5f32ffadd5f4761438b527b055fb0d4bb8233\", \"files\": {}}",
+        "dest": "cargo/vendor/pyo3-0.20.3",
         "dest-filename": ".cargo-checksum.json"
     },
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://static.crates.io/crates/pyo3-build-config/pyo3-build-config-0.20.2.crate",
-        "sha256": "07426f0d8fe5a601f26293f300afd1a7b1ed5e78b2a705870c5f30893c5163be",
-        "dest": "cargo/vendor/pyo3-build-config-0.20.2"
+        "url": "https://static.crates.io/crates/pyo3-build-config/pyo3-build-config-0.20.3.crate",
+        "sha256": "deaa5745de3f5231ce10517a1f5dd97d53e5a2fd77aa6b5842292085831d48d7",
+        "dest": "cargo/vendor/pyo3-build-config-0.20.3"
     },
     {
         "type": "inline",
-        "contents": "{\"package\": \"07426f0d8fe5a601f26293f300afd1a7b1ed5e78b2a705870c5f30893c5163be\", \"files\": {}}",
-        "dest": "cargo/vendor/pyo3-build-config-0.20.2",
+        "contents": "{\"package\": \"deaa5745de3f5231ce10517a1f5dd97d53e5a2fd77aa6b5842292085831d48d7\", \"files\": {}}",
+        "dest": "cargo/vendor/pyo3-build-config-0.20.3",
         "dest-filename": ".cargo-checksum.json"
     },
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://static.crates.io/crates/pyo3-ffi/pyo3-ffi-0.20.2.crate",
-        "sha256": "dbb7dec17e17766b46bca4f1a4215a85006b4c2ecde122076c562dd058da6cf1",
-        "dest": "cargo/vendor/pyo3-ffi-0.20.2"
+        "url": "https://static.crates.io/crates/pyo3-ffi/pyo3-ffi-0.20.3.crate",
+        "sha256": "62b42531d03e08d4ef1f6e85a2ed422eb678b8cd62b762e53891c05faf0d4afa",
+        "dest": "cargo/vendor/pyo3-ffi-0.20.3"
     },
     {
         "type": "inline",
-        "contents": "{\"package\": \"dbb7dec17e17766b46bca4f1a4215a85006b4c2ecde122076c562dd058da6cf1\", \"files\": {}}",
-        "dest": "cargo/vendor/pyo3-ffi-0.20.2",
+        "contents": "{\"package\": \"62b42531d03e08d4ef1f6e85a2ed422eb678b8cd62b762e53891c05faf0d4afa\", \"files\": {}}",
+        "dest": "cargo/vendor/pyo3-ffi-0.20.3",
         "dest-filename": ".cargo-checksum.json"
     },
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://static.crates.io/crates/pyo3-macros/pyo3-macros-0.20.2.crate",
-        "sha256": "05f738b4e40d50b5711957f142878cfa0f28e054aa0ebdfc3fd137a843f74ed3",
-        "dest": "cargo/vendor/pyo3-macros-0.20.2"
+        "url": "https://static.crates.io/crates/pyo3-macros/pyo3-macros-0.20.3.crate",
+        "sha256": "7305c720fa01b8055ec95e484a6eca7a83c841267f0dd5280f0c8b8551d2c158",
+        "dest": "cargo/vendor/pyo3-macros-0.20.3"
     },
     {
         "type": "inline",
-        "contents": "{\"package\": \"05f738b4e40d50b5711957f142878cfa0f28e054aa0ebdfc3fd137a843f74ed3\", \"files\": {}}",
-        "dest": "cargo/vendor/pyo3-macros-0.20.2",
+        "contents": "{\"package\": \"7305c720fa01b8055ec95e484a6eca7a83c841267f0dd5280f0c8b8551d2c158\", \"files\": {}}",
+        "dest": "cargo/vendor/pyo3-macros-0.20.3",
         "dest-filename": ".cargo-checksum.json"
     },
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://static.crates.io/crates/pyo3-macros-backend/pyo3-macros-backend-0.20.2.crate",
-        "sha256": "0fc910d4851847827daf9d6cdd4a823fbdaab5b8818325c5e97a86da79e8881f",
-        "dest": "cargo/vendor/pyo3-macros-backend-0.20.2"
+        "url": "https://static.crates.io/crates/pyo3-macros-backend/pyo3-macros-backend-0.20.3.crate",
+        "sha256": "7c7e9b68bb9c3149c5b0cade5d07f953d6d125eb4337723c4ccdb665f1f96185",
+        "dest": "cargo/vendor/pyo3-macros-backend-0.20.3"
     },
     {
         "type": "inline",
-        "contents": "{\"package\": \"0fc910d4851847827daf9d6cdd4a823fbdaab5b8818325c5e97a86da79e8881f\", \"files\": {}}",
-        "dest": "cargo/vendor/pyo3-macros-backend-0.20.2",
+        "contents": "{\"package\": \"7c7e9b68bb9c3149c5b0cade5d07f953d6d125eb4337723c4ccdb665f1f96185\", \"files\": {}}",
+        "dest": "cargo/vendor/pyo3-macros-backend-0.20.3",
         "dest-filename": ".cargo-checksum.json"
     },
     {
