@@ -61,12 +61,13 @@ modules:
         RUST_BACKTRACE: '1'
     buildsystem: simple
     build-commands:
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation
     sources:
       - cargo-sources.json
       - type: file
-        url: https://files.pythonhosted.org/packages/13/9e/a55763a32d340d7b06d045753c186b690e7d88780cafce5f88cb931536be/cryptography-42.0.5.tar.gz
-        sha256: 6fe07eec95dfd477eb9530aef5bead34fec819b3aaf6c5bd6d20565da607bfe1
+        url: https://files.pythonhosted.org/packages/78/63/66c03eb51f0d241862083deb3f17ab5fce08cf6b347db7887bcb4d1a194e/cryptography-42.0.7.tar.gz
+        sha256: ecbfbc00bf55888edda9868a4cf927205de8499e7fabe6c050322298382953f2
         x-checker-data:
           type: pypi
           name: cryptography
