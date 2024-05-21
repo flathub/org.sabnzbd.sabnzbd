@@ -87,7 +87,7 @@ modules:
       - DESTDIR=$(FLATPAK_DEST)
     sources:
       - type: archive
-        url: https://www.rarlab.com/rar/unrarsrc-7.0.7.tar.gz
+        url: https://www.rarlab.com/rar/unrarsrc-7.0.9.tar.gz
         sha256: da95829c7e66fe461c06eb4bea8145e58d88d76909432d0875cd1ff86669f728
   - name: par2cmdline-turbo
     buildsystem: autotools
@@ -111,8 +111,5 @@ modules:
       - desktop-file-edit --set-key=Exec --set-value="SABnzbd.py --browser 1 %F" /app/share/applications/sabnzbd.desktop
     sources:
       - type: archive
-        url: https://github.com/sabnzbd/sabnzbd/releases/download/4.2.3/SABnzbd-4.2.3-src.tar.gz
-        sha256: f16314cf4032dcaccfd0b4af4d0e67a55c37f31870af3ca90f80d5f547ed8c25
-      - type: patch
-        path: patches/sabnzbd-appdata.patch
-        sha256: cf722b623cca88e18cb6a15ff5498916d719f35673289c02e4290fba77cce1a9
+        url: https://github.com/sabnzbd/sabnzbd/releases/download/4.3.1/SABnzbd-4.3.1-src.tar.gz
+        sha256: 8fcea961b5734ad0fb9025237df32a5a1067b638e57bdb0571c286e36fdb6b0e
