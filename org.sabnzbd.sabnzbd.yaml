@@ -37,7 +37,7 @@ modules:
     sources:
       - type: archive
         url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.15.8/dbus-dbus-1.15.8.tar.gz
-        sha256: a44a8e9cc5a25587397d32f96292bb267622a5b6aea87899b9b18bb8f3abe1cd
+        sha256: 3ae23cd28b96beac175eab0798d65c8e21e9fcf57132d840c170aaa7b21cd818
         x-checker-data:
           type: anitya
           project-id: 5356
