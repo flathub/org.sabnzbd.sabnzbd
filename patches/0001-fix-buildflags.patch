@@ -1,0 +1,43 @@
+From: Nick Andrik <nick.andrik@gmail.com>
+Date: Mon, 21 Jan 2013 23:07:40 +0100
+Subject: unrar-nonfree: Doesn't export build flags
+
+Forwarded: not-needed
+Closes: 694611
+Source: unrar-nonfree
+Version: 1:4.1.4-1
+Thanks: Felix Geyer <fgeyer@debian.org>
+
+Added hardening support (Closes: #694611)
+---
+ makefile | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/makefile b/makefile
+index ce54a02..9e9f824 100644
+--- a/makefile
++++ b/makefile
+@@ -3,12 +3,12 @@
+ 
+ # Linux using GCC
+ CXX=c++
+-CXXFLAGS=-march=native -O2 -std=c++11 -Wno-logical-op-parentheses -Wno-switch -Wno-dangling-else
++CXXFLAGS=-std=c++11 -Wno-logical-op-parentheses -Wno-switch -Wno-dangling-else
+ LIBFLAGS=-fPIC
+ DEFINES=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DRAR_SMP
+ STRIP=strip
+ AR=ar
+-LDFLAGS=-pthread
++LDFLAGS+=-pthread
+ DESTDIR=/usr
+ 
+ ##########################
+@@ -59,7 +59,7 @@ lib:	WHAT=RARDLL
+ lib:	CXXFLAGS+=$(LIBFLAGS)
+ lib:	$(OBJECTS) $(LIB_OBJ)
+ 	@rm -f libunrar.*
+-	$(LINK) -shared -o libunrar.so $(LDFLAGS) $(OBJECTS) $(LIB_OBJ)
++	$(LINK) -Wl,-soname,libunrar.so.5 -shared -o libunrar.so $(LDFLAGS) $(OBJECTS) $(LIB_OBJ)
+ 	$(AR) rcs libunrar.a $(OBJECTS) $(LIB_OBJ)
+ 
+ install-unrar:
