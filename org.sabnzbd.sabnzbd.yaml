@@ -1,7 +1,7 @@
 app-id: org.sabnzbd.sabnzbd
 command: SABnzbd.py
 runtime: org.freedesktop.Platform
-runtime-version: "23.08"
+runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -24,8 +24,8 @@ finish-args:
   - --filesystem=/run/media
   - --persist=.sabnzbd
 cleanup:
-  - "*.a"
-  - "*.la"
+  - '*.a'
+  - '*.la'
   - /include
   - /lib/pkgconfig
   - /man
@@ -33,11 +33,11 @@ modules:
   - pypi-dependencies.json
   - name: dbus-run-session
     buildsystem: autotools
-    cleanup: ["*"]
+    cleanup: ['*']
     sources:
       - type: archive
-        url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.15.8/dbus-dbus-1.15.8.tar.gz
-        sha256: 3ae23cd28b96beac175eab0798d65c8e21e9fcf57132d840c170aaa7b21cd818
+        url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.14.10/dbus-dbus-1.14.10.tar.gz
+        sha256: 5fedcd6c17fbc62646af224e1aab11a334c463e7e7d89163a670ed24e7ab241c
         x-checker-data:
           type: anitya
           project-id: 5356
@@ -57,11 +57,12 @@ modules:
       append-path: /usr/lib/sdk/rust-stable/bin
       env:
         CARGO_HOME: /run/build/python3-cryptography/cargo
-        CARGO_NET_OFFLINE: "true"
-        RUST_BACKTRACE: "1"
+        CARGO_NET_OFFLINE: 'true'
+        RUST_BACKTRACE: '1'
     buildsystem: simple
     build-commands:
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation
     sources:
       - cargo-sources.json
       - type: file
