@@ -8,8 +8,8 @@ Flatpak for [SABnzbd](https://github.com/sabnzbd/sabnzbd).
 
 1. Install <https://github.com/flatpak/flatpak-builder-tools/tree/master/pip>
 2. Compare and adjust packages with <https://github.com/sabnzbd/sabnzbd/blob/4.3.2/requirements.txt>
-3. `flatpak install flathub org.freedesktop.Platform//22.08 org.freedesktop.Sdk//22.08`
-4. `flatpak-pip-generator --runtime='org.freedesktop.Sdk//22.08' --requirements-file='requirements.txt' --output pypi-dependencies`
+3. `flatpak install flathub org.freedesktop.Platform//23.08 org.freedesktop.Sdk//23.08`
+4. `flatpak-pip-generator --runtime='org.freedesktop.Sdk//23.08' --requirements-file='requirements.txt' --output pypi-dependencies`
 
 ### Generating Cargo dependencies
 
