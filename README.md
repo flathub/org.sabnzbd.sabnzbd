@@ -22,6 +22,7 @@ Flatpak for [SABnzbd](https://github.com/sabnzbd/sabnzbd).
 See <https://docs.flatpak.org/en/latest/first-build.html> for details.
 
 ```bash
+flatpak install org.flatpak.Builder
 flatpak install flathub org.freedesktop.Platform//23.08
 flatpak install flathub org.freedesktop.Sdk//23.08
 flatpak install flathub org.freedesktop.Sdk.Extension.rust-stable//23.08

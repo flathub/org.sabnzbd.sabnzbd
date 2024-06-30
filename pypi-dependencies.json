@@ -98,7 +98,7 @@
             "name": "python3-apprise",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"apprise==1.8.0\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"apprise==1.7.6\" --no-build-isolation"
             ],
             "sources": [
                 {
@@ -108,8 +108,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/cd/1e/a7ba1c528ae9e3411e6f76c05aefba4e08feac4f94742de4bf1f0085d844/apprise-1.8.0-py3-none-any.whl",
-                    "sha256": "29307f9b7eeb5db70de13bd19f7f98700ad75369d14d1dcc49a6fcc06ed8a546"
+                    "url": "https://files.pythonhosted.org/packages/ed/d0/e263859b0d71d6455875a809bde7b61ef77415f461febe5f4565ea53689c/apprise-1.7.6-py3-none-any.whl",
+                    "sha256": "a98d815dbf950c92b5d8e7c2a4ec30e86257cece26a38ae62ec8fd8f7c551cb0"
                 },
                 {
                     "type": "file",
@@ -157,13 +157,13 @@
             "name": "python3-sabctools",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sabctools==8.2.0\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sabctools==8.1.0\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/e2/5a/73246dbbd6a14ad944fc741b3e6547a8e82c6ca3d982f9648df9fa626a0e/sabctools-8.2.0.tar.gz",
-                    "sha256": "74e30d6682964311c9b7ac8788d295b699d8bcb2642bc9e4b4e9be763b124dc3"
+                    "url": "https://files.pythonhosted.org/packages/7b/d8/ec03e227399fd1f28d8fa2887540c270cd57ec94cceeff8797a3105271dc/sabctools-8.1.0.tar.gz",
+                    "sha256": "3d87db991f704f74874fea05c90176175de0ec581dbd8fe5f69d03eb973ff915"
                 }
             ]
         },
@@ -605,13 +605,13 @@
             "name": "python3-puremagic",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"puremagic==1.23\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"puremagic==1.22\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/0d/ec/41eae1c4aabeec12490236df8d32e43be0dc6c1beb898d3d942c37bd054d/puremagic-1.23-py3-none-any.whl",
-                    "sha256": "f67ba60a1820ae154016a0fe6a9fdfa11961f14602939b37b0165d59bd2c26ad"
+                    "url": "https://files.pythonhosted.org/packages/dd/47/c7091f42633b41788a5deb8cdca0b9d0f18e3bba881203caaa470e6c9f55/puremagic-1.22-py3-none-any.whl",
+                    "sha256": "8cf3f0deb8230619ed987976cbbe7c4ebba0d19c3c26516d35085b87d23211df"
                 }
             ]
         },
@@ -624,8 +624,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/95/a1/bd4f759db13cd8beb9c9f68682aced5d966781b9d7380cf514a306f56762/babelfish-0.6.1-py3-none-any.whl",
-                    "sha256": "512f1501d4c8f7d38f0921f48660be7542de1a7b24abb6a6a65324a670150293"
+                    "url": "https://files.pythonhosted.org/packages/ce/2c/f7951f771261da6740af14fd9698064616aa040780cd8a03243fc43165c7/babelfish-0.6.0-py3-none-any.whl",
+                    "sha256": "268f1c6279f2a04a66837972e8a9f3dcc68e16f1201eec57d2a4b828a8b41b11"
                 },
                 {
                     "type": "file",
@@ -648,13 +648,13 @@
             "name": "python3-babelfish",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"babelfish==0.6.1\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"babelfish==0.6.0\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/95/a1/bd4f759db13cd8beb9c9f68682aced5d966781b9d7380cf514a306f56762/babelfish-0.6.1-py3-none-any.whl",
-                    "sha256": "512f1501d4c8f7d38f0921f48660be7542de1a7b24abb6a6a65324a670150293"
+                    "url": "https://files.pythonhosted.org/packages/ce/2c/f7951f771261da6740af14fd9698064616aa040780cd8a03243fc43165c7/babelfish-0.6.0-py3-none-any.whl",
+                    "sha256": "268f1c6279f2a04a66837972e8a9f3dcc68e16f1201eec57d2a4b828a8b41b11"
                 }
             ]
         },
@@ -676,13 +676,13 @@
             "name": "python3-ujson",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"ujson==5.10.0\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"ujson==5.9.0\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/f0/00/3110fd566786bfa542adb7932d62035e0c0ef662a8ff6544b6643b3d6fd7/ujson-5.10.0.tar.gz",
-                    "sha256": "b3cd8f3c5d8c7738257f1018880444f7b7d9b66232c64649f562d7ba86ad4bc1"
+                    "url": "https://files.pythonhosted.org/packages/6e/54/6f2bdac7117e89a47de4511c9f01732a283457ab1bf856e1e51aa861619e/ujson-5.9.0.tar.gz",
+                    "sha256": "89cc92e73d5501b8a7f48575eeb14ad27156ad092c2e9fc7e3cf949f07e75532"
                 }
             ]
         },
@@ -927,13 +927,13 @@
             "name": "python3-blinker",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"blinker==1.8.2\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"blinker==1.8.1\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/bb/2a/10164ed1f31196a2f7f3799368a821765c62851ead0e630ab52b8e14b4d0/blinker-1.8.2-py3-none-any.whl",
-                    "sha256": "1779309f71bf239144b9399d06ae925637cf6634cf6bd131104184531bf67c01"
+                    "url": "https://files.pythonhosted.org/packages/b8/a8/e2c40dc86dfc88fea7b627123e0a8e33ad1978af1f521629ec0f9a6e5da8/blinker-1.8.1-py3-none-any.whl",
+                    "sha256": "5f1cdeff423b77c31b89de0565cd03e5275a03028f44b2b15f912632a58cced6"
                 }
             ]
         }
