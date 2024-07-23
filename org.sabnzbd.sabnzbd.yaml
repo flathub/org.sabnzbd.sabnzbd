@@ -1,7 +1,7 @@
 app-id: org.sabnzbd.sabnzbd
 command: SABnzbd.py
 runtime: org.freedesktop.Platform
-runtime-version: "23.08"
+runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -24,8 +24,8 @@ finish-args:
   - --filesystem=/run/media
   - --persist=.sabnzbd
 cleanup:
-  - "*.a"
-  - "*.la"
+  - '*.a'
+  - '*.la'
   - /include
   - /lib/pkgconfig
   - /man
@@ -33,7 +33,7 @@ modules:
   - pypi-dependencies.json
   - name: dbus-run-session
     buildsystem: autotools
-    cleanup: ["*"]
+    cleanup: ['*']
     sources:
       - type: archive
         url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.15.8/dbus-dbus-1.15.8.tar.gz
@@ -57,16 +57,17 @@ modules:
       append-path: /usr/lib/sdk/rust-stable/bin
       env:
         CARGO_HOME: /run/build/python3-cryptography/cargo
-        CARGO_NET_OFFLINE: "true"
-        RUST_BACKTRACE: "1"
+        CARGO_NET_OFFLINE: 'true'
+        RUST_BACKTRACE: '1'
     buildsystem: simple
     build-commands:
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation
     sources:
       - cargo-sources.json
       - type: file
-        url: https://files.pythonhosted.org/packages/78/63/66c03eb51f0d241862083deb3f17ab5fce08cf6b347db7887bcb4d1a194e/cryptography-42.0.7.tar.gz
-        sha256: ecbfbc00bf55888edda9868a4cf927205de8499e7fabe6c050322298382953f2
+        url: https://files.pythonhosted.org/packages/69/ec/9fb9dcf4f91f0e5e76de597256c43eedefd8423aa59be95c70c4c3db426a/cryptography-43.0.0.tar.gz
+        sha256: b88075ada2d51aa9f18283532c9f60e72170041bba88d7f37e49cbb10275299e
         x-checker-data:
           type: pypi
           name: cryptography
