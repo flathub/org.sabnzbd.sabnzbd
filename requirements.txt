@@ -45,7 +45,7 @@ ujson==5.10.0
 
 # Linux notifications + tray
 notify2==0.3.1
-pycairo==1.26.0
+pycairo==1.26.1
 pygobject==3.48.2
 
 # Apprise Requirements
