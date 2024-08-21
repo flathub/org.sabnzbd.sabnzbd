@@ -14,7 +14,7 @@ Flatpak for [SABnzbd](https://github.com/sabnzbd/sabnzbd).
 ### Generating Cargo dependencies
 
 1. Install <https://github.com/flatpak/flatpak-builder-tools/tree/master/cargo>
-2. `wget https://raw.githubusercontent.com/pyca/cryptography/43.0.0/src/rust/Cargo.lock`
+2. `wget https://raw.githubusercontent.com/pyca/cryptography/42.0.8/src/rust/Cargo.lock`
 3. `python3 flatpak-cargo-generator.py Cargo.lock -o cargo-sources.json`
 
 ### Install
