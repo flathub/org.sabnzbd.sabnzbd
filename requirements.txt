@@ -6,7 +6,7 @@ sabyenc3==5.4.4
 
 # Main requirements
 # Note that not all sub-dependencies are listed, but only ones we know could cause trouble
-apprise==1.8.1
+apprise==1.8.0
 sabctools==8.2.5
 CT3==3.3.3.post1
 cffi==1.17.0
@@ -51,7 +51,7 @@ pygobject==3.48.2
 # Apprise Requirements
 requests==2.32.3
 requests-oauthlib==2.0.0
-PyYAML==6.0.2
+PyYAML==6.0.1
 markdown==3.6
 paho-mqtt==1.6.1 # Pinned, newer versions don't work with AppRise yet
 

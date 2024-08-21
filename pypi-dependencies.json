@@ -83,13 +83,18 @@
             "name": "python3-apprise",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"apprise==1.8.1\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"apprise==1.8.0\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/77/e1/d8844629f9464afe0222936f85c58005a9d5b5925c818781d62cf1d608d5/apprise-1.8.1-py3-none-any.whl",
-                    "sha256": "371ea400305bd3bf5e8af8e56f151e131ee6357ae009418f9dc3c279909ba0ee"
+                    "url": "https://files.pythonhosted.org/packages/cd/e5/af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0/PyYAML-6.0.1.tar.gz",
+                    "sha256": "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/cd/1e/a7ba1c528ae9e3411e6f76c05aefba4e08feac4f94742de4bf1f0085d844/apprise-1.8.0-py3-none-any.whl",
+                    "sha256": "29307f9b7eeb5db70de13bd19f7f98700ad75369d14d1dcc49a6fcc06ed8a546"
                 },
                 {
                     "type": "file",
@@ -805,9 +810,15 @@
             "name": "python3-PyYAML",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"PyYAML==6.0.2\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"PyYAML==6.0.1\" --no-build-isolation"
             ],
-            "sources": []
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/cd/e5/af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0/PyYAML-6.0.1.tar.gz",
+                    "sha256": "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
+                }
+            ]
         },
         {
             "name": "python3-paho-mqtt",
