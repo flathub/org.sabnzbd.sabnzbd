@@ -11,14 +11,14 @@ Flatpak for [SABnzbd](https://github.com/sabnzbd/sabnzbd).
 ### Generating Python dependencies
 
 1. Install <https://github.com/flatpak/flatpak-builder-tools/tree/master/pip>
-2. Compare and adjust packages with https://github.com/sabnzbd/sabnzbd/blob/master/requirements.txt
+2. Compare and adjust packages with <https://github.com/sabnzbd/sabnzbd/blob/4.5.0/requirements.txt>
 3. `flatpak install flathub org.freedesktop.Platform//23.08 org.freedesktop.Sdk//23.08`
 4. `python3 flatpak-pip-generator --runtime='org.freedesktop.Sdk//23.08' --requirements-file='requirements.txt' --output pypi-dependencies`
 
 ### Generating Cargo dependencies
 
 1. Install <https://github.com/flatpak/flatpak-builder-tools/tree/master/cargo>
-2. `wget https://github.com/pyca/cryptography/blob/main/Cargo.lock`
+2. `wget https://raw.githubusercontent.com/pyca/cryptography/42.0.8/src/rust/Cargo.lock`
 3. `python3 flatpak-cargo-generator.py Cargo.lock -o cargo-sources.json`
 
 ### Install
