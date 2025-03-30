@@ -4,17 +4,21 @@ Flatpak for [SABnzbd](https://github.com/sabnzbd/sabnzbd).
 
 ## Build from source
 
+### Update the manifest
+1. Update the url for SABnzbd in the [manifest file](https://github.com/flathub/org.sabnzbd.sabnzbd/blob/85a8c16e7c2e351077c5cd83437ca4e43b2eb274/org.sabnzbd.sabnzbd.yaml#L117)
+2. Update the SHA256 hash for the SABnzbd source file
+
 ### Generating Python dependencies
 
 1. Install <https://github.com/flatpak/flatpak-builder-tools/tree/master/pip>
-2. Compare and adjust packages with <https://github.com/sabnzbd/sabnzbd/blob/4.4.1/requirements.txt>
+2. Compare and adjust packages with https://github.com/sabnzbd/sabnzbd/blob/master/requirements.txt
 3. `flatpak install flathub org.freedesktop.Platform//23.08 org.freedesktop.Sdk//23.08`
-4. `flatpak-pip-generator --runtime='org.freedesktop.Sdk//23.08' --requirements-file='requirements.txt' --output pypi-dependencies`
+4. `python3 flatpak-pip-generator --runtime='org.freedesktop.Sdk//23.08' --requirements-file='requirements.txt' --output pypi-dependencies`
 
 ### Generating Cargo dependencies
 
 1. Install <https://github.com/flatpak/flatpak-builder-tools/tree/master/cargo>
-2. `wget https://raw.githubusercontent.com/pyca/cryptography/42.0.8/src/rust/Cargo.lock`
+2. `wget https://github.com/pyca/cryptography/blob/main/Cargo.lock`
 3. `python3 flatpak-cargo-generator.py Cargo.lock -o cargo-sources.json`
 
 ### Install
