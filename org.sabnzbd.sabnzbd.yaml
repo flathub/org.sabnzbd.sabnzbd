@@ -124,8 +124,8 @@ modules:
       - cargo-sources-cryptography.json
       - type: file
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
-        url: https://files.pythonhosted.org/packages/9f/33/c00162f49c0e2fe8064a62cb92b93e50c74a72bc370ab92f86112b33ff62/cryptography-46.0.3.tar.gz
-        sha256: a8b17438104fed022ce745b362294d9ce35b4c2e45c1d958ad4a4b019285f4a1
+        url: https://files.pythonhosted.org/packages/a7/35/c495bffc2056f2dadb32434f1feedd79abde2a7f8363e1974afa9c33c7e2/cryptography-45.0.7.tar.gz
+        sha256: 4b1654dfc64ea479c242508eb8c724044f1e964a47d1d1cacc5132292d851971
         x-checker-data:
           type: pypi
           name: cryptography
