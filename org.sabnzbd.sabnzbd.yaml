@@ -154,7 +154,7 @@ modules:
       - type: patch
         # Patch origin is Debian, see https://github.com/debian-calibre/unrar-nonfree/tree/master/debian/patches
         path: patches/0001-fix-buildflags.patch
-        sha256: ecd54158acaf7562585d465c8f613aa35130731acf270e4224fd9bd8f00e25b4
+        sha256: 15254ec7d4b47e5a874ca6017a583b0c30e0583520d916c30d49bd71f930661c
 
   - name: par2cmdline-turbo
     buildsystem: autotools
