@@ -1,7 +1,7 @@
 app-id: org.sabnzbd.sabnzbd
 command: SABnzbd.py
 runtime: org.freedesktop.Platform
-runtime-version: "23.08"
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -24,34 +24,96 @@ finish-args:
   - --filesystem=/run/media
   - --persist=.sabnzbd
 cleanup:
-  - "*.a"
-  - "*.la"
+  - '*.a'
+  - '*.la'
   - /include
   - /lib/pkgconfig
   - /man
+  - /share/man
+  - /share/doc
+  # Parts of SABnzbd not needed at runtime
+  - /bin/licenses
+  - /bin/po
+  - /bin/tests
+  - /bin/tools
+  - '/bin/*.txt'
+  # Scriptlets installed by pip, not needed by SABnzbd
+  - /bin/apprise
+  - /bin/calc-prorate
+  - /bin/chardetect
+  - /bin/cheetah
+  - /bin/cheetah-analyze
+  - /bin/cheetah-compile
+  - /bin/cheroot
+  - /bin/cherryd
+  - /bin/guessit
+  - /bin/maturin
+  - /bin/normalizer
+  - /bin/setuptools-scm
 modules:
+  # SABnzbd dependencies, generated from requirements.txt
   - pypi-dependencies.json
+
   - name: dbus-run-session
     buildsystem: cmake
-    cleanup: ["*"]
+    cleanup: ['*']
     sources:
       - type: archive
-        url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.16.0/dbus-dbus-1.16.0.tar.gz
-        sha256: d2ca9d958c830e762ba70aea8e6b5c29fa7b58d0fee8ddd9bb5a00f35106ab57
+        url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.16.2/dbus-dbus-1.16.2.tar.gz
+        sha256: d77cc71acd93e85f2bd2a6fe3a40e5bd023519e3e9fa9b5361e7109f42b74060
         x-checker-data:
           type: anitya
           project-id: 5356
           url-template: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-$version/dbus-dbus-$version.tar.gz
+
   - name: dbus-python
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://dbus.freedesktop.org/releases/dbus-python/dbus-python-1.3.2.tar.gz
-        sha256: ad67819308618b5069537be237f8e68ca1c7fcc95ee4a121fe6845b1418248f8
+        url: https://dbus.freedesktop.org/releases/dbus-python/dbus-python-1.4.0.tar.xz
+        sha256: c36b28f10ffcc8f1f798aca973bcc132f91f33eb9b6b8904381b4077766043d5
         x-checker-data:
           type: anitya
           project-id: 402
-          url-template: https://dbus.freedesktop.org/releases/dbus-python/dbus-python-$version.tar.gz
+          url-template: https://dbus.freedesktop.org/releases/dbus-python/dbus-python-$version.tar.xz
+
+  # Buildsystem used by cryptography
+  - name: python3-maturin
+    buildsystem: simple
+    build-options:
+      append-path: /usr/lib/sdk/rust-stable/bin
+      env:
+        CARGO_HOME: /run/build/python3-maturin/cargo
+        CARGO_NET_OFFLINE: 'true'
+    build-commands:
+      - cargo --offline fetch --manifest-path ./Cargo.toml
+      - cargo --offline build --release
+      - install -Dm755 target/release/maturin -t ${FLATPAK_DEST}/bin
+      - install -Dm644 maturin/__init__.py -t ${FLATPAK_DEST}/lib/python$(python -c 'import sys; print("%s.%s" %sys.version_info[0:2])')/site-packages/maturin/
+    sources:
+      - cargo-sources-maturin.json
+      - type: archive
+        # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
+        url: https://files.pythonhosted.org/packages/13/7c/b11b870fc4fd84de2099906314ce45488ae17be32ff5493519a6cddc518a/maturin-1.9.4.tar.gz
+        sha256: 235163a0c99bc6f380fb8786c04fd14dcf6cd622ff295ea3de525015e6ac40cf
+# Manual update only
+#        x-checker-data:
+#          type: pypi
+#          name: maturin
+
+  # Dependency of cryptography
+  - name: python3-cffi
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "." --no-build-isolation
+    sources:
+      - type: archive
+        url: https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz
+        sha256: 44d1b5909021139fe36001ae048dbdde8214afa20200eda0f64c068cac5d5529
+        x-checker-data:
+          type: pypi
+          name: cffi
+
   - name: python3-cryptography
     build-options:
       append-path: /usr/lib/sdk/rust-stable/bin
@@ -63,47 +125,67 @@ modules:
     build-commands:
       - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation
     sources:
-      - cargo-sources.json
+      - cargo-sources-cryptography.json
       - type: file
-        url: https://files.pythonhosted.org/packages/78/63/66c03eb51f0d241862083deb3f17ab5fce08cf6b347db7887bcb4d1a194e/cryptography-42.0.7.tar.gz
-        sha256: ecbfbc00bf55888edda9868a4cf927205de8499e7fabe6c050322298382953f2
-        x-checker-data:
-          type: pypi
-          name: cryptography
+        # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
+        url: https://files.pythonhosted.org/packages/a7/35/c495bffc2056f2dadb32434f1feedd79abde2a7f8363e1974afa9c33c7e2/cryptography-45.0.7.tar.gz
+        sha256: 4b1654dfc64ea479c242508eb8c724044f1e964a47d1d1cacc5132292d851971
+# Manual update only
+#        x-checker-data:
+#          type: pypi
+#          name: cryptography
+
   - name: p7zip
     no-autogen: true
     make-args:
       - 7z
     sources:
       - type: archive
-        url: https://github.com/p7zip-project/p7zip/archive/v17.05/p7zip-v17.05.tar.gz
-        sha256: d2788f892571058c08d27095c22154579dfefb807ebe357d145ab2ddddefb1a6
+        url: https://github.com/p7zip-project/p7zip/archive/v17.06/p7zip-v17.06.tar.gz
+        sha256: c35640020e8f044b425d9c18e1808ff9206dc7caf77c9720f57eb0849d714cd1
+        x-checker-data:
+          type: anitya
+          project-id: 2583
+          stable-only: true
+          url-template: https://github.com/p7zip-project/p7zip/archive/v$version/p7zip-v$version.tar.gz
       - type: shell
         commands:
-          - sed -i 's|/usr/local|/app|g' makefile.common
+          - sed -i 's|/usr/local|${FLATPAK_DEST}|g' makefile.common
+
   - name: unrar
     no-autogen: true
     make-install-args:
       - DESTDIR=$(FLATPAK_DEST)
     sources:
       - type: archive
-        url: https://www.rarlab.com/rar/unrarsrc-7.0.9.tar.gz
-        sha256: 505c13f9e4c54c01546f2e29b2fcc2d7fabc856a060b81e5cdfe6012a9198326
+        # Find the "UnRAR source" link at https://www.rarlab.com/rar_add.htm
+        url: https://www.rarlab.com/rar/unrarsrc-7.2.1.tar.gz
+        sha256: 3fe3b4d710da45521625353dc2e023dad48c010f02a93302756e1061a8f3ae8e
+        x-checker-data:
+          type: anitya
+          project-id: 13306
+          url-template: https://www.rarlab.com/rar/unrarsrc-$version.tar.gz
       - type: patch
+        # Patch origin is Debian, see https://github.com/debian-calibre/unrar-nonfree/tree/master/debian/patches
         path: patches/0001-fix-buildflags.patch
-        sha256: ecd54158acaf7562585d465c8f613aa35130731acf270e4224fd9bd8f00e25b4
+
   - name: par2cmdline-turbo
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://github.com/animetosho/par2cmdline-turbo/archive/refs/tags/v1.1.1.tar.gz
-        sha256: df2ed7c0ab4eb70347d2fe6c7ed36a0bd5b4b750e7dbdb842d89c51409c716fc
+        url: https://github.com/animetosho/par2cmdline-turbo/archive/refs/tags/v1.3.0.tar.gz
+        sha256: ec7106f88f45e834607d74fb373dae22583f08eafef4850ae98c7c70ce788f72
+        x-checker-data:
+          type: anitya
+          project-id: 372791
+          url-template: https://github.com/animetosho/par2cmdline-turbo/archive/refs/tags/v$version.tar.gz
       - type: script
         dest-filename: autogen.sh
         commands:
           - aclocal
           - automake --force-missing --add-missing --foreign
           - autoconf
+
   - name: sabnzbdplus
     buildsystem: simple
     build-commands:
@@ -114,5 +196,11 @@ modules:
       - desktop-file-edit --set-key=Exec --set-value="SABnzbd.py --browser 1 %F" /app/share/applications/sabnzbd.desktop
     sources:
       - type: archive
-        url: https://github.com/sabnzbd/sabnzbd/releases/download/4.5.1/SABnzbd-4.5.1-src.tar.gz
-        sha256: fa1ec07a20769bcd863099cc40e8f20a336221505137bb1b52d981506333fc1c
+        url: https://github.com/sabnzbd/sabnzbd/releases/download/4.5.5/SABnzbd-4.5.5-src.tar.gz
+        sha256: 7f93d714287293f519f244b92d8eb727aa504448c5961dab8420e2093f92e3b7
+        x-checker-data:
+          type: anitya
+          project-id: 44529
+          stable-only: true
+          is-main-source: true
+          url-template: https://github.com/sabnzbd/sabnzbd/releases/download/$version/SABnzbd-$version-src.tar.gz

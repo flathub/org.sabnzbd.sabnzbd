@@ -3,5 +3,9 @@
 /.idea
 /.vscode
 Cargo.lock
-flatpak-pip-generator
+Cargo-maturin.lock
+Cargo-cryptography.lock
+flatpak-pip-generator.py
 flatpak-cargo-generator.py
+flatpak-pip-generator
+flatpak-cargo-generator
