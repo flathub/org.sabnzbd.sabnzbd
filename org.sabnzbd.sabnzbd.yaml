@@ -96,9 +96,10 @@ modules:
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
         url: https://files.pythonhosted.org/packages/13/7c/b11b870fc4fd84de2099906314ce45488ae17be32ff5493519a6cddc518a/maturin-1.9.4.tar.gz
         sha256: 235163a0c99bc6f380fb8786c04fd14dcf6cd622ff295ea3de525015e6ac40cf
-        x-checker-data:
-          type: pypi
-          name: maturin
+# Manual update only
+#        x-checker-data:
+#          type: pypi
+#          name: maturin
 
   # Dependency of cryptography
   - name: python3-cffi
@@ -129,9 +130,10 @@ modules:
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
         url: https://files.pythonhosted.org/packages/a7/35/c495bffc2056f2dadb32434f1feedd79abde2a7f8363e1974afa9c33c7e2/cryptography-45.0.7.tar.gz
         sha256: 4b1654dfc64ea479c242508eb8c724044f1e964a47d1d1cacc5132292d851971
-        x-checker-data:
-          type: pypi
-          name: cryptography
+# Manual update only
+#        x-checker-data:
+#          type: pypi
+#          name: cryptography
 
   - name: p7zip
     no-autogen: true
@@ -200,4 +202,5 @@ modules:
           type: anitya
           project-id: 44529
           stable-only: true
+          is-main-source: true
           url-template: https://github.com/sabnzbd/sabnzbd/releases/download/$version/SABnzbd-$version-src.tar.gz
