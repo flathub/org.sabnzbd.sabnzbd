@@ -1,7 +1,7 @@
 app-id: org.sabnzbd.sabnzbd
 command: SABnzbd.py
 runtime: org.freedesktop.Platform
-runtime-version: "25.08"
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -24,8 +24,8 @@ finish-args:
   - --filesystem=/run/media
   - --persist=.sabnzbd
 cleanup:
-  - "*.a"
-  - "*.la"
+  - '*.a'
+  - '*.la'
   - /include
   - /lib/pkgconfig
   - /man
@@ -36,7 +36,7 @@ cleanup:
   - /bin/po
   - /bin/tests
   - /bin/tools
-  - "/bin/*.txt"
+  - '/bin/*.txt'
   # Scriptlets installed by pip, not needed by SABnzbd
   - /bin/apprise
   - /bin/calc-prorate
@@ -56,7 +56,7 @@ modules:
 
   - name: dbus-run-session
     buildsystem: cmake
-    cleanup: ["*"]
+    cleanup: ['*']
     sources:
       - type: archive
         url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.16.0/dbus-dbus-1.16.0.tar.gz
@@ -92,10 +92,13 @@ modules:
       - install -Dm644 maturin/__init__.py -t ${FLATPAK_DEST}/lib/python$(python -c 'import sys; print("%s.%s" %sys.version_info[0:2])')/site-packages/maturin/
     sources:
       - cargo-sources-maturin.json
-      - type: git
-        url: https://github.com/PyO3/maturin
+      - type: archive
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
-        tag: v1.9.4
+        url: https://files.pythonhosted.org/packages/13/7c/b11b870fc4fd84de2099906314ce45488ae17be32ff5493519a6cddc518a/maturin-1.9.4.tar.gz
+        sha256: 235163a0c99bc6f380fb8786c04fd14dcf6cd622ff295ea3de525015e6ac40cf
+        x-checker-data:
+          type: pypi
+          name: maturin
 
   # Dependency of cryptography
   - name: python3-cffi
@@ -135,12 +138,17 @@ modules:
     make-args:
       - 7z
     sources:
-      - type: git
-        url: https://github.com/p7zip-project/p7zip
-        tag: v17.06
+      - type: archive
+        url: https://github.com/p7zip-project/p7zip/archive/v17.06/p7zip-v17.06.tar.gz
+        sha256: c35640020e8f044b425d9c18e1808ff9206dc7caf77c9720f57eb0849d714cd1
+        x-checker-data:
+          type: anitya
+          project-id: 2583
+          stable-only: true
+          url-template: https://github.com/p7zip-project/p7zip/archive/v$version/p7zip-v$version.tar.gz
       - type: shell
         commands:
-          - sed -i 's|/usr/local|/app|g' makefile.common
+          - sed -i 's|/usr/local|${FLATPAK_DEST}|g' makefile.common
 
   - name: unrar
     no-autogen: true
@@ -151,6 +159,10 @@ modules:
         # Find the "UnRAR source" link at https://www.rarlab.com/rar_add.htm
         url: https://www.rarlab.com/rar/unrarsrc-7.2.1.tar.gz
         sha256: 3fe3b4d710da45521625353dc2e023dad48c010f02a93302756e1061a8f3ae8e
+        x-checker-data:
+          type: anitya
+          project-id: 13306
+          url-template: https://www.rarlab.com/rar/unrarsrc-$version.tar.gz
       - type: patch
         # Patch origin is Debian, see https://github.com/debian-calibre/unrar-nonfree/tree/master/debian/patches
         path: patches/0001-fix-buildflags.patch
@@ -158,9 +170,13 @@ modules:
   - name: par2cmdline-turbo
     buildsystem: autotools
     sources:
-      - type: git
-        url: https://github.com/animetosho/par2cmdline-turbo
-        tag: v1.3.0
+      - type: archive
+        url: https://github.com/animetosho/par2cmdline-turbo/archive/refs/tags/v1.3.0.tar.gz
+        sha256: ec7106f88f45e834607d74fb373dae22583f08eafef4850ae98c7c70ce788f72
+        x-checker-data:
+          type: anitya
+          project-id: 372791
+          url-template: https://github.com/animetosho/par2cmdline-turbo/archive/refs/tags/v$version.tar.gz
       - type: script
         dest-filename: autogen.sh
         commands:
@@ -180,3 +196,8 @@ modules:
       - type: archive
         url: https://github.com/sabnzbd/sabnzbd/releases/download/4.5.5/SABnzbd-4.5.5-src.tar.gz
         sha256: 7f93d714287293f519f244b92d8eb727aa504448c5961dab8420e2093f92e3b7
+        x-checker-data:
+          type: anitya
+          project-id: 44529
+          stable-only: true
+          url-template: https://github.com/sabnzbd/sabnzbd/releases/download/$version/SABnzbd-$version-src.tar.gz
