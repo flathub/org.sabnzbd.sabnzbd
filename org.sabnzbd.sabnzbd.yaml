@@ -147,6 +147,7 @@ modules:
           type: anitya
           project-id: 2583
           stable-only: true
+          is-important: true
           url-template: https://github.com/p7zip-project/p7zip/archive/v$version/p7zip-v$version.tar.gz
       - type: shell
         commands:
@@ -164,6 +165,7 @@ modules:
         x-checker-data:
           type: anitya
           project-id: 13306
+          is-important: true
           url-template: https://www.rarlab.com/rar/unrarsrc-$version.tar.gz
       - type: patch
         # Patch origin is Debian, see https://github.com/debian-calibre/unrar-nonfree/tree/master/debian/patches
@@ -178,6 +180,7 @@ modules:
         x-checker-data:
           type: anitya
           project-id: 372791
+          is-important: true
           url-template: https://github.com/animetosho/par2cmdline-turbo/archive/refs/tags/v$version.tar.gz
       - type: script
         dest-filename: autogen.sh
