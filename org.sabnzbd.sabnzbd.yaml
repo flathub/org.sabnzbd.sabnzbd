@@ -36,7 +36,7 @@ cleanup:
   - /bin/po
   - /bin/tests
   - /bin/tools
-  - '/bin/*.txt'
+  - /bin/*.txt
   # Scriptlets installed by pip, not needed by SABnzbd
   - /bin/apprise
   - /bin/calc-prorate
@@ -89,7 +89,8 @@ modules:
       - cargo --offline fetch --manifest-path ./Cargo.toml
       - cargo --offline build --release
       - install -Dm755 target/release/maturin -t ${FLATPAK_DEST}/bin
-      - install -Dm644 maturin/__init__.py -t ${FLATPAK_DEST}/lib/python$(python -c 'import sys; print("%s.%s" %sys.version_info[0:2])')/site-packages/maturin/
+      - install -Dm644 maturin/__init__.py -t ${FLATPAK_DEST}/lib/python$(python -c
+        'import sys; print("%s.%s" %sys.version_info[0:2])')/site-packages/maturin/
     sources:
       - cargo-sources-maturin.json
       - type: archive
@@ -105,7 +106,8 @@ modules:
   - name: python3-cffi
     buildsystem: simple
     build-commands:
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "." --no-build-isolation
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "." --no-build-isolation
     sources:
       - type: archive
         url: https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz
@@ -119,11 +121,12 @@ modules:
       append-path: /usr/lib/sdk/rust-stable/bin
       env:
         CARGO_HOME: /run/build/python3-cryptography/cargo
-        CARGO_NET_OFFLINE: "true"
-        RUST_BACKTRACE: "1"
+        CARGO_NET_OFFLINE: 'true'
+        RUST_BACKTRACE: '1'
     buildsystem: simple
     build-commands:
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation
     sources:
       - cargo-sources-cryptography.json
       - type: file
@@ -160,8 +163,8 @@ modules:
     sources:
       - type: archive
         # Find the "UnRAR source" link at https://www.rarlab.com/rar_add.htm
-        url: https://www.rarlab.com/rar/unrarsrc-7.2.1.tar.gz
-        sha256: 3fe3b4d710da45521625353dc2e023dad48c010f02a93302756e1061a8f3ae8e
+        url: https://www.rarlab.com/rar/unrarsrc-7.2.2.tar.gz
+        sha256: 41c00c8755cf5bf6b5d7f0d2d167ee889c2c5352e17e5c9470dbc354af1e71ab
         x-checker-data:
           type: anitya
           project-id: 13306
