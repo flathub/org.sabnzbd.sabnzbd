@@ -34,8 +34,10 @@ cleanup:
   # Parts of SABnzbd not needed at runtime
   - /bin/licenses
   - /bin/po
+  - /bin/scripts
   - /bin/tests
   - /bin/tools
+  - /bin/README.mkd
   - /bin/*.txt
   # Scriptlets installed by pip, not needed by SABnzbd
   - /bin/apprise
@@ -47,10 +49,17 @@ cleanup:
   - /bin/cheroot
   - /bin/cherryd
   - /bin/guessit
+  - /bin/httpx
   - /bin/maturin
   - /bin/normalizer
+  - /bin/puccinialize
   - /bin/setuptools-scm
+  - /bin/tqdm
 modules:
+  # Assorted pypi dependencies, generated from requirements-*.txt
+  - pypi-dependencies-flatpak.json
+  - pypi-dependencies-cryptography.json
+  - pypi-dependencies-orjson.json
   # SABnzbd dependencies, generated from requirements.txt
   - pypi-dependencies.json
 
@@ -77,7 +86,7 @@ modules:
           project-id: 402
           url-template: https://dbus.freedesktop.org/releases/dbus-python/dbus-python-$version.tar.xz
 
-  # Buildsystem used by cryptography
+  # Buildsystem used by cryptography, orjson
   - name: python3-maturin
     buildsystem: simple
     build-options:
@@ -95,26 +104,33 @@ modules:
       - cargo-sources-maturin.json
       - type: archive
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
-        url: https://files.pythonhosted.org/packages/13/7c/b11b870fc4fd84de2099906314ce45488ae17be32ff5493519a6cddc518a/maturin-1.9.4.tar.gz
-        sha256: 235163a0c99bc6f380fb8786c04fd14dcf6cd622ff295ea3de525015e6ac40cf
+        url: https://files.pythonhosted.org/packages/02/44/c593afce7d418ae6016b955c978055232359ad28c707a9ac6643fc60512d/maturin-1.10.2.tar.gz
+        sha256: 259292563da89850bf8f7d37aa4ddba22905214c1e180b1c8f55505dfd8c0e81
 # Manual update only
 #        x-checker-data:
 #          type: pypi
 #          name: maturin
 
-  # Dependency of cryptography
-  - name: python3-cffi
+  - name: python3-orjson
+    build-options:
+      append-path: /usr/lib/sdk/rust-stable/bin
+      env:
+        CARGO_HOME: /run/build/python3-orjson/cargo
+        CARGO_NET_OFFLINE: 'true'
+        RUST_BACKTRACE: '1'
     buildsystem: simple
     build-commands:
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
-        --prefix=${FLATPAK_DEST} "." --no-build-isolation
+      - pip3 install --verbose --exists-action=i --no-index --find-links=file://${PWD}
+        --prefix=${FLATPAK_DEST} orjson --no-build-isolation
     sources:
-      - type: archive
-        url: https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz
-        sha256: 44d1b5909021139fe36001ae048dbdde8214afa20200eda0f64c068cac5d5529
+      - cargo-sources-orjson.json
+      - type: file
+        # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
+        url: https://files.pythonhosted.org/packages/04/b8/333fdb27840f3bf04022d21b654a35f58e15407183aeb16f3b41aa053446/orjson-3.11.5.tar.gz
+        sha256: 82393ab47b4fe44ffd0a7659fa9cfaacc717eb617c93cde83795f14af5c2e9d5
         x-checker-data:
           type: pypi
-          name: cffi
+          name: orjson
 
   - name: python3-cryptography
     build-options:
@@ -131,8 +147,8 @@ modules:
       - cargo-sources-cryptography.json
       - type: file
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
-        url: https://files.pythonhosted.org/packages/a7/35/c495bffc2056f2dadb32434f1feedd79abde2a7f8363e1974afa9c33c7e2/cryptography-45.0.7.tar.gz
-        sha256: 4b1654dfc64ea479c242508eb8c724044f1e964a47d1d1cacc5132292d851971
+        url: https://files.pythonhosted.org/packages/9f/33/c00162f49c0e2fe8064a62cb92b93e50c74a72bc370ab92f86112b33ff62/cryptography-46.0.3.tar.gz
+        sha256: a8b17438104fed022ce745b362294d9ce35b4c2e45c1d958ad4a4b019285f4a1
 # Manual update only
 #        x-checker-data:
 #          type: pypi

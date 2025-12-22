@@ -1,0 +1,4 @@
+# Flatpak requirements
+setuptools-rust
+setuptools-scm
+meson-python
