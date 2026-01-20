@@ -1,19 +1,21 @@
 # SABnzbd requirements, direct imports only; cryptography, dbus, orjson, and
 # all utils (7zip, par2, unrar) are handled via org.sabnzbd.sabnzbd.yaml
 apprise==1.9.5
-sabctools==8.2.6
-CT3==3.4.0
-feedparser==6.0.12
-configobj==5.0.9
+certifi==2025.10.5
+chardet==5.2.0
 cheroot==11.0.0
 cherrypy==18.10.0
-portend==3.2.1
-chardet==5.2.0
-PySocks==1.7.1
-puremagic==1.30
-rarfile==4.2
+configobj==5.0.9
+CT3==3.4.0
+feedparser==6.0.12
 guessit==3.8.0
+more-itertools==10.8.0
+portend==3.2.1
+puremagic==1.30
+PySocks==1.7.1
+rarfile==4.2
 rebulk==3.2.0
+sabctools==8.2.6
 # Notifications and tray
 notify2==0.3.1
 pycairo==1.28.0
