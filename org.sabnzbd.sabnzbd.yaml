@@ -126,8 +126,8 @@ modules:
       - cargo-sources-orjson.json
       - type: file
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
-        url: https://files.pythonhosted.org/packages/04/b8/333fdb27840f3bf04022d21b654a35f58e15407183aeb16f3b41aa053446/orjson-3.11.5.tar.gz
-        sha256: 82393ab47b4fe44ffd0a7659fa9cfaacc717eb617c93cde83795f14af5c2e9d5
+        url: https://files.pythonhosted.org/packages/53/45/b268004f745ede84e5798b48ee12b05129d19235d0e15267aa57dcdb400b/orjson-3.11.7.tar.gz
+        sha256: 9b1a67243945819ce55d24a30b59d6a168e86220452d2c96f4d1f093e71c0c49
         x-checker-data:
           type: pypi
           name: orjson
@@ -179,8 +179,8 @@ modules:
     sources:
       - type: archive
         # Find the "UnRAR source" link at https://www.rarlab.com/rar_add.htm
-        url: https://www.rarlab.com/rar/unrarsrc-7.2.3.tar.gz
-        sha256: 3995af0aa32b1505a566da053725551a1f0698dc42b2fdf7ba7d65db0d004e33
+        url: https://www.rarlab.com/rar/unrarsrc-7.2.4.tar.gz
+        sha256: b02e571a33af7711cd803080500370dc1d28eea82b2032480819d27462ad8b31
         x-checker-data:
           type: anitya
           project-id: 13306
