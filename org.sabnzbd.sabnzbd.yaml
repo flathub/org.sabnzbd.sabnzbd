@@ -194,8 +194,8 @@ modules:
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://github.com/animetosho/par2cmdline-turbo/archive/refs/tags/v1.3.0.tar.gz
-        sha256: ec7106f88f45e834607d74fb373dae22583f08eafef4850ae98c7c70ce788f72
+        url: https://github.com/animetosho/par2cmdline-turbo/archive/refs/tags/v1.4.0.tar.gz
+        sha256: 6f2cb042f23d9b0c93f14cc0e16de5bd6e98bf36d8be1f8f2e886fa85ad1b972
         x-checker-data:
           type: anitya
           project-id: 372791
