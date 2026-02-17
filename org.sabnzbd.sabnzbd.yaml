@@ -1,6 +1,7 @@
 app-id: org.sabnzbd.sabnzbd
 command: SABnzbd.py
 runtime: org.freedesktop.Platform
+# Remember to also update both env and container image in auto-update.yaml on runtime-version bumps
 runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
@@ -50,11 +51,14 @@ cleanup:
   - /bin/cherryd
   - /bin/guessit
   - /bin/httpx
+  - /bin/markdown-it
   - /bin/maturin
   - /bin/normalizer
   - /bin/puccinialize
+  - /bin/pygmentize
   - /bin/setuptools-scm
   - /bin/tqdm
+  - /bin/typer
 modules:
   # Assorted pypi dependencies, generated from requirements-*.txt
   - pypi-dependencies-flatpak.json
@@ -87,12 +91,12 @@ modules:
           url-template: https://dbus.freedesktop.org/releases/dbus-python/dbus-python-$version.tar.xz
 
   # Buildsystem used by cryptography, orjson
-  - name: python3-maturin
+  - name: maturin
     buildsystem: simple
     build-options:
       append-path: /usr/lib/sdk/rust-stable/bin
       env:
-        CARGO_HOME: /run/build/python3-maturin/cargo
+        CARGO_HOME: /run/build/maturin/cargo
         CARGO_NET_OFFLINE: 'true'
     build-commands:
       - cargo --offline fetch --manifest-path ./Cargo.toml
@@ -111,11 +115,11 @@ modules:
 #          type: pypi
 #          name: maturin
 
-  - name: python3-orjson
+  - name: orjson
     build-options:
       append-path: /usr/lib/sdk/rust-stable/bin
       env:
-        CARGO_HOME: /run/build/python3-orjson/cargo
+        CARGO_HOME: /run/build/orjson/cargo
         CARGO_NET_OFFLINE: 'true'
         RUST_BACKTRACE: '1'
     buildsystem: simple
@@ -132,11 +136,11 @@ modules:
           type: pypi
           name: orjson
 
-  - name: python3-cryptography
+  - name: cryptography
     build-options:
       append-path: /usr/lib/sdk/rust-stable/bin
       env:
-        CARGO_HOME: /run/build/python3-cryptography/cargo
+        CARGO_HOME: /run/build/cryptography/cargo
         CARGO_NET_OFFLINE: 'true'
         RUST_BACKTRACE: '1'
     buildsystem: simple
@@ -208,7 +212,7 @@ modules:
           - automake --force-missing --add-missing --foreign
           - autoconf
 
-  - name: sabnzbdplus
+  - name: sabnzbd
     buildsystem: simple
     build-commands:
       - cp -a * /app/bin/

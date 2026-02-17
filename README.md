@@ -4,12 +4,15 @@ Flatpak for [SABnzbd](https://github.com/sabnzbd/sabnzbd).
 
 ## Build from source
 
+The information and commands below describe a completely manual update and build of the flatpak. In practice most of the work except for version bumps of cryptography and maturin is automated via flathub's external-data-checker, this repository's auto-update workflow, and flathub-infra's build and publish actions triggered by commits to the master branch. Unless bugs show up or the automation goes off the rails, only the manifest (org.sabnzbd.sabnzbd.yaml) and the requirements files occasionally need manual edits; all pypi-dependencies and cargo-sources json files are fully generated.
+
 ### Update the manifest and requirements files
 
 1. `flatpak install --from https://dl.flathub.org/repo/appstream/org.flathub.flatpak-external-data-checker.flatpakref`
 2. Optionally include new cryptography and/or maturin versions by temporarily uncommenting the relevant x-checker-data sections in the [manifest file](https://github.com/flathub/org.sabnzbd.sabnzbd/blob/master/org.sabnzbd.sabnzbd.yaml).
 3. `flatpak run org.flathub.flatpak-external-data-checker --update --edit-only org.sabnzbd.sabnzbd.yaml`
-4. Check/update [requirements.txt](https://github.com/flathub/org.sabnzbd.sabnzbd/blob/master/requirements.txt), mostly based on the upstream SABnzbd equivalent at <https://github.com/sabnzbd/sabnzbd/blob/master/requirements.txt>, but leave out anything not directly imported unless you need to pin a version
+4. Check/update the requirements-*.txt files
+5. Check/update [requirements.txt](https://github.com/flathub/org.sabnzbd.sabnzbd/blob/master/requirements.txt), mostly based on the upstream SABnzbd equivalent at <https://github.com/sabnzbd/sabnzbd/blob/master/requirements.txt>, but leave out anything not directly imported unless you need to pin a version
 
 ### Generate Python dependencies
 
