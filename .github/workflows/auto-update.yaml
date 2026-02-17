@@ -138,7 +138,7 @@ jobs:
               target="branch ${{ github.ref_name }}"
             fi
             short_sha="$(printf '%s' "${{ github.event.pull_request.head.sha || github.sha }}" | head -c7)"
-            git commit -a -m "auto-update for ${target} [${short_sha}]"
+            git commit -a -m "🔧 auto-update for ${target} [${short_sha}]"
             git push https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           else
             echo "No changes to commit."
