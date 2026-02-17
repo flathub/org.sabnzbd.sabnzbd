@@ -1,0 +1,145 @@
+# This workflow refreshes the pypi and cargo dependencies, and updates requirements.txt whenever
+# sabnzbd itself gets a version bump. To skip the workflow, include '[skip actions]' in any of the
+# commit messages in your push or the HEAD commit of your PR.
+name: auto-update
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - '*.yaml'
+      - 'requirements*.txt'
+
+env:
+  # Github repository info (tag-prefix:owner/project) for every cargo-sources-${project}.json file
+  CARGO_MODULES: ':pyca/cryptography v:PyO3/maturin :ijl/orjson'
+  CLONE_DIR: __checkouts__
+  MANIFEST: org.sabnzbd.sabnzbd.yaml
+  SDK_VERSION: '25.08'
+
+jobs:
+  auto-update:
+    # Don't run on forks (pointless) or pull requests originating from forks (no commit access), and
+    # prevent manual runs directly on the master branch (circumventing the usual flatpak test build)
+    if: >
+      github.repository == 'flathub/org.sabnzbd.sabnzbd' && (
+        ( github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.event.pull_request.base.repo.full_name ) ||
+        ( github.event_name == 'workflow_dispatch' && github.ref_name != 'master' )
+      )
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/flathub-infra/flatpak-github-actions:freedesktop-25.08
+      options: --privileged
+
+    steps:
+      - name: Prep
+        run: |
+          python3 -m pip --no-input install --upgrade pip
+          python3 -m pip --no-input install --upgrade yq
+
+      - name: Checkout flathub/org.sabnzbd.sabnzbd (${{ github.event.pull_request.head.ref || github.ref }})
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+
+      - name: Checkout flathub/org.sabnzbd.sabnzbd (master branch, as sub-project)
+        uses: actions/checkout@v6
+        with:
+          ref: master
+          path: '${{ env.CLONE_DIR }}/master'
+
+      - name: Determine the SABnzbd version and release status from the manifest
+        id: sabnzbd-release
+        run: |
+          latest_hash="$(yq -r '.modules[-1].sources[0].sha256' ${{ env.MANIFEST }})"
+          master_hash="$(yq -r '.modules[-1].sources[0].sha256' "${{ env.CLONE_DIR }}/master/${{ env.MANIFEST }}")"
+          version="$(yq -r '.modules[-1].sources[0].url' ${{ env.MANIFEST }} \
+            | sed -n 's/.*\/SABnzbd-\([0-9.]\+\)-src.tar.gz$/\1/p')"
+          # Output version and release status
+          [ -n "$version" ] && printf '%s\n' "version=${version}" >> "$GITHUB_OUTPUT"
+          [ "$latest_hash" = "$master_hash" ] || printf '%s\n' "version_bump=true" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout sabnzbd/sabnzbd (upstream release ${{ steps.sabnzbd-release.outputs.version || 'n/a' }})
+        if: steps.sabnzbd-release.outputs.version
+        uses: actions/checkout@v6
+        with:
+          repository: 'sabnzbd/sabnzbd'
+          ref: 'refs/tags/${{ steps.sabnzbd-release.outputs.version }}'
+          path: '${{ env.CLONE_DIR }}/sabnzbd'
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            sabnzbd/
+            sabnzbd/utils/
+            SABnzbd.py
+            requirements.txt
+
+      - name: Checkout flatpak/flatpak-builder-tools
+        uses: actions/checkout@v6
+        with:
+          repository: 'flatpak/flatpak-builder-tools'
+          path: '${{ env.CLONE_DIR }}/flatpak-builder-tools'
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            cargo/
+            pip/
+
+      - name: Install flatpak-builder-tools dependencies
+        run: |
+          for tool in cargo pip; do
+            python3 -m pip --no-input install "${{ env.CLONE_DIR }}/flatpak-builder-tools/${tool}"
+          done
+
+      - name: Update requirements.txt
+        if: steps.sabnzbd-release.outputs.version && steps.sabnzbd-release.outputs.version_bump
+        run: |
+          .github/auto-update-helper.sh "${{ env.CLONE_DIR }}/sabnzbd" "yes" > requirements.txt
+          diff --unified=0 "${{ env.CLONE_DIR }}/master/requirements.txt" requirements.txt || true
+
+      - name: Refresh pypi-dependencies-*.json
+        run: |
+          for file in requirements*.txt; do
+            python3 "${{ env.CLONE_DIR }}/flatpak-builder-tools/pip/flatpak-pip-generator.py" \
+              --runtime "org.freedesktop.Sdk//${{ env.SDK_VERSION }}" \
+              --requirements-file "${file}" \
+              --output "$(printf '%s\n' "${file}" | sed -n 's/[^-]*\([^.]*\)\.txt$/pypi-dependencies\1/p')"
+          done
+
+      - name: Refresh cargo-sources-*.json
+        run: |
+          for item in ${{ env.CARGO_MODULES }}; do
+            pkg="${item##*/}"
+            version="$(yq -r ".modules[4:] | map(select(.name == \"${pkg}\")) | .[].sources[1].url" \
+              ${{ env.MANIFEST }} | sed -n 's/.*-\([0-9.]\+\)\.tar\.gz$/\1/p')"
+            # Fetch lock file
+            curl --location --output "Cargo-${pkg}.lock" \
+              "https://github.com/${item##*:}/raw/refs/tags/${item%%:*}${version}/Cargo.lock"
+            # Regenerate cargo-sources-*.json
+            python3 "${{ env.CLONE_DIR }}/flatpak-builder-tools/cargo/flatpak-cargo-generator.py" \
+              "Cargo-${pkg}.lock" -o "cargo-sources-${pkg}.json"
+          done
+          # Cleanup
+          rm -vf Cargo-*.lock
+
+      - name: Commit & push
+        env:
+          GIT_USER_EMAIL: '${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com'
+          GIT_USER_NAME: 'auto-update workflow'
+        run: |
+          git config --global --add safe.directory "$(pwd)"
+          git add -- requirements*.txt cargo-sources*.json pypi-dependencies*.json
+          if [ -n "$(git status --short --untracked-files=no)" ]; then
+            git config user.email "${{ env.GIT_USER_EMAIL }}"
+            git config user.name "${{ env.GIT_USER_NAME }}"
+            if [ -n "${{ github.event.pull_request.number }}" ]; then
+              target="pull request #${{ github.event.pull_request.number }}"
+            else
+              target="branch ${{ github.ref_name }}"
+            fi
+            short_sha="$(printf '%s' "${{ github.event.pull_request.head.sha || github.sha }}" | head -c7)"
+            git commit -a -m "auto-update for ${target} [${short_sha}]"
+            git push https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          else
+            echo "No changes to commit."
+          fi
