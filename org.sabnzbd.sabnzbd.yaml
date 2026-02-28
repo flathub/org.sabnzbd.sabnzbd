@@ -108,8 +108,8 @@ modules:
       - cargo-sources-maturin.json
       - type: archive
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
-        url: https://files.pythonhosted.org/packages/02/44/c593afce7d418ae6016b955c978055232359ad28c707a9ac6643fc60512d/maturin-1.10.2.tar.gz
-        sha256: 259292563da89850bf8f7d37aa4ddba22905214c1e180b1c8f55505dfd8c0e81
+        url: https://files.pythonhosted.org/packages/a4/15/4c41c4c951718f8c17ed1621b7999afb8d72d69c731c987b47e3c138d4ad/maturin-1.12.5.tar.gz
+        sha256: 236943b7aff3e85ccd2b7a35ca10b64595f2c169bbb605e349e54534ff561a15
 # Manual update only
 #        x-checker-data:
 #          type: pypi
@@ -151,8 +151,8 @@ modules:
       - cargo-sources-cryptography.json
       - type: file
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
-        url: https://files.pythonhosted.org/packages/9f/33/c00162f49c0e2fe8064a62cb92b93e50c74a72bc370ab92f86112b33ff62/cryptography-46.0.3.tar.gz
-        sha256: a8b17438104fed022ce745b362294d9ce35b4c2e45c1d958ad4a4b019285f4a1
+        url: https://files.pythonhosted.org/packages/60/04/ee2a9e8542e4fa2773b81771ff8349ff19cdd56b7258a0cc442639052edb/cryptography-46.0.5.tar.gz
+        sha256: abace499247268e3757271b2f1e244b36b06f8515cf27c4d49468fc9eb16e93d
 # Manual update only
 #        x-checker-data:
 #          type: pypi
