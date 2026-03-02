@@ -60,6 +60,7 @@ jobs:
           # Output version and release status
           [ -n "$version" ] && printf '%s\n' "version=${version}" >> "$GITHUB_OUTPUT"
           [ "$latest_hash" = "$master_hash" ] || printf '%s\n' "version_bump=true" >> "$GITHUB_OUTPUT"
+          printf '%s\n' "Manifest points to sabnzbd upstream release ${version:-n/a}"
 
       - name: Checkout sabnzbd/sabnzbd (upstream release ${{ steps.sabnzbd-release.outputs.version || 'n/a' }})
         if: steps.sabnzbd-release.outputs.version
@@ -94,7 +95,7 @@ jobs:
       - name: Update requirements.txt
         if: steps.sabnzbd-release.outputs.version && steps.sabnzbd-release.outputs.version_bump
         run: |
-          .github/auto-update-helper.sh "${{ env.CLONE_DIR }}/sabnzbd" "yes" > requirements.txt
+          .github/auto-update-helper.sh "${{ env.CLONE_DIR }}/sabnzbd" "no" > requirements.txt
           diff --unified=0 "${{ env.CLONE_DIR }}/master/requirements.txt" requirements.txt || true
 
       - name: Refresh pypi-dependencies-*.json
@@ -113,7 +114,8 @@ jobs:
             version="$(yq -r ".modules[4:] | map(select(.name == \"${pkg}\")) | .[].sources[1].url" \
               ${{ env.MANIFEST }} | sed -n 's/.*-\([0-9.]\+\)\.tar\.gz$/\1/p')"
             # Fetch lock file
-            curl --location --output "Cargo-${pkg}.lock" \
+            curl --location --output "Cargo-${pkg}.lock" --silent --write-out \
+              'Received status code %{http_code} fetching %{size_download} bytes from %{url} (%{url_effective})\n' \
               "https://github.com/${item##*:}/raw/refs/tags/${item%%:*}${version}/Cargo.lock"
             # Regenerate cargo-sources-*.json
             python3 "${{ env.CLONE_DIR }}/flatpak-builder-tools/cargo/flatpak-cargo-generator.py" \

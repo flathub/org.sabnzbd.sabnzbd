@@ -40,7 +40,7 @@ INITIAL_LIST=$(grep -E -r -h -- '^([^#]* )?import ' $SABNZBD_PYTHON_FILES \
 # Verify the results against the upstream requirements file and discard anything not listed there
 VERIFIED_LIST=
 for MODULE in $INITIAL_LIST; do
-	UPSTREAM_ENTRY="$(sed -n "s/^\($MODULE\([!<>=]=[^;]\+\)\?\)\(;.*\)\?/\1/p" requirements.txt)"
+	UPSTREAM_ENTRY="$(sed -n "s/^\($MODULE\([!<>=]=[^;#[:space:]]\+\)\?\).*/\1/p" requirements.txt)"
 	if [ "$UPSTREAM_ENTRY" ]; then
 		[ "$KEEP_UPSTREAM_VERSIONING" = "yes" ] && MODULE_ENTRY="$UPSTREAM_ENTRY" || MODULE_ENTRY="$MODULE"
 		# Append to verified list
