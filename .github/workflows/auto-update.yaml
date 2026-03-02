@@ -113,7 +113,8 @@ jobs:
             version="$(yq -r ".modules[4:] | map(select(.name == \"${pkg}\")) | .[].sources[1].url" \
               ${{ env.MANIFEST }} | sed -n 's/.*-\([0-9.]\+\)\.tar\.gz$/\1/p')"
             # Fetch lock file
-            curl --location --output "Cargo-${pkg}.lock" \
+            curl --location --output "Cargo-${pkg}.lock" --silent --write-out \
+              'Received status code %{http_code} fetching %{size_download} bytes from %{url} (%{url_effective})\n' \
               "https://github.com/${item##*:}/raw/refs/tags/${item%%:*}${version}/Cargo.lock"
             # Regenerate cargo-sources-*.json
             python3 "${{ env.CLONE_DIR }}/flatpak-builder-tools/cargo/flatpak-cargo-generator.py" \
