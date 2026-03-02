@@ -208,9 +208,7 @@ modules:
       - type: script
         dest-filename: autogen.sh
         commands:
-          - aclocal
-          - automake --force-missing --add-missing --foreign
-          - autoconf
+          - autoreconf --verbose --force --install
 
   - name: sabnzbd
     buildsystem: simple
