@@ -94,7 +94,7 @@ jobs:
       - name: Update requirements.txt
         if: steps.sabnzbd-release.outputs.version && steps.sabnzbd-release.outputs.version_bump
         run: |
-          .github/auto-update-helper.sh "${{ env.CLONE_DIR }}/sabnzbd" "yes" > requirements.txt
+          .github/auto-update-helper.sh "${{ env.CLONE_DIR }}/sabnzbd" "no" > requirements.txt
           diff --unified=0 "${{ env.CLONE_DIR }}/master/requirements.txt" requirements.txt || true
 
       - name: Refresh pypi-dependencies-*.json
