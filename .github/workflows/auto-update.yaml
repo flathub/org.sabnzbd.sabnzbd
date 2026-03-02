@@ -60,6 +60,7 @@ jobs:
           # Output version and release status
           [ -n "$version" ] && printf '%s\n' "version=${version}" >> "$GITHUB_OUTPUT"
           [ "$latest_hash" = "$master_hash" ] || printf '%s\n' "version_bump=true" >> "$GITHUB_OUTPUT"
+          printf '%s\n' "Manifest points to sabnzbd upstream release ${version:-n/a}"
 
       - name: Checkout sabnzbd/sabnzbd (upstream release ${{ steps.sabnzbd-release.outputs.version || 'n/a' }})
         if: steps.sabnzbd-release.outputs.version
