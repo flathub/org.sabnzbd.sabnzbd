@@ -35,12 +35,16 @@ INITIAL_LIST=$(grep -E -r -h -- '^([^#]* )?import ' $SABNZBD_PYTHON_FILES \
 	| grep -v -E -- "(from|import) +($PYTHON_STD_LIBS)($|\.|[[:space:]])" \
 	| sed -n 's/^[[:space:]]*\(from\|import\) \([a-zA-Z0-9_]\+\).*/\2/p' \
 	| grep -v -E -- "^($PYTHON_FOREIGN_LIBS|$PYTHON_MANIFEST_LIBS)$" \
-	| sed -e "s/^Cheetah$/CT3/g" -e "s/^socks$/PySocks/g" -e "s/^more_itertools$/more-itertools/g")
+	| sed -e "s/^Cheetah$/CT3/g" -e "s/^socks$/PySocks/g")
 
 # Verify the results against the upstream requirements file and discard anything not listed there
 VERIFIED_LIST=
 for MODULE in $INITIAL_LIST; do
-	UPSTREAM_ENTRY="$(sed -n "s/^\($MODULE\([!<>=]=[^;#[:space:]]\+\)\?\).*/\1/p" requirements.txt)"
+	# Import names may include an underscore but never a hyphen; pypi projects and requirements.txt
+	# on the other hand do use hyphens (underscores still work though). Hence, a bit of flexibility
+	# is needed when comparing module search results with upstream.
+	MODULE_REGEXP="$(printf '%s' "$MODULE" | sed -e 's/_/[-_]/')"
+	UPSTREAM_ENTRY="$(sed -n "s/^\($MODULE_REGEXP\([!<>=]=[^;#[:space:]]\+\)\?\).*/\1/p" requirements.txt)"
 	if [ "$UPSTREAM_ENTRY" ]; then
 		[ "$KEEP_UPSTREAM_VERSIONING" = "yes" ] && MODULE_ENTRY="$UPSTREAM_ENTRY" || MODULE_ENTRY="$MODULE"
 		# Append to verified list
@@ -50,8 +54,9 @@ for MODULE in $INITIAL_LIST; do
 	fi
 done
 
-# Insert extra modules, set the sabctools version, sort, and print to stdout
+# Insert extra modules, set the sabctools version, replace underscores, sort, and print to stdout
 printf '%b' "$VERIFIED_LIST" \
 	| sed -e "\$a\\$PYTHON_EXTRA_LIBS" \
 	| sed -e "s/^sabctools$/&==$SABCTOOLS_VERSION/" \
+	| sed -e "s/_/-/g" \
 	| sort -u -f
