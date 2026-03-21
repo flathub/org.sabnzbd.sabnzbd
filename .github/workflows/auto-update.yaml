@@ -40,12 +40,12 @@ jobs:
           python3 -m pip --no-input install --upgrade yq
 
       - name: Checkout flathub/org.sabnzbd.sabnzbd (${{ github.event.pull_request.head.ref || github.ref }})
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
 
       - name: Checkout flathub/org.sabnzbd.sabnzbd (master branch, as sub-project)
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           ref: master
           path: '${{ env.CLONE_DIR }}/master'
@@ -64,7 +64,7 @@ jobs:
 
       - name: Checkout sabnzbd/sabnzbd (upstream release ${{ steps.sabnzbd-release.outputs.version || 'n/a' }})
         if: steps.sabnzbd-release.outputs.version
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           repository: 'sabnzbd/sabnzbd'
           ref: 'refs/tags/${{ steps.sabnzbd-release.outputs.version }}'
@@ -77,7 +77,7 @@ jobs:
             requirements.txt
 
       - name: Checkout flatpak/flatpak-builder-tools
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           repository: 'flatpak/flatpak-builder-tools'
           path: '${{ env.CLONE_DIR }}/flatpak-builder-tools'
