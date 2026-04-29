@@ -1,6 +1,7 @@
 # This workflow refreshes the pypi and cargo dependencies, and updates requirements.txt whenever
-# sabnzbd itself gets a version bump. To skip the workflow, include "[skip auto-update]" in any of the
-# commit messages in your push or the HEAD commit of your PR. (similar to github's "[skip actions]")
+# sabnzbd itself gets a version bump. To skip the workflow, add a 'skip auto-update' label on the
+# PR or include "[skip actions]" in the commit message for the HEAD commit of your PR to skip all
+# actions (flathub's test build included).
 name: auto-update
 
 on:
@@ -24,7 +25,7 @@ jobs:
     # Don't run on forks (pointless) or pull requests originating from forks (no commit access), and
     # prevent manual runs directly on the master branch (circumventing the usual flatpak test build)
     if: >
-      !contains(github.event.head_commit.message, '[skip auto-update]') &&
+      !contains(github.event.pull_request.labels.*.name, 'skip auto-update') &&
       github.repository == 'flathub/org.sabnzbd.sabnzbd' && (
         ( github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.event.pull_request.base.repo.full_name ) ||
         ( github.event_name == 'workflow_dispatch' && github.ref_name != 'master' )
