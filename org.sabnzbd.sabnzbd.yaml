@@ -59,6 +59,7 @@ cleanup:
   - /bin/setuptools-scm
   - /bin/tqdm
   - /bin/typer
+  - /bin/vcs-versioning
 modules:
   # Assorted pypi dependencies, generated from requirements-*.txt
   - pypi-dependencies-flatpak.json
