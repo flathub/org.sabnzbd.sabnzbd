@@ -130,8 +130,8 @@ modules:
       - cargo-sources-orjson.json
       - type: file
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
-        url: https://files.pythonhosted.org/packages/9d/1b/2024d06792d0779f9dbc51531b61c24f76c75b9f4ce05e6f3377a1814cea/orjson-3.11.8.tar.gz
-        sha256: 96163d9cdc5a202703e9ad1b9ae757d5f0ca62f4fa0cc93d1f27b0e180cc404e
+        url: https://files.pythonhosted.org/packages/53/45/b268004f745ede84e5798b48ee12b05129d19235d0e15267aa57dcdb400b/orjson-3.11.7.tar.gz
+        sha256: 9b1a67243945819ce55d24a30b59d6a168e86220452d2c96f4d1f093e71c0c49
         x-checker-data:
           type: pypi
           name: orjson
