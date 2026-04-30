@@ -44,11 +44,13 @@ jobs:
       - name: Checkout flathub/org.sabnzbd.sabnzbd (${{ github.event.pull_request.head.ref || github.ref }})
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
+          persist-credentials: false
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
 
       - name: Checkout flathub/org.sabnzbd.sabnzbd (master branch, as sub-project)
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
+          persist-credentials: false
           ref: master
           path: '${{ env.CLONE_DIR }}/master'
 
@@ -68,6 +70,7 @@ jobs:
         if: steps.sabnzbd-release.outputs.version
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
+          persist-credentials: false
           repository: 'sabnzbd/sabnzbd'
           ref: 'refs/tags/${{ steps.sabnzbd-release.outputs.version }}'
           path: '${{ env.CLONE_DIR }}/sabnzbd'
@@ -81,6 +84,7 @@ jobs:
       - name: Checkout flatpak/flatpak-builder-tools
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
+          persist-credentials: false
           repository: 'flatpak/flatpak-builder-tools'
           path: '${{ env.CLONE_DIR }}/flatpak-builder-tools'
           sparse-checkout-cone-mode: false
@@ -127,23 +131,20 @@ jobs:
           rm -vf Cargo-*.lock
 
       - name: Commit & push
-        env:
-          GIT_USER_EMAIL: '${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com'
-          GIT_USER_NAME: 'auto-update workflow'
         run: |
           git config --global --add safe.directory "$(pwd)"
           git add -- requirements*.txt cargo-sources*.json pypi-dependencies*.json
           if [ -n "$(git status --short --untracked-files=no)" ]; then
-            git config user.email "${{ env.GIT_USER_EMAIL }}"
-            git config user.name "${{ env.GIT_USER_NAME }}"
+            git config user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
+            git config user.name "auto-update workflow"
             if [ -n "${{ github.event.pull_request.number }}" ]; then
               target="pull request #${{ github.event.pull_request.number }}"
             else
-              target="branch ${{ github.ref_name }}"
+              target="branch ${GITHUB_REF_NAME}"
             fi
             short_sha="$(printf '%s' "${{ github.event.pull_request.head.sha || github.sha }}" | head -c7)"
             git commit -a -m "🔧 auto-update for ${target} [${short_sha}]"
-            git push https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+            git push https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           else
             echo "No changes to commit."
           fi
