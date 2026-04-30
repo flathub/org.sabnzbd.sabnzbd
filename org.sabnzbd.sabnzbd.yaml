@@ -132,9 +132,10 @@ modules:
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
         url: https://files.pythonhosted.org/packages/53/45/b268004f745ede84e5798b48ee12b05129d19235d0e15267aa57dcdb400b/orjson-3.11.7.tar.gz
         sha256: 9b1a67243945819ce55d24a30b59d6a168e86220452d2c96f4d1f093e71c0c49
-        x-checker-data:
-          type: pypi
-          name: orjson
+# Manual update only
+#        x-checker-data:
+#          type: pypi
+#          name: orjson
 
   - name: cryptography
     build-options:

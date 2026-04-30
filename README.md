@@ -4,7 +4,7 @@ Flatpak for [SABnzbd](https://github.com/sabnzbd/sabnzbd).
 
 ## Build from source
 
-The information and commands below describe a completely manual update and build of the flatpak. In practice most of the work except for version bumps of cryptography and maturin is automated via flathub's external-data-checker, this repository's auto-update workflow, and flathub-infra's build and publish actions triggered by commits to the master branch. Unless bugs show up or the automation goes off the rails, only the manifest (org.sabnzbd.sabnzbd.yaml) and the requirements files occasionally need manual edits; all pypi-dependencies and cargo-sources json files are fully generated.
+The information and commands below describe a completely manual update and build of the flatpak. In practice most of the work except for version bumps of cryptography, maturin and orjson is automated via flathub's external-data-checker, this repository's auto-update workflow, and flathub-infra's build and publish actions triggered by commits to the master branch. Unless bugs show up or the automation goes off the rails, only the manifest (org.sabnzbd.sabnzbd.yaml) and the requirements files occasionally need manual edits; all pypi-dependencies and cargo-sources json files are fully generated.
 
 ### Update the manifest and requirements files
 
