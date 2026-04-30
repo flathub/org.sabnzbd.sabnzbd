@@ -59,6 +59,7 @@ cleanup:
   - /bin/setuptools-scm
   - /bin/tqdm
   - /bin/typer
+  - /bin/vcs-versioning
 modules:
   # Assorted pypi dependencies, generated from requirements-*.txt
   - pypi-dependencies-flatpak.json
@@ -132,9 +133,10 @@ modules:
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
         url: https://files.pythonhosted.org/packages/53/45/b268004f745ede84e5798b48ee12b05129d19235d0e15267aa57dcdb400b/orjson-3.11.7.tar.gz
         sha256: 9b1a67243945819ce55d24a30b59d6a168e86220452d2c96f4d1f093e71c0c49
-        x-checker-data:
-          type: pypi
-          name: orjson
+# Manual update only
+#        x-checker-data:
+#          type: pypi
+#          name: orjson
 
   - name: cryptography
     build-options:
@@ -183,8 +185,8 @@ modules:
     sources:
       - type: archive
         # Find the "UnRAR source" link at https://www.rarlab.com/rar_add.htm
-        url: https://www.rarlab.com/rar/unrarsrc-7.2.5.tar.gz
-        sha256: 3d7b402ce7b9825af32a5f593379269e742c883d9d276527be19d0e9f6a114f9
+        url: https://www.rarlab.com/rar/unrarsrc-7.2.6.tar.gz
+        sha256: d1afa67ef4121ebc5986815699e05db0ce8648499e5dca854f282a4c3f72c003
         x-checker-data:
           type: anitya
           project-id: 13306
