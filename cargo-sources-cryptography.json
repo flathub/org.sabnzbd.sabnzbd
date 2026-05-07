@@ -54,14 +54,14 @@
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://static.crates.io/crates/cc/cc-1.2.60.crate",
-        "sha256": "43c5703da9466b66a946814e1adf53ea2c90f10063b86290cc9eb67ce3478a20",
-        "dest": "cargo/vendor/cc-1.2.60"
+        "url": "https://static.crates.io/crates/cc/cc-1.2.61.crate",
+        "sha256": "d16d90359e986641506914ba71350897565610e87ce0ad9e6f28569db3dd5c6d",
+        "dest": "cargo/vendor/cc-1.2.61"
     },
     {
         "type": "inline",
-        "contents": "{\"package\": \"43c5703da9466b66a946814e1adf53ea2c90f10063b86290cc9eb67ce3478a20\", \"files\": {}}",
-        "dest": "cargo/vendor/cc-1.2.60",
+        "contents": "{\"package\": \"d16d90359e986641506914ba71350897565610e87ce0ad9e6f28569db3dd5c6d\", \"files\": {}}",
+        "dest": "cargo/vendor/cc-1.2.61",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -171,14 +171,14 @@
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://static.crates.io/crates/openssl/openssl-0.10.78.crate",
-        "sha256": "f38c4372413cdaaf3cc79dd92d29d7d9f5ab09b51b10dded508fb90bb70b9222",
-        "dest": "cargo/vendor/openssl-0.10.78"
+        "url": "https://static.crates.io/crates/openssl/openssl-0.10.79.crate",
+        "sha256": "bf0b434746ee2832f4f0baf10137e1cabb18cbe6912c69e2e33263c45250f542",
+        "dest": "cargo/vendor/openssl-0.10.79"
     },
     {
         "type": "inline",
-        "contents": "{\"package\": \"f38c4372413cdaaf3cc79dd92d29d7d9f5ab09b51b10dded508fb90bb70b9222\", \"files\": {}}",
-        "dest": "cargo/vendor/openssl-0.10.78",
+        "contents": "{\"package\": \"bf0b434746ee2832f4f0baf10137e1cabb18cbe6912c69e2e33263c45250f542\", \"files\": {}}",
+        "dest": "cargo/vendor/openssl-0.10.79",
         "dest-filename": ".cargo-checksum.json"
     },
     {
@@ -197,14 +197,14 @@
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://static.crates.io/crates/openssl-sys/openssl-sys-0.9.114.crate",
-        "sha256": "13ce1245cd07fcc4cfdb438f7507b0c7e4f3849a69fd84d52374c66d83741bb6",
-        "dest": "cargo/vendor/openssl-sys-0.9.114"
+        "url": "https://static.crates.io/crates/openssl-sys/openssl-sys-0.9.115.crate",
+        "sha256": "158fe5b292746440aa6e7a7e690e55aeb72d41505e2804c23c6973ad0e9c9781",
+        "dest": "cargo/vendor/openssl-sys-0.9.115"
     },
     {
         "type": "inline",
-        "contents": "{\"package\": \"13ce1245cd07fcc4cfdb438f7507b0c7e4f3849a69fd84d52374c66d83741bb6\", \"files\": {}}",
-        "dest": "cargo/vendor/openssl-sys-0.9.114",
+        "contents": "{\"package\": \"158fe5b292746440aa6e7a7e690e55aeb72d41505e2804c23c6973ad0e9c9781\", \"files\": {}}",
+        "dest": "cargo/vendor/openssl-sys-0.9.115",
         "dest-filename": ".cargo-checksum.json"
     },
     {
