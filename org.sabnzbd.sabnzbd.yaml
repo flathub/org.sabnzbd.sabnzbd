@@ -131,8 +131,8 @@ modules:
       - cargo-sources-orjson.json
       - type: file
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
-        url: https://files.pythonhosted.org/packages/53/45/b268004f745ede84e5798b48ee12b05129d19235d0e15267aa57dcdb400b/orjson-3.11.7.tar.gz
-        sha256: 9b1a67243945819ce55d24a30b59d6a168e86220452d2c96f4d1f093e71c0c49
+        url: https://files.pythonhosted.org/packages/7e/0c/964746fcafbd16f8ff53219ad9f6b412b34f345c75f384ad434ceaadb538/orjson-3.11.9.tar.gz
+        sha256: 4fef17e1f8722c11587a6ef18e35902450221da0028e65dbaaa543619e68e48f
 # Manual update only
 #        x-checker-data:
 #          type: pypi
@@ -153,8 +153,8 @@ modules:
       - cargo-sources-cryptography.json
       - type: file
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
-        url: https://files.pythonhosted.org/packages/ef/b2/7ffa7fe8207a8c42147ffe70c3e360b228160c1d85dc3faff16aaa3244c0/cryptography-47.0.0.tar.gz
-        sha256: 9f8e55fe4e63613a5e1cc5819030f27b97742d720203a087802ce4ce9ceb52bb
+        url: https://files.pythonhosted.org/packages/9f/a9/db8f313fdcd85d767d4973515e1db101f9c71f95fced83233de224673757/cryptography-48.0.0.tar.gz
+        sha256: 5c3932f4436d1cccb036cb0eaef46e6e2db91035166f1ad6505c3c9d5a635920
 # Manual update only
 #        x-checker-data:
 #          type: pypi
