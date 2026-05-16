@@ -222,8 +222,8 @@ modules:
       - desktop-file-edit --set-key=Exec --set-value="SABnzbd.py --browser 1 %F" /app/share/applications/sabnzbd.desktop
     sources:
       - type: archive
-        url: https://github.com/sabnzbd/sabnzbd/releases/download/5.0.2/SABnzbd-5.0.2-src.tar.gz
-        sha256: 32a1d7f7174ee2f4c08cf94c743eccd9444840de66813a88ab84b71b2c800671
+        url: https://github.com/sabnzbd/sabnzbd/releases/download/5.0.3/SABnzbd-5.0.3-src.tar.gz
+        sha256: 1f9c76dba68fbc959f14fca25f892c036778fe0650ed4494fb2b420090302078
         x-checker-data:
           type: anitya
           project-id: 44529
