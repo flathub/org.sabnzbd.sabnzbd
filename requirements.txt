@@ -16,4 +16,4 @@ pygobject
 PySocks
 rarfile
 rebulk
-sabctools==9.4.0
+sabctools~=9.4.0

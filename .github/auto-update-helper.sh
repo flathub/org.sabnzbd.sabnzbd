@@ -57,6 +57,6 @@ done
 # Insert extra modules, set the sabctools version, replace underscores, sort, and print to stdout
 printf '%b' "$VERIFIED_LIST" \
 	| sed -e "\$a\\$PYTHON_EXTRA_LIBS" \
-	| sed -e "s/^sabctools$/&==$SABCTOOLS_VERSION/" \
+	| sed -e "s/^sabctools$/&~=$SABCTOOLS_VERSION/" \
 	| sed -e "s/_/-/g" \
 	| sort -u -f
