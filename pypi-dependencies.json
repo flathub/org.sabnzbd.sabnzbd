@@ -27,8 +27,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ae/44/c1221527f6a71a01ec6fbad7fa78f1d50dfa02217385cf0fa3eec7087d59/click-8.3.3-py3-none-any.whl",
-                    "sha256": "a2bf429bb3033c89fa4936ffb35d5cb471e3719e1f3c8a7c3fff0b8314305613"
+                    "url": "https://files.pythonhosted.org/packages/ee/ae/8e92f8058baf87f6c7d86ee7e457668690195cc77efedb8d3797a06e3940/click-8.4.0-py3-none-any.whl",
+                    "sha256": "40c50b7c6c6adac2823d411041ec84f3f103f1b280d5e9ce0d7f998995832f81"
                 },
                 {
                     "type": "file",
@@ -104,8 +104,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/fd/c4/813bb09f0985cb21e959f21f2464169eca882656849adf727ac7bb7e1767/jaraco_functools-4.4.0-py3-none-any.whl",
-                    "sha256": "9eec1e36f45c818d9bf307c8948eb03b2b56cd44087b3cdc989abca1f20b9176"
+                    "url": "https://files.pythonhosted.org/packages/96/9a/982e48afcffcd727a9144506720ffd4224b6b7e355c98641866f38b7c043/jaraco_functools-4.5.0-py3-none-any.whl",
+                    "sha256": "79ce39246eddbde4b3a03b77ea5f0f7878dc669b166a66cf3fa8e266aa3fa2f4"
                 },
                 {
                     "type": "file",
@@ -138,8 +138,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ae/44/c1221527f6a71a01ec6fbad7fa78f1d50dfa02217385cf0fa3eec7087d59/click-8.3.3-py3-none-any.whl",
-                    "sha256": "a2bf429bb3033c89fa4936ffb35d5cb471e3719e1f3c8a7c3fff0b8314305613"
+                    "url": "https://files.pythonhosted.org/packages/ee/ae/8e92f8058baf87f6c7d86ee7e457668690195cc77efedb8d3797a06e3940/click-8.4.0-py3-none-any.whl",
+                    "sha256": "40c50b7c6c6adac2823d411041ec84f3f103f1b280d5e9ce0d7f998995832f81"
                 },
                 {
                     "type": "file",
@@ -153,8 +153,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/fd/c4/813bb09f0985cb21e959f21f2464169eca882656849adf727ac7bb7e1767/jaraco_functools-4.4.0-py3-none-any.whl",
-                    "sha256": "9eec1e36f45c818d9bf307c8948eb03b2b56cd44087b3cdc989abca1f20b9176"
+                    "url": "https://files.pythonhosted.org/packages/96/9a/982e48afcffcd727a9144506720ffd4224b6b7e355c98641866f38b7c043/jaraco_functools-4.5.0-py3-none-any.whl",
+                    "sha256": "79ce39246eddbde4b3a03b77ea5f0f7878dc669b166a66cf3fa8e266aa3fa2f4"
                 },
                 {
                     "type": "file",
@@ -351,8 +351,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ae/44/c1221527f6a71a01ec6fbad7fa78f1d50dfa02217385cf0fa3eec7087d59/click-8.3.3-py3-none-any.whl",
-                    "sha256": "a2bf429bb3033c89fa4936ffb35d5cb471e3719e1f3c8a7c3fff0b8314305613"
+                    "url": "https://files.pythonhosted.org/packages/ee/ae/8e92f8058baf87f6c7d86ee7e457668690195cc77efedb8d3797a06e3940/click-8.4.0-py3-none-any.whl",
+                    "sha256": "40c50b7c6c6adac2823d411041ec84f3f103f1b280d5e9ce0d7f998995832f81"
                 },
                 {
                     "type": "file",
@@ -366,8 +366,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/fd/c4/813bb09f0985cb21e959f21f2464169eca882656849adf727ac7bb7e1767/jaraco_functools-4.4.0-py3-none-any.whl",
-                    "sha256": "9eec1e36f45c818d9bf307c8948eb03b2b56cd44087b3cdc989abca1f20b9176"
+                    "url": "https://files.pythonhosted.org/packages/96/9a/982e48afcffcd727a9144506720ffd4224b6b7e355c98641866f38b7c043/jaraco_functools-4.5.0-py3-none-any.whl",
+                    "sha256": "79ce39246eddbde4b3a03b77ea5f0f7878dc669b166a66cf3fa8e266aa3fa2f4"
                 },
                 {
                     "type": "file",
@@ -529,7 +529,7 @@
             "name": "python3-sabctools",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sabctools==9.4.0\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sabctools~=9.4.0\" --no-build-isolation"
             ],
             "sources": [
                 {
