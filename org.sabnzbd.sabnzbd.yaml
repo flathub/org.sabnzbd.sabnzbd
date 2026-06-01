@@ -51,6 +51,7 @@ cleanup:
   - /bin/cherryd
   - /bin/guessit
   - /bin/httpx
+  - /bin/idna
   - /bin/markdown-it
   - /bin/maturin
   - /bin/normalizer
@@ -160,23 +161,22 @@ modules:
 #          type: pypi
 #          name: cryptography
 
-  - name: p7zip
-    no-autogen: true
-    make-args:
-      - 7z
+  - name: 7zip
+    buildsystem: simple
+    subdir: CPP/7zip/Bundles/Alone2
+    build-commands:
+      - make -j $FLATPAK_BUILDER_N_JOBS -f makefile.gcc
+      - install -D -m755 ./_o/7zz -t /app/bin
     sources:
       - type: archive
-        url: https://github.com/p7zip-project/p7zip/archive/v17.06/p7zip-v17.06.tar.gz
-        sha256: c35640020e8f044b425d9c18e1808ff9206dc7caf77c9720f57eb0849d714cd1
+        url: https://github.com/ip7z/7zip/archive/refs/tags/26.01.tar.gz
+        sha256: f4212b508641b3584f7089ab67bc0aba028c631f049b4dd603ff07853e72e749
         x-checker-data:
           type: anitya
-          project-id: 2583
-          stable-only: true
+          project-id: 372314
           is-important: true
-          url-template: https://github.com/p7zip-project/p7zip/archive/v$version/p7zip-v$version.tar.gz
-      - type: shell
-        commands:
-          - sed -i 's|/usr/local|${FLATPAK_DEST}|g' makefile.common
+          stable-only: true
+          url-template: https://github.com/ip7z/7zip/archive/refs/tags/$version.tar.gz
 
   - name: unrar
     no-autogen: true
