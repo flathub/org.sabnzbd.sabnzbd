@@ -42,7 +42,8 @@ cleanup:
   - /bin/*.txt
 cleanup-commands:
   # Scriptlets installed by pip, not needed by SABnzbd
-  - find ${FLATPAK_DEST}/bin -maxdepth 1 -type f -executable -not -name 'SABnzbd.py' -not -name '7zz' -not -name 'par2' -not -name 'unrar' -ls -delete
+  - find ${FLATPAK_DEST}/bin -maxdepth 1 -type f -executable -not -name 'SABnzbd.py'
+    -not -name '7zz' -not -name 'par2' -not -name 'unrar' -ls -delete
 modules:
   # Assorted pypi dependencies, generated from requirements-*.txt
   - pypi-dependencies-flatpak.json
@@ -204,8 +205,8 @@ modules:
       - desktop-file-edit --set-key=Exec --set-value="SABnzbd.py --browser 1 %F" /app/share/applications/sabnzbd.desktop
     sources:
       - type: archive
-        url: https://github.com/sabnzbd/sabnzbd/releases/download/5.0.3/SABnzbd-5.0.3-src.tar.gz
-        sha256: 1f9c76dba68fbc959f14fca25f892c036778fe0650ed4494fb2b420090302078
+        url: https://github.com/sabnzbd/sabnzbd/releases/download/5.0.4/SABnzbd-5.0.4-src.tar.gz
+        sha256: ed286ab75f664407f8969331d02f56b25f067a70069c476bee1cb038c26c9350
         x-checker-data:
           type: anitya
           project-id: 44529
