@@ -40,27 +40,9 @@ cleanup:
   - /bin/tools
   - /bin/README.mkd
   - /bin/*.txt
+cleanup-commands:
   # Scriptlets installed by pip, not needed by SABnzbd
-  - /bin/apprise
-  - /bin/calc-prorate
-  - /bin/chardetect
-  - /bin/cheetah
-  - /bin/cheetah-analyze
-  - /bin/cheetah-compile
-  - /bin/cheroot
-  - /bin/cherryd
-  - /bin/guessit
-  - /bin/httpx
-  - /bin/idna
-  - /bin/markdown-it
-  - /bin/maturin
-  - /bin/normalizer
-  - /bin/puccinialize
-  - /bin/pygmentize
-  - /bin/setuptools-scm
-  - /bin/tqdm
-  - /bin/typer
-  - /bin/vcs-versioning
+  - find ${FLATPAK_DEST}/bin -maxdepth 1 -type f -executable -not -name 'SABnzbd.py' -not -name '7zz' -not -name 'par2' -not -name 'unrar' -ls -delete
 modules:
   # Assorted pypi dependencies, generated from requirements-*.txt
   - pypi-dependencies-flatpak.json
