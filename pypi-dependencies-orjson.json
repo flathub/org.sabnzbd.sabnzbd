@@ -17,8 +17,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/81/47/dd9a212ef6e343a6857485ffe25bba537304f1913bdbed446a23f7f592e1/filelock-3.29.0-py3-none-any.whl",
-            "sha256": "96f5f6344709aa1572bbf631c640e4ebeeb519e08da902c39a001882f30ac258"
+            "url": "https://files.pythonhosted.org/packages/81/8f/b61d427c4f49a8bdadc93f4e7e74df8a6df6f77ee6e26bf0df53d3925363/filelock-3.29.3-py3-none-any.whl",
+            "sha256": "e58333029cc9b925f39aad59b1d8f0a1ad836af4e60d7217f4a4dba87461261d"
         },
         {
             "type": "file",
@@ -37,8 +37,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/de/a7/f76514cc40ad6234098ecdebda08732d75964776c51a42845b7da10649e2/idna-3.17-py3-none-any.whl",
-            "sha256": "466e48829084efe2548012b855df21540b96f2e20e51bd124c851536556a592c"
+            "url": "https://files.pythonhosted.org/packages/1e/5e/d4e9f1a599fb8e573b7b87160658329fbf28d19eac2718f51fc3def3aa5a/idna-3.18-py3-none-any.whl",
+            "sha256": "7f952cbe720b688055e3f87de14f5c3e5fdaa8bc3928985c4077ca689de849a2"
         },
         {
             "type": "file",
@@ -52,8 +52,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/16/e1/3079a9ff9b8e11b846c6ac5c8b5bfb7ff225eee721825310c91b3b50304f/tqdm-4.67.3-py3-none-any.whl",
-            "sha256": "ee1e4c0e59148062281c49d80b25b67771a127c85fc9676d3be5f243206826bf"
+            "url": "https://files.pythonhosted.org/packages/eb/75/1a0392bcc21c44dcdf87b3cf2d137e7829be2c083a1e38d44efca3d57a16/tqdm-4.68.2-py3-none-any.whl",
+            "sha256": "d4240441fb5353290b87d6a85968c9decc131a99b8c7faa28269d829de669ede"
         }
     ]
 }
