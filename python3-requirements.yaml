@@ -1,0 +1,633 @@
+# Generated with flatpak-pip-generator --runtime=org.freedesktop.Sdk//25.08 --yaml --checker-data --requirements-file=requirements.txt --prefer-wheels=cryptography,orjson
+name: python3-requirements
+buildsystem: simple
+build-commands: []
+modules:
+  - name: python3-cryptography
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation
+    sources:
+      - &id001
+        type: file
+        url: https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz
+        sha256: 44d1b5909021139fe36001ae048dbdde8214afa20200eda0f64c068cac5d5529
+        x-checker-data:
+          type: pypi
+          name: cffi
+      - type: file
+        url: https://files.pythonhosted.org/packages/e6/8b/43011f7ebe515a8aa20d61f290a326cd890c2e738e16e59eaff8d9c3a412/cryptography-49.0.0-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
+        sha256: 0e959b578856a3924bc0cbb710fc12c387b9412a951389f3ca61704a9e25f325
+        only-arches:
+          - x86_64
+        x-checker-data:
+          type: pypi
+          name: cryptography
+          packagetype: bdist_wheel
+      - type: file
+        url: https://files.pythonhosted.org/packages/09/41/3797cfaf69cae04a13ee78ebd83f0678d9c02b4779d21ce24445326f1a69/cryptography-49.0.0-cp311-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.whl
+        sha256: 36d1709f992593689b45bda411498d62c6e365f2ca00b84657d4dadd24de16db
+        only-arches:
+          - aarch64
+        x-checker-data:
+          type: pypi
+          name: cryptography
+          packagetype: bdist_wheel
+      - &id002
+        type: file
+        url: https://files.pythonhosted.org/packages/0c/c3/44f3fbbfa403ea2a7c779186dc20772604442dde72947e7d01069cbe98e3/pycparser-3.0-py3-none-any.whl
+        sha256: b727414169a36b7d524c1c3e31839a521725078d7b2ff038656844266160a992
+        x-checker-data:
+          type: pypi
+          name: pycparser
+          packagetype: bdist_wheel
+  - name: python3-orjson
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "orjson" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/a1/08/dca0082dd2a194acb93e5457e73455388e2e2ca464a2672449a9ddbb679d/orjson-3.11.9-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+        sha256: 4e39364e726a8fff737309aff059ff67d8a8c8d5b677be7bb49a8b3e84b7e218
+        only-arches:
+          - x86_64
+        x-checker-data:
+          type: pypi
+          name: orjson
+          packagetype: bdist_wheel
+      - type: file
+        url: https://files.pythonhosted.org/packages/21/0f/c9ede0bf052f6b4051e64a7d4fa91b725cccf8321a6a786e86eb03519f00/orjson-3.11.9-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
+        sha256: ffe02797b5e9f3a9d8292ddcd289b474ad13e81ad83cd1891a240811f1d2cb81
+        only-arches:
+          - aarch64
+        x-checker-data:
+          type: pypi
+          name: orjson
+          packagetype: bdist_wheel
+  - name: python3-apprise
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "apprise" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/5e/79/1483693160917522703708e45b4045946d86be634b8af2c2ac9f361f8fa3/apprise-1.11.0-py3-none-any.whl
+        sha256: 6abc6d9f8dddedfe14b2918c3553146894ac6e3dad401deaf854b20b4c455d38
+        x-checker-data:
+          type: pypi
+          name: apprise
+          packagetype: bdist_wheel
+      - type: file
+        url: https://files.pythonhosted.org/packages/59/8c/57e832b7af6d7c5abe66eb3fbe3a3a32f4d11ea23a1aa7131371035be991/certifi-2026.5.20-py3-none-any.whl
+        sha256: 3c52e209ba0a4ad7aebe60436a4ab349c39e1e602e8c134221e546902ad25897
+        x-checker-data:
+          type: pypi
+          name: certifi
+          packagetype: bdist_wheel
+      - type: file
+        url: https://files.pythonhosted.org/packages/db/8f/61959034484a4a7c527811f4721e75d02d653a35afb0b6054474d8185d4c/charset_normalizer-3.4.7-py3-none-any.whl
+        sha256: 3dce51d0f5e7951f8bb4900c257dad282f49190fdbebecd4ba99bcc41fef404d
+        x-checker-data:
+          type: pypi
+          name: charset-normalizer
+          packagetype: bdist_wheel
+      - type: file
+        url: https://files.pythonhosted.org/packages/c7/0d/67e5b4109ea4a837e80daa87c2c696711955e40449a97e8926672534def2/click-8.4.1-py3-none-any.whl
+        sha256: 482be17c6991b8c19c5429a1e995d9b0efdbb63172824c41f99965dc0ade8ec2
+        x-checker-data:
+          type: pypi
+          name: click
+          packagetype: bdist_wheel
+      - type: file
+        url: https://files.pythonhosted.org/packages/1e/5e/d4e9f1a599fb8e573b7b87160658329fbf28d19eac2718f51fc3def3aa5a/idna-3.18-py3-none-any.whl
+        sha256: 7f952cbe720b688055e3f87de14f5c3e5fdaa8bc3928985c4077ca689de849a2
+        x-checker-data:
+          type: pypi
+          name: idna
+          packagetype: bdist_wheel
+      - type: file
+        url: https://files.pythonhosted.org/packages/be/9c/92789c596b8df838baa98fa71844d84283302f7604ed565dafe5a6b5041a/oauthlib-3.3.1-py3-none-any.whl
+        sha256: 88119c938d2b8fb88561af5f6ee0eec8cc8d552b7bb1f712743136eb7523b7a1
+        x-checker-data:
+          type: pypi
+          name: oauthlib
+          packagetype: bdist_wheel
+      - type: file
+        url: https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz
+        sha256: d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f
+        x-checker-data:
+          type: pypi
+          name: pyyaml
+      - type: file
+        url: https://files.pythonhosted.org/packages/a0/f4/c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a/requests-2.34.2-py3-none-any.whl
+        sha256: 2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0
+        x-checker-data:
+          type: pypi
+          name: requests
+          packagetype: bdist_wheel
+      - type: file
+        url: https://files.pythonhosted.org/packages/3b/5d/63d4ae3b9daea098d5d6f5da83984853c1bbacd5dc826764b249fe119d24/requests_oauthlib-2.0.0-py2.py3-none-any.whl
+        sha256: 7dd8a5c40426b779b0868c404bdef9768deccf22749cde15852df527e6269b36
+        x-checker-data:
+          type: pypi
+          name: requests-oauthlib
+          packagetype: bdist_wheel
+      - type: file
+        url: https://files.pythonhosted.org/packages/7f/3e/5db95bcf282c52709639744ca2a8b149baccf648e39c8cc87553df9eae0c/urllib3-2.7.0-py3-none-any.whl
+        sha256: 9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897
+        x-checker-data:
+          type: pypi
+          name: urllib3
+          packagetype: bdist_wheel
+  - name: python3-sabctools
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "sabctools" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/d0/41/bafeea7493131d8cd0a05c157e41d2eecceb9b7897be3eb42f41fdbeef91/sabctools-9.4.1.tar.gz
+        sha256: 314daf8165fba23cb93989651094c7af3f73ee6beb26ade6adf4543368d0f70b
+        x-checker-data:
+          type: pypi
+          name: sabctools
+  - name: python3-CT3
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "CT3" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/96/c2/2a1605af41829cd2a247271b5b6f6b2dbc2e9407df2dd9bcafdceafcd4b3/ct3-3.4.0.post5.tar.gz
+        sha256: 1c5f2000d52d591703c74f6f5f7ef427ed1b6501be28e3f1634f62c3a5d792e1
+        x-checker-data:
+          type: pypi
+          name: ct3
+  - name: python3-cffi
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "cffi" --no-build-isolation
+    sources:
+      - *id001
+      - *id002
+  - name: python3-pycparser
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "pycparser" --no-build-isolation
+    sources:
+      - *id002
+  - name: python3-feedparser
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "feedparser" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/4e/eb/c96d64137e29ae17d83ad2552470bafe3a7a915e85434d9942077d7fd011/feedparser-6.0.12-py3-none-any.whl
+        sha256: 6bbff10f5a52662c00a2e3f86a38928c37c48f77b3c511aedcd51de933549324
+        x-checker-data:
+          type: pypi
+          name: feedparser
+          packagetype: bdist_wheel
+      - &id021
+        type: file
+        url: https://files.pythonhosted.org/packages/9e/bd/3704a8c3e0942d711c1299ebf7b9091930adae6675d7c8f476a7ce48653c/sgmllib3k-1.0.0.tar.gz
+        sha256: 7868fb1c8bfa764c1ac563d3cf369c381d1325d36124933a726f29fcdaa812e9
+        x-checker-data:
+          type: pypi
+          name: sgmllib3k
+  - name: python3-configobj
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "configobj" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/a6/c4/0679472c60052c27efa612b4cd3ddd2a23e885dcdc73461781d2c802d39e/configobj-5.0.9-py2.py3-none-any.whl
+        sha256: 1ba10c5b6ee16229c79a05047aeda2b55eb4e80d7c7d8ecf17ec1ca600c79882
+        x-checker-data:
+          type: pypi
+          name: configobj
+          packagetype: bdist_wheel
+  - name: python3-cheroot
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "cheroot" --no-build-isolation
+    sources:
+      - &id003
+        type: file
+        url: https://files.pythonhosted.org/packages/41/99/af65511a10c4212438ac52bc5e45e486e7a04d292201ad84dfd9208fe9a8/cheroot-11.1.2-py3-none-any.whl
+        sha256: 0f6c0ba05c00fbc869fb46b1de4ec2384e1d85418ae963d3bc10ae83b688dbfa
+        x-checker-data:
+          type: pypi
+          name: cheroot
+          packagetype: bdist_wheel
+      - &id004
+        type: file
+        url: https://files.pythonhosted.org/packages/96/9a/982e48afcffcd727a9144506720ffd4224b6b7e355c98641866f38b7c043/jaraco_functools-4.5.0-py3-none-any.whl
+        sha256: 79ce39246eddbde4b3a03b77ea5f0f7878dc669b166a66cf3fa8e266aa3fa2f4
+        x-checker-data:
+          type: pypi
+          name: jaraco-functools
+          packagetype: bdist_wheel
+      - &id005
+        type: file
+        url: https://files.pythonhosted.org/packages/e8/3d/1087453384dbde46a8c7f9356eead2c58be8a7bf156bca40243377c85715/more_itertools-11.1.0-py3-none-any.whl
+        sha256: 4b65538ae22f6fed0ce4874efd317463a7489796a0939fa66824dd542125a192
+        x-checker-data:
+          type: pypi
+          name: more-itertools
+          packagetype: bdist_wheel
+  - name: python3-six
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "six" --no-build-isolation
+    sources:
+      - &id006
+        type: file
+        url: https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl
+        sha256: 4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274
+        x-checker-data:
+          type: pypi
+          name: six
+          packagetype: bdist_wheel
+  - name: python3-cherrypy
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "cherrypy" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/97/61/4aba4860c91e66adbc44a62a437ad845abab21cc3dcb0b8e320000d091dd/CherryPy-18.10.0-py3-none-any.whl
+        sha256: 129e444b9a63cea4e765481b156376f1cfe319e64caaaec2485636532373b298
+        x-checker-data:
+          type: pypi
+          name: cherrypy
+          packagetype: bdist_wheel
+      - &id007
+        type: file
+        url: https://files.pythonhosted.org/packages/1e/d3/26bf1008eb3d2daa8ef4cacc7f3bfdc11818d111f7e2d0201bc6e3b49d45/annotated_doc-0.0.4-py3-none-any.whl
+        sha256: 571ac1dc6991c450b25a9c2d84a3705e2ae7a53467b5d111c24fa8baabbed320
+        x-checker-data:
+          type: pypi
+          name: annotated-doc
+          packagetype: bdist_wheel
+      - *id003
+      - &id008
+        type: file
+        url: https://files.pythonhosted.org/packages/b5/fe/570f6a7b4443a3548ab02ba88c77b64521452a2eed2c80449d13be8fd4d1/jaraco_collections-5.2.1-py3-none-any.whl
+        sha256: ea3415ddfc50206b6ba7d09c3deb358b76a5f8c1ddc82be788e8e8bd151ebfa8
+        x-checker-data:
+          type: pypi
+          name: jaraco-collections
+          packagetype: bdist_wheel
+      - &id009
+        type: file
+        url: https://files.pythonhosted.org/packages/f2/58/bc8954bda5fcda97bd7c19be11b85f91973d67a706ed4a3aec33e7de22db/jaraco_context-6.1.2-py3-none-any.whl
+        sha256: bf8150b79a2d5d91ae48629d8b427a8f7ba0e1097dd6202a9059f29a36379535
+        x-checker-data:
+          type: pypi
+          name: jaraco-context
+          packagetype: bdist_wheel
+      - *id004
+      - &id010
+        type: file
+        url: https://files.pythonhosted.org/packages/39/6d/628f347098059957987596123b3992120c673d17e8ce560185b1d6b88a27/jaraco_text-4.2.0-py3-none-any.whl
+        sha256: 034408ef073f72de919124e9934a12acd50d10bd139bea47732620fa964b0144
+        x-checker-data:
+          type: pypi
+          name: jaraco-text
+          packagetype: bdist_wheel
+      - &id011
+        type: file
+        url: https://files.pythonhosted.org/packages/b3/81/4da04ced5a082363ecfa159c010d200ecbd959ae410c10c0264a38cac0f5/markdown_it_py-4.2.0-py3-none-any.whl
+        sha256: 9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a
+        x-checker-data:
+          type: pypi
+          name: markdown-it-py
+          packagetype: bdist_wheel
+      - &id012
+        type: file
+        url: https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl
+        sha256: 84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8
+        x-checker-data:
+          type: pypi
+          name: mdurl
+          packagetype: bdist_wheel
+      - *id005
+      - &id022
+        type: file
+        url: https://files.pythonhosted.org/packages/49/11/b0b19077f80cb8972b44c96af983e8cfcdb1506090bacef137ed8b448af8/portend-3.2.1-py3-none-any.whl
+        sha256: bd2bb1cd8585e32f1f986c1b8eae2950c8622c648db163b711a2fc2ef8d8d492
+        x-checker-data:
+          type: pypi
+          name: portend
+          packagetype: bdist_wheel
+      - &id013
+        type: file
+        url: https://files.pythonhosted.org/packages/f4/7e/a72dd26f3b0f4f2bf1dd8923c85f7ceb43172af56d63c7383eb62b332364/pygments-2.20.0-py3-none-any.whl
+        sha256: 81a9e26dd42fd28a23a2d169d86d7ac03b46e2f8b59ed4698fb4785f946d0176
+        x-checker-data:
+          type: pypi
+          name: pygments
+          packagetype: bdist_wheel
+      - &id019
+        type: file
+        url: https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl
+        sha256: a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427
+        x-checker-data:
+          type: pypi
+          name: python-dateutil
+          packagetype: bdist_wheel
+      - &id014
+        type: file
+        url: https://files.pythonhosted.org/packages/82/3b/64d4899d73f91ba49a8c18a8ff3f0ea8f1c1d75481760df8c68ef5235bf5/rich-15.0.0-py3-none-any.whl
+        sha256: 33bd4ef74232fb73fe9279a257718407f169c09b78a87ad3d296f548e27de0bb
+        x-checker-data:
+          type: pypi
+          name: rich
+          packagetype: bdist_wheel
+      - &id015
+        type: file
+        url: https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl
+        sha256: 7ecfff8f2fd72616f7481040475a65b2bf8af90a56c89140852d1120324e8686
+        x-checker-data:
+          type: pypi
+          name: shellingham
+          packagetype: bdist_wheel
+      - *id006
+      - &id020
+        type: file
+        url: https://files.pythonhosted.org/packages/e3/5e/9326e8ec4418ea59c6c290f4f3209d61f790f0737bfc5afcb588cad3fd9f/tempora-5.9.0-py3-none-any.whl
+        sha256: 5aa96ab2b8a2be795bd4c78a4299c0196365a91976972f8852b19e1d363ccd29
+        x-checker-data:
+          type: pypi
+          name: tempora
+          packagetype: bdist_wheel
+      - &id016
+        type: file
+        url: https://files.pythonhosted.org/packages/24/25/2201973529af2c954de0bb725323c3aaed6d7f0ceee8f550dec9185df013/typer-0.26.7-py3-none-any.whl
+        sha256: 5c87cfbc5d34491c5346ebf49c23e18d56ccb863268d3a8d592b26087c2f5e58
+        x-checker-data:
+          type: pypi
+          name: typer
+          packagetype: bdist_wheel
+      - &id017
+        type: file
+        url: https://files.pythonhosted.org/packages/a7/24/5480c20380dfd18cf33d14784096dca45a24eae6102e91d49a718d3b6855/typer_slim-0.24.0-py3-none-any.whl
+        sha256: d5d7ee1ee2834d5020c7c616ed5e0d0f29b9a4b1dd283bdebae198ec09778d0e
+        x-checker-data:
+          type: pypi
+          name: typer-slim
+          packagetype: bdist_wheel
+      - &id018
+        type: file
+        url: https://files.pythonhosted.org/packages/3b/7f/3a614b65bc4b181578b1d50a78663ee02d5d2d3b859712f3d3597c8afe6f/zc_lockfile-4.0-py3-none-any.whl
+        sha256: aa3aa295257bebaa09ea9ad5cb288bf9f98f88de6932f96b6659f62715d83581
+        x-checker-data:
+          type: pypi
+          name: zc-lockfile
+          packagetype: bdist_wheel
+  - name: python3-jaraco.functools
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "jaraco.functools" --no-build-isolation
+    sources:
+      - *id004
+      - *id005
+  - name: python3-jaraco.collections
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "jaraco.collections" --no-build-isolation
+    sources:
+      - *id007
+      - *id008
+      - *id009
+      - *id004
+      - *id010
+      - *id011
+      - *id012
+      - *id005
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+  - name: python3-jaraco.text
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "jaraco.text" --no-build-isolation
+    sources:
+      - *id007
+      - *id009
+      - *id004
+      - *id010
+      - *id011
+      - *id012
+      - *id005
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+  - name: python3-jaraco.classes
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "jaraco.classes" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/7f/66/b15ce62552d84bbfcec9a4873ab79d993a1dd4edb922cbfccae192bd5b5f/jaraco.classes-3.4.0-py3-none-any.whl
+        sha256: f662826b6bed8cace05e7ff873ce0f9283b5c924470fe664fff1c2f00f581790
+        x-checker-data:
+          type: pypi
+          name: jaraco.classes
+          packagetype: bdist_wheel
+      - *id005
+  - name: python3-jaraco.context
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "jaraco.context" --no-build-isolation
+    sources:
+      - *id009
+  - name: python3-more-itertools
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "more-itertools" --no-build-isolation
+    sources:
+      - *id005
+  - name: python3-zc.lockfile
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "zc.lockfile" --no-build-isolation
+    sources:
+      - *id018
+  - name: python3-python-dateutil
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "python-dateutil" --no-build-isolation
+    sources:
+      - *id019
+      - *id006
+  - name: python3-tempora
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "tempora" --no-build-isolation
+    sources:
+      - *id007
+      - *id008
+      - *id009
+      - *id004
+      - *id010
+      - *id011
+      - *id012
+      - *id005
+      - *id013
+      - *id019
+      - *id014
+      - *id015
+      - *id006
+      - *id020
+      - *id016
+      - *id017
+  - name: python3-pytz
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "pytz" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/ec/dd/96da98f892250475bdf2328112d7468abdd4acc7b902b6af23f4ed958ea0/pytz-2026.2-py2.py3-none-any.whl
+        sha256: 04156e608bee23d3792fd45c94ae47fae1036688e75032eea2e3bf0323d1f126
+        x-checker-data:
+          type: pypi
+          name: pytz
+          packagetype: bdist_wheel
+  - name: python3-sgmllib3k
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "sgmllib3k" --no-build-isolation
+    sources:
+      - *id021
+  - name: python3-portend
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "portend" --no-build-isolation
+    sources:
+      - *id007
+      - *id008
+      - *id009
+      - *id004
+      - *id010
+      - *id011
+      - *id012
+      - *id005
+      - *id022
+      - *id013
+      - *id019
+      - *id014
+      - *id015
+      - *id006
+      - *id020
+      - *id016
+      - *id017
+  - name: python3-PySocks
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "PySocks" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/8d/59/b4572118e098ac8e46e399a1dd0f2d85403ce8bbaad9ec79373ed6badaf9/PySocks-1.7.1-py3-none-any.whl
+        sha256: 2725bd0a9925919b9b51739eea5f9e2bae91e83288108a9ad338b2e3a4435ee5
+        x-checker-data:
+          type: pypi
+          name: pysocks
+          packagetype: bdist_wheel
+  - name: python3-puremagic
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "puremagic" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/95/81/314320aeffd88dadeac553ff9eb10f54507ab41deccd0c69f6221d254a0a/puremagic-2.2.0-py3-none-any.whl
+        sha256: c4f7ed7307f056c787199acfda839555921be1df13abba61e8e6db0c787ae1d0
+        x-checker-data:
+          type: pypi
+          name: puremagic
+          packagetype: bdist_wheel
+  - name: python3-rarfile
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "rarfile" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/62/fc/ab37559419ca36dd8dd317c3a98395ed4dcee2beeb28bf6059b972906727/rarfile-4.2-py3-none-any.whl
+        sha256: 8757e1e3757e32962e229cab2432efc1f15f210823cc96ccba0f6a39d17370c9
+        x-checker-data:
+          type: pypi
+          name: rarfile
+          packagetype: bdist_wheel
+  - name: python3-guessit
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "guessit" --no-build-isolation
+    sources:
+      - &id023
+        type: file
+        url: https://files.pythonhosted.org/packages/95/a1/bd4f759db13cd8beb9c9f68682aced5d966781b9d7380cf514a306f56762/babelfish-0.6.1-py3-none-any.whl
+        sha256: 512f1501d4c8f7d38f0921f48660be7542de1a7b24abb6a6a65324a670150293
+        x-checker-data:
+          type: pypi
+          name: babelfish
+          packagetype: bdist_wheel
+      - type: file
+        url: https://files.pythonhosted.org/packages/b8/9b/924a8f9709c3143d4c9a301a88042cbce37e09789378217284b19d4f8132/guessit-3.8.0-py3-none-any.whl
+        sha256: eb5747b1d0fbca926562c1e5894dbc3f6507c35e8c0bd9e38148401cd9579d83
+        x-checker-data:
+          type: pypi
+          name: guessit
+          packagetype: bdist_wheel
+      - *id019
+      - &id024
+        type: file
+        url: https://files.pythonhosted.org/packages/84/4d/df073d593f7e7e4a5a7e19148b2e9b4ae63b4ddcbb863f1e7bb2b6f19c62/rebulk-3.2.0-py3-none-any.whl
+        sha256: 6bc31ae4b37200623c5827d2f539f9ec3e52b50431322dad8154642a39b0a53e
+        x-checker-data:
+          type: pypi
+          name: rebulk
+          packagetype: bdist_wheel
+      - *id006
+  - name: python3-babelfish
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "babelfish" --no-build-isolation
+    sources:
+      - *id023
+  - name: python3-rebulk
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "rebulk" --no-build-isolation
+    sources:
+      - *id024

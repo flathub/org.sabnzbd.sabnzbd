@@ -1,5 +1,3 @@
 {
-    "automerge-flathubbot-prs": false,
-    "require-important-update": true,
-    "disable-external-data-checker": false
+    "require-important-update": true
 }

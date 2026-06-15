@@ -4,8 +4,6 @@ runtime: org.freedesktop.Platform
 # Remember to also update both env and container image in auto-update.yaml on runtime-version bumps
 runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
-sdk-extensions:
-  - org.freedesktop.Sdk.Extension.rust-stable
 rename-desktop-file: sabnzbd.desktop
 rename-icon: sabnzbd
 finish-args:
@@ -45,12 +43,7 @@ cleanup-commands:
   - find ${FLATPAK_DEST}/bin -maxdepth 1 -type f -executable -not -name 'SABnzbd.py'
     -not -name '7zz' -not -name 'par2' -not -name 'unrar' -ls -delete
 modules:
-  # Assorted pypi dependencies, generated from requirements-*.txt
-  - pypi-dependencies-flatpak.json
-  - pypi-dependencies-cryptography.json
-  - pypi-dependencies-orjson.json
-  # SABnzbd dependencies, generated from requirements.txt
-  - pypi-dependencies.json
+  - python3-requirements.yaml
 
   - name: dbus-run-session
     buildsystem: cmake
@@ -74,75 +67,6 @@ modules:
           type: anitya
           project-id: 402
           url-template: https://dbus.freedesktop.org/releases/dbus-python/dbus-python-$version.tar.xz
-
-  # Buildsystem used by cryptography, orjson
-  - name: maturin
-    buildsystem: simple
-    build-options:
-      append-path: /usr/lib/sdk/rust-stable/bin
-      env:
-        CARGO_HOME: /run/build/maturin/cargo
-        CARGO_NET_OFFLINE: 'true'
-    build-commands:
-      - cargo --offline fetch --manifest-path ./Cargo.toml
-      - cargo --offline build --release
-      - install -Dm755 target/release/maturin -t ${FLATPAK_DEST}/bin
-      - install -Dm644 maturin/__init__.py -t ${FLATPAK_DEST}/lib/python$(python -c
-        'import sys; print("%s.%s" %sys.version_info[0:2])')/site-packages/maturin/
-    sources:
-      - cargo-sources-maturin.json
-      - type: archive
-        # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
-        url: https://files.pythonhosted.org/packages/39/16/b284a7bc4af3dd87717c784278c1b8cb18606ad1f6f7a671c47bfd9c3df0/maturin-1.13.1.tar.gz
-        sha256: 9a87ff3b8e4d1c6eac33ebfe8e261e8236516d98d45c0323550621819b5a1a2f
-# Manual update only
-#        x-checker-data:
-#          type: pypi
-#          name: maturin
-
-  - name: orjson
-    build-options:
-      append-path: /usr/lib/sdk/rust-stable/bin
-      env:
-        CARGO_HOME: /run/build/orjson/cargo
-        CARGO_NET_OFFLINE: 'true'
-        RUST_BACKTRACE: '1'
-    buildsystem: simple
-    build-commands:
-      - pip3 install --verbose --exists-action=i --no-index --find-links=file://${PWD}
-        --prefix=${FLATPAK_DEST} orjson --no-build-isolation
-    sources:
-      - cargo-sources-orjson.json
-      - type: file
-        # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
-        url: https://files.pythonhosted.org/packages/7e/0c/964746fcafbd16f8ff53219ad9f6b412b34f345c75f384ad434ceaadb538/orjson-3.11.9.tar.gz
-        sha256: 4fef17e1f8722c11587a6ef18e35902450221da0028e65dbaaa543619e68e48f
-# Manual update only
-#        x-checker-data:
-#          type: pypi
-#          name: orjson
-
-  - name: cryptography
-    build-options:
-      append-path: /usr/lib/sdk/rust-stable/bin
-      env:
-        CARGO_HOME: /run/build/cryptography/cargo
-        CARGO_NET_OFFLINE: 'true'
-        RUST_BACKTRACE: '1'
-    buildsystem: simple
-    build-commands:
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
-        --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation
-    sources:
-      - cargo-sources-cryptography.json
-      - type: file
-        # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
-        url: https://files.pythonhosted.org/packages/9f/a9/db8f313fdcd85d767d4973515e1db101f9c71f95fced83233de224673757/cryptography-48.0.0.tar.gz
-        sha256: 5c3932f4436d1cccb036cb0eaef46e6e2db91035166f1ad6505c3c9d5a635920
-# Manual update only
-#        x-checker-data:
-#          type: pypi
-#          name: cryptography
 
   - name: 7zip
     buildsystem: simple
