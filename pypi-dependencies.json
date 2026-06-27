@@ -208,8 +208,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/24/25/2201973529af2c954de0bb725323c3aaed6d7f0ceee8f550dec9185df013/typer-0.26.7-py3-none-any.whl",
-                    "sha256": "5c87cfbc5d34491c5346ebf49c23e18d56ccb863268d3a8d592b26087c2f5e58"
+                    "url": "https://files.pythonhosted.org/packages/80/87/b9fd69c92c6102a066e1b86a35243f53e70bd4c709f2a26d9f4fee4f4dc0/typer-0.26.8-py3-none-any.whl",
+                    "sha256": "3512ca79ac5c11113414b36e80281b872884477722440691c89d1112e321a49c"
                 },
                 {
                     "type": "file",
@@ -294,8 +294,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/84/4d/df073d593f7e7e4a5a7e19148b2e9b4ae63b4ddcbb863f1e7bb2b6f19c62/rebulk-3.2.0-py3-none-any.whl",
-                    "sha256": "6bc31ae4b37200623c5827d2f539f9ec3e52b50431322dad8154642a39b0a53e"
+                    "url": "https://files.pythonhosted.org/packages/6c/2b/02ee27d45ef182780aceeb1efc0697349dc6307bfb645eb4fbe7d8a35541/rebulk-4.1.0-py3-none-any.whl",
+                    "sha256": "9043c0adcf4b09ef7c302e94fe79204137a4017a17736bc13e98e4ae927118f7"
                 },
                 {
                     "type": "file",
@@ -416,8 +416,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/24/25/2201973529af2c954de0bb725323c3aaed6d7f0ceee8f550dec9185df013/typer-0.26.7-py3-none-any.whl",
-                    "sha256": "5c87cfbc5d34491c5346ebf49c23e18d56ccb863268d3a8d592b26087c2f5e58"
+                    "url": "https://files.pythonhosted.org/packages/80/87/b9fd69c92c6102a066e1b86a35243f53e70bd4c709f2a26d9f4fee4f4dc0/typer-0.26.8-py3-none-any.whl",
+                    "sha256": "3512ca79ac5c11113414b36e80281b872884477722440691c89d1112e321a49c"
                 },
                 {
                     "type": "file",
@@ -510,8 +510,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/84/4d/df073d593f7e7e4a5a7e19148b2e9b4ae63b4ddcbb863f1e7bb2b6f19c62/rebulk-3.2.0-py3-none-any.whl",
-                    "sha256": "6bc31ae4b37200623c5827d2f539f9ec3e52b50431322dad8154642a39b0a53e"
+                    "url": "https://files.pythonhosted.org/packages/6c/2b/02ee27d45ef182780aceeb1efc0697349dc6307bfb645eb4fbe7d8a35541/rebulk-4.1.0-py3-none-any.whl",
+                    "sha256": "9043c0adcf4b09ef7c302e94fe79204137a4017a17736bc13e98e4ae927118f7"
                 }
             ]
         },
