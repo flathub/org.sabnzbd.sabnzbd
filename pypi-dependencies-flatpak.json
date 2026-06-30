@@ -17,8 +17,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/b7/29/c12876926be20e100527f541c792731ea09b995139aee9676eaacd1b751e/setuptools_rust-1.12.1-py3-none-any.whl",
-                    "sha256": "b7ebd6a182e7aefa97a072e880530c9b0ec8fcca8617e0bb8ff299c1a064f693"
+                    "url": "https://files.pythonhosted.org/packages/0b/80/909e46e684e47b116ed145bf2a1a8f5f7c9d90e8c3f8f7fce6a529c0068d/setuptools_rust-1.13.0-py3-none-any.whl",
+                    "sha256": "666439c4d90e968bb625bcf87ec0aa02b4f49e599d2f5dc255c633a04e8eca99"
                 }
             ]
         },
@@ -36,8 +36,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/d9/4c/f638c153a62e566c3e0e43f3998f8f97d4c3daadc984bb540461eaa8edf3/vcs_versioning-2.2.0-py3-none-any.whl",
-                    "sha256": "69a649bfbbe9f8134e8b15cddc7b27daa00e5eccbcb5128e060a87e94bad8255"
+                    "url": "https://files.pythonhosted.org/packages/85/9e/1f06f4ddc3a74ccfe0877490caaf4a5233e65401160afc8cb13207815f5e/vcs_versioning-2.2.2-py3-none-any.whl",
+                    "sha256": "fe7fb216f8780a5516e7864a9333aacb1b70015b087a9be3918da76ef2760808"
                 }
             ]
         },
