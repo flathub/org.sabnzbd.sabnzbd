@@ -284,8 +284,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/b8/9b/924a8f9709c3143d4c9a301a88042cbce37e09789378217284b19d4f8132/guessit-3.8.0-py3-none-any.whl",
-                    "sha256": "eb5747b1d0fbca926562c1e5894dbc3f6507c35e8c0bd9e38148401cd9579d83"
+                    "url": "https://files.pythonhosted.org/packages/d1/46/4817d8289276f0660a291a6f00f90f61e0a44677545027b8869b62faea51/guessit-4.0.2-py3-none-any.whl",
+                    "sha256": "fa27dbd5b000ab8ea6722f256cb91dc553e57da3cdf2c496b98ec01240fcd406"
                 },
                 {
                     "type": "file",
@@ -294,8 +294,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/6c/2b/02ee27d45ef182780aceeb1efc0697349dc6307bfb645eb4fbe7d8a35541/rebulk-4.1.0-py3-none-any.whl",
-                    "sha256": "9043c0adcf4b09ef7c302e94fe79204137a4017a17736bc13e98e4ae927118f7"
+                    "url": "https://files.pythonhosted.org/packages/6c/8b/a853a0294dbb0544ea34eb178d07ebc8626560d5d3e824069dc9add4ec2c/rebulk-6.0.0-py3-none-any.whl",
+                    "sha256": "f93e5ae00c19149c047a7fb0c7c3c380f340da56f05ebfa4989bcecee4999601"
                 },
                 {
                     "type": "file",
@@ -510,8 +510,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/6c/2b/02ee27d45ef182780aceeb1efc0697349dc6307bfb645eb4fbe7d8a35541/rebulk-4.1.0-py3-none-any.whl",
-                    "sha256": "9043c0adcf4b09ef7c302e94fe79204137a4017a17736bc13e98e4ae927118f7"
+                    "url": "https://files.pythonhosted.org/packages/6c/8b/a853a0294dbb0544ea34eb178d07ebc8626560d5d3e824069dc9add4ec2c/rebulk-6.0.0-py3-none-any.whl",
+                    "sha256": "f93e5ae00c19149c047a7fb0c7c3c380f340da56f05ebfa4989bcecee4999601"
                 }
             ]
         },
