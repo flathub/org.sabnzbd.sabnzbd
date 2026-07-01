@@ -42,13 +42,13 @@ jobs:
           python3 -m pip --no-input install --upgrade yq
 
       - name: Checkout flathub/org.sabnzbd.sabnzbd (${{ github.event.pull_request.head.ref || github.ref }})
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
         with:
           persist-credentials: false
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
 
       - name: Checkout flathub/org.sabnzbd.sabnzbd (master branch, as sub-project)
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
         with:
           persist-credentials: false
           ref: master
@@ -68,7 +68,7 @@ jobs:
 
       - name: Checkout sabnzbd/sabnzbd (upstream release ${{ steps.sabnzbd-release.outputs.version || 'n/a' }})
         if: steps.sabnzbd-release.outputs.version
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
         with:
           persist-credentials: false
           repository: 'sabnzbd/sabnzbd'
@@ -82,7 +82,7 @@ jobs:
             requirements.txt
 
       - name: Checkout flatpak/flatpak-builder-tools
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
         with:
           persist-credentials: false
           repository: 'flatpak/flatpak-builder-tools'
