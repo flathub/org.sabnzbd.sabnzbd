@@ -35,7 +35,7 @@ INITIAL_LIST=$(grep -E -r -h -- '^([^#]* )?import ' $SABNZBD_PYTHON_FILES \
 	| grep -v -E -- "(from|import) +($PYTHON_STD_LIBS)($|\.|[[:space:]])" \
 	| sed -n 's/^[[:space:]]*\(from\|import\) \([a-zA-Z0-9_]\+\).*/\2/p' \
 	| grep -v -E -- "^($PYTHON_FOREIGN_LIBS|$PYTHON_MANIFEST_LIBS)$" \
-	| sed -e "s/^Cheetah$/CT3/g" -e "s/^socks$/PySocks/g")
+	| sed -e "s/^Cheetah$/CT3/g" -e "s/^socks$/PySocks/g" -e "s/^dateutil$/python-dateutil/g")
 
 # Verify the results against the upstream requirements file and discard anything not listed there
 VERIFIED_LIST=
