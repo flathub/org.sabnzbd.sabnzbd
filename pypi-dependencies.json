@@ -12,18 +12,18 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/5e/79/1483693160917522703708e45b4045946d86be634b8af2c2ac9f361f8fa3/apprise-1.11.0-py3-none-any.whl",
-                    "sha256": "6abc6d9f8dddedfe14b2918c3553146894ac6e3dad401deaf854b20b4c455d38"
+                    "url": "https://files.pythonhosted.org/packages/d3/e9/acfea54abdd66a059ff82995d3703eca3a27df3dc1bdc6afaf8a30a854fe/apprise-1.12.0-py3-none-any.whl",
+                    "sha256": "28edabfec5a9d5dbcd9aa28bdfd8928ecb68764e40214b6e648eab6d974b5a93"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ef/2f/c5464532e965badff2f4c4c1a3a83f5697f0d7c407ed0cda44aaa99bb451/certifi-2026.6.17-py3-none-any.whl",
-                    "sha256": "2227dcbaafe0d2f59279d1762ddddc37783ed4354594f194ffc31d20f41fc3db"
+                    "url": "https://files.pythonhosted.org/packages/0b/a7/71ac2cff56fec219ed242bb11b8efb69fcc4bec75db06fb7bfe35de520e6/certifi-2026.7.22-py3-none-any.whl",
+                    "sha256": "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/db/8f/61959034484a4a7c527811f4721e75d02d653a35afb0b6054474d8185d4c/charset_normalizer-3.4.7-py3-none-any.whl",
-                    "sha256": "3dce51d0f5e7951f8bb4900c257dad282f49190fdbebecd4ba99bcc41fef404d"
+                    "url": "https://files.pythonhosted.org/packages/98/2b/f97f1c193fb855c345d678f5077d6926034db0722df74c8f057020e05a25/charset_normalizer-3.4.9-py3-none-any.whl",
+                    "sha256": "68e5f26a1ad57ded6d1cfb85331d1c1a195314756471d97758c48498bb4dcdf5"
                 },
                 {
                     "type": "file",
@@ -71,8 +71,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ef/2f/c5464532e965badff2f4c4c1a3a83f5697f0d7c407ed0cda44aaa99bb451/certifi-2026.6.17-py3-none-any.whl",
-                    "sha256": "2227dcbaafe0d2f59279d1762ddddc37783ed4354594f194ffc31d20f41fc3db"
+                    "url": "https://files.pythonhosted.org/packages/0b/a7/71ac2cff56fec219ed242bb11b8efb69fcc4bec75db06fb7bfe35de520e6/certifi-2026.7.22-py3-none-any.whl",
+                    "sha256": "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
                 }
             ]
         },
@@ -85,8 +85,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/db/8f/61959034484a4a7c527811f4721e75d02d653a35afb0b6054474d8185d4c/charset_normalizer-3.4.7-py3-none-any.whl",
-                    "sha256": "3dce51d0f5e7951f8bb4900c257dad282f49190fdbebecd4ba99bcc41fef404d"
+                    "url": "https://files.pythonhosted.org/packages/98/2b/f97f1c193fb855c345d678f5077d6926034db0722df74c8f057020e05a25/charset_normalizer-3.4.9-py3-none-any.whl",
+                    "sha256": "68e5f26a1ad57ded6d1cfb85331d1c1a195314756471d97758c48498bb4dcdf5"
                 }
             ]
         },
@@ -104,8 +104,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/96/9a/982e48afcffcd727a9144506720ffd4224b6b7e355c98641866f38b7c043/jaraco_functools-4.5.0-py3-none-any.whl",
-                    "sha256": "79ce39246eddbde4b3a03b77ea5f0f7878dc669b166a66cf3fa8e266aa3fa2f4"
+                    "url": "https://files.pythonhosted.org/packages/02/36/ecc85bc96c273dc8a11273ed4782272975e6338d4a3e9228621175edf0e3/jaraco_functools-4.6.0-py3-none-any.whl",
+                    "sha256": "99e3dc0060c5cbe8fcd1cdb36258e2a65ca40f1566b2033b12abb1bb44dd3c30"
                 },
                 {
                     "type": "file",
@@ -128,8 +128,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/1e/d3/26bf1008eb3d2daa8ef4cacc7f3bfdc11818d111f7e2d0201bc6e3b49d45/annotated_doc-0.0.4-py3-none-any.whl",
-                    "sha256": "571ac1dc6991c450b25a9c2d84a3705e2ae7a53467b5d111c24fa8baabbed320"
+                    "url": "https://files.pythonhosted.org/packages/3e/30/e900b21425a860e195f32e37657aa1f7c7f2b1bfb26f03ca209b90933c06/annotated_doc-0.0.5-py3-none-any.whl",
+                    "sha256": "117bac03a25ede5df5440e855b32d556049ca169ead221505badf432fed4b101"
                 },
                 {
                     "type": "file",
@@ -148,13 +148,13 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/96/9a/982e48afcffcd727a9144506720ffd4224b6b7e355c98641866f38b7c043/jaraco_functools-4.5.0-py3-none-any.whl",
-                    "sha256": "79ce39246eddbde4b3a03b77ea5f0f7878dc669b166a66cf3fa8e266aa3fa2f4"
+                    "url": "https://files.pythonhosted.org/packages/02/36/ecc85bc96c273dc8a11273ed4782272975e6338d4a3e9228621175edf0e3/jaraco_functools-4.6.0-py3-none-any.whl",
+                    "sha256": "99e3dc0060c5cbe8fcd1cdb36258e2a65ca40f1566b2033b12abb1bb44dd3c30"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/39/6d/628f347098059957987596123b3992120c673d17e8ce560185b1d6b88a27/jaraco_text-4.2.0-py3-none-any.whl",
-                    "sha256": "034408ef073f72de919124e9934a12acd50d10bd139bea47732620fa964b0144"
+                    "url": "https://files.pythonhosted.org/packages/d2/4f/cd038114e8ed88682eabe3123e598f8d236ab0f6b8c642d522438bfba175/jaraco_text-4.3.0-py3-none-any.whl",
+                    "sha256": "07a06a9eaf8b7eee54f2fec816565ef1eec5aa78fc81e4f1c3131ad09ff45a9a"
                 },
                 {
                     "type": "file",
@@ -203,18 +203,23 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/e3/5e/9326e8ec4418ea59c6c290f4f3209d61f790f0737bfc5afcb588cad3fd9f/tempora-5.9.0-py3-none-any.whl",
-                    "sha256": "5aa96ab2b8a2be795bd4c78a4299c0196365a91976972f8852b19e1d363ccd29"
+                    "url": "https://files.pythonhosted.org/packages/ec/9e/4d84da6edba51bab06be6ff8b1ccf93cc19b0ef4ab6ffcab1f873134bec3/tempora-5.12.0-py3-none-any.whl",
+                    "sha256": "0f313689c4d83341acc806d7e6693864729606868cbc7709c4c121969d0909cc"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/80/87/b9fd69c92c6102a066e1b86a35243f53e70bd4c709f2a26d9f4fee4f4dc0/typer-0.26.8-py3-none-any.whl",
-                    "sha256": "3512ca79ac5c11113414b36e80281b872884477722440691c89d1112e321a49c"
+                    "url": "https://files.pythonhosted.org/packages/43/89/9518bc0c3929bee36b3a4a8e3daddd6e03f92f9961c66d4983b837160543/typer-0.27.1-py3-none-any.whl",
+                    "sha256": "53150287edd11baeb4e4722c8e394fcdf8181c0ae89485cba8d25c778d5edd56"
                 },
                 {
                     "type": "file",
                     "url": "https://files.pythonhosted.org/packages/a7/24/5480c20380dfd18cf33d14784096dca45a24eae6102e91d49a718d3b6855/typer_slim-0.24.0-py3-none-any.whl",
                     "sha256": "d5d7ee1ee2834d5020c7c616ed5e0d0f29b9a4b1dd283bdebae198ec09778d0e"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl",
+                    "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
                 },
                 {
                     "type": "file",
@@ -260,13 +265,13 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/4e/eb/c96d64137e29ae17d83ad2552470bafe3a7a915e85434d9942077d7fd011/feedparser-6.0.12-py3-none-any.whl",
-                    "sha256": "6bbff10f5a52662c00a2e3f86a38928c37c48f77b3c511aedcd51de933549324"
+                    "url": "https://files.pythonhosted.org/packages/7f/61/f04912e63702e73fb2a378f9c0a1ad9eb17a334a11a6b3fe1daa593903c2/feedparser-6.0.14-py3-none-any.whl",
+                    "sha256": "e35e3f760151b0c3b22cac9684155cae186a233e16c49bcbc6c49e91e3131137"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/9e/bd/3704a8c3e0942d711c1299ebf7b9091930adae6675d7c8f476a7ce48653c/sgmllib3k-1.0.0.tar.gz",
-                    "sha256": "7868fb1c8bfa764c1ac563d3cf369c381d1325d36124933a726f29fcdaa812e9"
+                    "url": "https://files.pythonhosted.org/packages/85/a0/79a31f898092e145bd66e2b338fb0656979acb2bbbcae8220940fbfcd820/feedparser_sgmllib-2.1.0-py3-none-any.whl",
+                    "sha256": "2cab2d43b95a954f920f18aebce7a4dbbb3f539780b127e2aa114f579821e01d"
                 }
             ]
         },
@@ -284,8 +289,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/d1/46/4817d8289276f0660a291a6f00f90f61e0a44677545027b8869b62faea51/guessit-4.0.2-py3-none-any.whl",
-                    "sha256": "fa27dbd5b000ab8ea6722f256cb91dc553e57da3cdf2c496b98ec01240fcd406"
+                    "url": "https://files.pythonhosted.org/packages/4c/87/90c2040ffc623ab90993eee9e03ade9ce8168de4d04948b77004d17032c1/guessit-4.4.0-py3-none-any.whl",
+                    "sha256": "565bf82dd6dc8801f357b2eec6a1dd447007f398dbebd06b7b440e303e2df3bc"
                 },
                 {
                     "type": "file",
@@ -294,8 +299,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/6c/8b/a853a0294dbb0544ea34eb178d07ebc8626560d5d3e824069dc9add4ec2c/rebulk-6.0.0-py3-none-any.whl",
-                    "sha256": "f93e5ae00c19149c047a7fb0c7c3c380f340da56f05ebfa4989bcecee4999601"
+                    "url": "https://files.pythonhosted.org/packages/01/44/6a16b13cb50ca25cc88928bf85adef1227d21add9c4cd830958d0124d48b/rebulk-6.0.1-py3-none-any.whl",
+                    "sha256": "fe67fd0af60962c7f3957fa01ef0039c43631c09146228698ee22e20ac33907e"
                 },
                 {
                     "type": "file",
@@ -341,8 +346,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/1e/d3/26bf1008eb3d2daa8ef4cacc7f3bfdc11818d111f7e2d0201bc6e3b49d45/annotated_doc-0.0.4-py3-none-any.whl",
-                    "sha256": "571ac1dc6991c450b25a9c2d84a3705e2ae7a53467b5d111c24fa8baabbed320"
+                    "url": "https://files.pythonhosted.org/packages/3e/30/e900b21425a860e195f32e37657aa1f7c7f2b1bfb26f03ca209b90933c06/annotated_doc-0.0.5-py3-none-any.whl",
+                    "sha256": "117bac03a25ede5df5440e855b32d556049ca169ead221505badf432fed4b101"
                 },
                 {
                     "type": "file",
@@ -356,13 +361,13 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/96/9a/982e48afcffcd727a9144506720ffd4224b6b7e355c98641866f38b7c043/jaraco_functools-4.5.0-py3-none-any.whl",
-                    "sha256": "79ce39246eddbde4b3a03b77ea5f0f7878dc669b166a66cf3fa8e266aa3fa2f4"
+                    "url": "https://files.pythonhosted.org/packages/02/36/ecc85bc96c273dc8a11273ed4782272975e6338d4a3e9228621175edf0e3/jaraco_functools-4.6.0-py3-none-any.whl",
+                    "sha256": "99e3dc0060c5cbe8fcd1cdb36258e2a65ca40f1566b2033b12abb1bb44dd3c30"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/39/6d/628f347098059957987596123b3992120c673d17e8ce560185b1d6b88a27/jaraco_text-4.2.0-py3-none-any.whl",
-                    "sha256": "034408ef073f72de919124e9934a12acd50d10bd139bea47732620fa964b0144"
+                    "url": "https://files.pythonhosted.org/packages/d2/4f/cd038114e8ed88682eabe3123e598f8d236ab0f6b8c642d522438bfba175/jaraco_text-4.3.0-py3-none-any.whl",
+                    "sha256": "07a06a9eaf8b7eee54f2fec816565ef1eec5aa78fc81e4f1c3131ad09ff45a9a"
                 },
                 {
                     "type": "file",
@@ -411,18 +416,23 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/e3/5e/9326e8ec4418ea59c6c290f4f3209d61f790f0737bfc5afcb588cad3fd9f/tempora-5.9.0-py3-none-any.whl",
-                    "sha256": "5aa96ab2b8a2be795bd4c78a4299c0196365a91976972f8852b19e1d363ccd29"
+                    "url": "https://files.pythonhosted.org/packages/ec/9e/4d84da6edba51bab06be6ff8b1ccf93cc19b0ef4ab6ffcab1f873134bec3/tempora-5.12.0-py3-none-any.whl",
+                    "sha256": "0f313689c4d83341acc806d7e6693864729606868cbc7709c4c121969d0909cc"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/80/87/b9fd69c92c6102a066e1b86a35243f53e70bd4c709f2a26d9f4fee4f4dc0/typer-0.26.8-py3-none-any.whl",
-                    "sha256": "3512ca79ac5c11113414b36e80281b872884477722440691c89d1112e321a49c"
+                    "url": "https://files.pythonhosted.org/packages/43/89/9518bc0c3929bee36b3a4a8e3daddd6e03f92f9961c66d4983b837160543/typer-0.27.1-py3-none-any.whl",
+                    "sha256": "53150287edd11baeb4e4722c8e394fcdf8181c0ae89485cba8d25c778d5edd56"
                 },
                 {
                     "type": "file",
                     "url": "https://files.pythonhosted.org/packages/a7/24/5480c20380dfd18cf33d14784096dca45a24eae6102e91d49a718d3b6855/typer_slim-0.24.0-py3-none-any.whl",
                     "sha256": "d5d7ee1ee2834d5020c7c616ed5e0d0f29b9a4b1dd283bdebae198ec09778d0e"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl",
+                    "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
                 }
             ]
         },
@@ -496,8 +506,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/62/fc/ab37559419ca36dd8dd317c3a98395ed4dcee2beeb28bf6059b972906727/rarfile-4.2-py3-none-any.whl",
-                    "sha256": "8757e1e3757e32962e229cab2432efc1f15f210823cc96ccba0f6a39d17370c9"
+                    "url": "https://files.pythonhosted.org/packages/f5/36/ffd87452bf72310dfd1185ade33e5b8be374ab370d19573a8197ca25c95b/rarfile-4.5-py3-none-any.whl",
+                    "sha256": "c74341f4b9a3a3ebb35ef396d59daf059eb028f34995a7162950a41d97b84de9"
                 }
             ]
         },
@@ -510,8 +520,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/6c/8b/a853a0294dbb0544ea34eb178d07ebc8626560d5d3e824069dc9add4ec2c/rebulk-6.0.0-py3-none-any.whl",
-                    "sha256": "f93e5ae00c19149c047a7fb0c7c3c380f340da56f05ebfa4989bcecee4999601"
+                    "url": "https://files.pythonhosted.org/packages/01/44/6a16b13cb50ca25cc88928bf85adef1227d21add9c4cd830958d0124d48b/rebulk-6.0.1-py3-none-any.whl",
+                    "sha256": "fe67fd0af60962c7f3957fa01ef0039c43631c09146228698ee22e20ac33907e"
                 }
             ]
         },
