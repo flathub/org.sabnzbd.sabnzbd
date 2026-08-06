@@ -15,6 +15,7 @@ finish-args:
   - --socket=wayland
   - --system-talk-name=org.freedesktop.login1
   - --system-talk-name=org.freedesktop.UPower
+  - --system-talk-name=org.freedesktop.Avahi
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.PowerManagement
   - --talk-name=org.gnome.SessionManager
@@ -29,6 +30,7 @@ cleanup:
   - '*.la'
   - /include
   - /lib/pkgconfig
+  - /lib/avahi
   - /man
   - /share/man
   - /share/doc
@@ -44,6 +46,8 @@ cleanup-commands:
   # Scriptlets installed by pip, not needed by SABnzbd
   - find ${FLATPAK_DEST}/bin -maxdepth 1 -type f -executable -not -name 'SABnzbd.py'
     -not -name '7zz' -not -name 'par2' -not -name 'unrar' -ls -delete
+  # Leftover broken symlinks
+  - find ${FLATPAK_DEST}/bin -maxdepth 1 -type l ! -exec test -e {} \; -ls -delete
 modules:
   # Assorted pypi dependencies, generated from requirements-*.txt
   - pypi-dependencies-flatpak.json
@@ -194,6 +198,44 @@ modules:
         dest-filename: autogen.sh
         commands:
           - autoreconf --verbose --force --install
+
+  - name: avahi
+    buildsystem: autotools
+    config-opts:
+      - --with-distro=none
+      - --enable-compat-libdns_sd
+      - --disable-compat-howl
+      - --disable-introspection
+      - --disable-qt3
+      - --disable-qt4
+      - --disable-qt5
+      - --disable-gtk
+      - --disable-gtk3
+      - --disable-core-docs
+      - --disable-manpages
+      - --disable-libdaemon
+      - --disable-libevent
+      - --disable-python
+      - --disable-pygobject
+      - --disable-mono
+      - --disable-monodoc
+      - --disable-autoipd
+      - --disable-doxygen-doc
+      - --disable-doxygen-dot
+      - --disable-doxygen-xml
+      - --disable-doxygen-html
+      - --disable-manpages
+      - --disable-xmltoman
+      - --disable-tests
+    sources:
+      - type: archive
+        url: https://www.avahi.org/download/avahi-0.8.tar.gz
+        sha256: 060309d7a333d38d951bc27598c677af1796934dbd98e1024e7ad8de798fedda
+        x-checker-data:
+          type: anitya
+          project-id: 147
+          stable-only: true
+          url-template: https://www.avahi.org/download/avahi-$version.tar.gz
 
   - name: sabnzbd
     buildsystem: simple
