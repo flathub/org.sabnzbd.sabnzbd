@@ -42,8 +42,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/7d/68/d8d58938dfb1370b266a1a729e6d77a985be23689a0496498ee17b2cbf90/platformdirs-4.11.0-py3-none-any.whl",
-            "sha256": "360ccded2b7fce0af0ff80cc8f5942a1c5d99b0e856033acb030bfc634709e74"
+            "url": "https://files.pythonhosted.org/packages/4c/85/9b31b44296cfa3bb56cddb35e6a0f6578bab0b490c0806c0245e32c6110c/platformdirs-4.11.1-py3-none-any.whl",
+            "sha256": "2efd27d363e8dd2e661639ffb398865a5e0a46442a11d266bf375a0e0c10e386"
         },
         {
             "type": "file",
