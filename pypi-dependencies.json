@@ -310,6 +310,20 @@
             ]
         },
         {
+            "name": "python3-hachoir",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"hachoir\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/ef/96/9570e6604114e9b2b2e1d90a89d01d10646b9cb6f54bba78f6de5fbbceb1/hachoir-3.3.0-py3-none-any.whl",
+                    "sha256": "9f721af67867d933383398b9605bc388db25f55dde1034d2bfde91f05e5d9910"
+                }
+            ]
+        },
+        {
             "name": "python3-more-itertools",
             "buildsystem": "simple",
             "build-commands": [
@@ -498,6 +512,25 @@
             ]
         },
         {
+            "name": "python3-python-dateutil",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"python-dateutil\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+                    "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl",
+                    "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+                }
+            ]
+        },
+        {
             "name": "python3-rarfile",
             "buildsystem": "simple",
             "build-commands": [
@@ -529,13 +562,13 @@
             "name": "python3-sabctools",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sabctools~=9.4.0\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sabctools~=9.6.3\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/d0/41/bafeea7493131d8cd0a05c157e41d2eecceb9b7897be3eb42f41fdbeef91/sabctools-9.4.1.tar.gz",
-                    "sha256": "314daf8165fba23cb93989651094c7af3f73ee6beb26ade6adf4543368d0f70b"
+                    "url": "https://files.pythonhosted.org/packages/6c/aa/3d415b13b5978e9d457bc1ec4d35e7701622bc697dd928ba6e5d30cb8432/sabctools-9.6.3.tar.gz",
+                    "sha256": "faacd20d5ec9111e39c81326ca1e49a2be2b24b95c13c28f82e3e7ac198c9129"
                 }
             ]
         }
