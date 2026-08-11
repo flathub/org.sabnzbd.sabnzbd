@@ -7,6 +7,7 @@ configobj
 CT3
 feedparser
 guessit
+hachoir
 more-itertools
 notify2
 portend
@@ -14,6 +15,7 @@ puremagic
 pycairo
 pygobject
 PySocks
+python-dateutil
 rarfile
 rebulk
-sabctools~=9.4.0
+sabctools~=9.6.3
