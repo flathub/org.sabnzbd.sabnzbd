@@ -107,17 +107,18 @@ jobs:
       - name: Refresh pypi-dependencies-*.json
         run: |
           for file in requirements*.txt; do
+            outfile="$(printf '%s\n' "${file}" | sed -n 's/[^-]*\([^.]*\)\.txt$/pypi-dependencies\1/p')"
             python3 "${{ env.CLONE_DIR }}/flatpak-builder-tools/pip/flatpak-pip-generator.py" \
               --runtime "org.freedesktop.Sdk//${{ env.SDK_VERSION }}" \
               --requirements-file "${file}" \
-              --output "$(printf '%s\n' "${file}" | sed -n 's/[^-]*\([^.]*\)\.txt$/pypi-dependencies\1/p')"
+              --output "${outfile}"
           done
 
       - name: Refresh cargo-sources-*.json
         run: |
           for item in ${{ env.CARGO_MODULES }}; do
             pkg="${item##*/}"
-            version="$(yq -r ".modules[4:] | map(select(.name == \"${pkg}\")) | .[].sources[1].url" \
+            version="$(yq -r ".modules[4:-2] | map(select(.name == \"${pkg}\")) | .[].sources[1].url" \
               ${{ env.MANIFEST }} | sed -n 's/.*-\([0-9.]\+\)\.tar\.gz$/\1/p')"
             # Fetch lock file
             curl --location --output "Cargo-${pkg}.lock" --silent --write-out \
