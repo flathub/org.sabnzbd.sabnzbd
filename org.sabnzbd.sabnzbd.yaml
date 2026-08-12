@@ -20,6 +20,7 @@ finish-args:
   - --talk-name=org.freedesktop.PowerManagement
   - --talk-name=org.gnome.SessionManager
   - --talk-name=org.kde.StatusNotifierWatcher
+  - --talk-name=org.ayatana.indicator.application
   - --filesystem=xdg-download
   - --filesystem=/mnt
   - --filesystem=/media
@@ -181,7 +182,7 @@ modules:
           url-template: https://www.rarlab.com/rar/unrarsrc-$version.tar.gz
       - type: patch
         # Patch origin is Debian, see https://github.com/debian-calibre/unrar-nonfree/tree/master/debian/patches
-        path: patches/0001-fix-buildflags.patch
+        path: patches/unrar-fix-buildflags.patch
 
   - name: par2cmdline-turbo
     buildsystem: autotools
@@ -237,12 +238,19 @@ modules:
           stable-only: true
           url-template: https://www.avahi.org/download/avahi-$version.tar.gz
 
+  # Tray icon support, via https://github.com/flathub/shared-modules/
+  - shared-modules/libayatana-appindicator/libayatana-appindicator-gtk3.json
+
   - name: sabnzbd
     buildsystem: simple
     build-commands:
       - cp -a * /app/bin/
       - install -Dm644 linux/org.sabnzbd.sabnzbd.appdata.xml /app/share/appdata/org.sabnzbd.sabnzbd.appdata.xml
+      # The main icon is automatically renamed to org.sabnzbd.sabnzbd.svg during the flatpak build...
       - install -Dm644 icons/logo-arrow.svg /app/share/icons/hicolor/scalable/apps/sabnzbd.svg
+      # ...but the others require names starting with 'org.sabnzbd.sabnzbd.' for flatpak to "export" them
+      - install -Dm644 icons/logo-arrow_gray.svg /app/share/icons/hicolor/scalable/apps/org.sabnzbd.sabnzbd.gray.svg
+      - install -Dm644 icons/logo-arrow_green.svg /app/share/icons/hicolor/scalable/apps/org.sabnzbd.sabnzbd.green.svg
       - install -Dm644 linux/sabnzbd.desktop /app/share/applications/sabnzbd.desktop
       - desktop-file-edit --set-key=Exec --set-value="SABnzbd.py --browser 1 %F" /app/share/applications/sabnzbd.desktop
     sources:
@@ -255,3 +263,5 @@ modules:
           stable-only: true
           is-main-source: true
           url-template: https://github.com/sabnzbd/sabnzbd/releases/download/$version/SABnzbd-$version-src.tar.gz
+      - type: patch
+        path: patches/sabnzbd_icon_rename.patch

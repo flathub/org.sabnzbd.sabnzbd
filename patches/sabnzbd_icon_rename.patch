@@ -1,0 +1,18 @@
+# Adjust the tray icon names to enable their use in the context of the flatpak
+diff --git a/sabnzbd/sabtraylinux.py b/sabnzbd/sabtraylinux.py
+index 08e0686f4..e7928ef9d 100644
+--- a/sabnzbd/sabtraylinux.py
++++ b/sabnzbd/sabtraylinux.py
+@@ -60,9 +60,9 @@ from sabnzbd.misc import to_units
+ 
+ class StatusIcon(Thread):
+     sabicons = {
+-        "default": abspath("icons/logo-arrow.svg"),
+-        "green": abspath("icons/logo-arrow_green.svg"),
+-        "pause": abspath("icons/logo-arrow_gray.svg"),
++        "default": "org.sabnzbd.sabnzbd",
++        "green": "org.sabnzbd.sabnzbd.green",
++        "pause": "org.sabnzbd.sabnzbd.gray",
+     }
+ 
+     updatefreq = 1000  # ms
