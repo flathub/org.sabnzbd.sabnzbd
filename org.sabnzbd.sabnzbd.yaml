@@ -120,8 +120,8 @@ modules:
       - cargo-sources-orjson.json
       - type: file
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
-        url: https://files.pythonhosted.org/packages/7e/0c/964746fcafbd16f8ff53219ad9f6b412b34f345c75f384ad434ceaadb538/orjson-3.11.9.tar.gz
-        sha256: 4fef17e1f8722c11587a6ef18e35902450221da0028e65dbaaa543619e68e48f
+        url: https://files.pythonhosted.org/packages/0f/f3/742fb1f62b825f2c010697eaf4e828004bc2a81e7e806666989c132c7c42/orjson-3.12.0.tar.gz
+        sha256: d14203fb1aae2ad9b3d52f8a0e82aeb10197ef1c9bc61da7f358bd70b00123d5
         x-checker-data:
           type: pypi
           name: orjson
@@ -255,8 +255,8 @@ modules:
       - desktop-file-edit --set-key=Exec --set-value="SABnzbd.py --browser 1 %F" /app/share/applications/sabnzbd.desktop
     sources:
       - type: archive
-        url: https://github.com/sabnzbd/sabnzbd/releases/download/5.1.0/SABnzbd-5.1.0-src.tar.gz
-        sha256: fde3e836dd037cf96366310bd8df8d121026f8ddb956adb897ee37a633b056f8
+        url: https://github.com/sabnzbd/sabnzbd/releases/download/5.1.1/SABnzbd-5.1.1-src.tar.gz
+        sha256: 134fa126635c6cc154737fd4ce058fcd52af00fb59347f573064513f12370412
         x-checker-data:
           type: anitya
           project-id: 44529
