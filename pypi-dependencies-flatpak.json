@@ -36,8 +36,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/41/ef/0298fdb2b86e6c734caf4048c4e28822173d0968f4a271ad70e4b427d1a8/vcs_versioning-2.3.0-py3-none-any.whl",
-                    "sha256": "1b8e76156e50961a29fa9a1bd25c38145a2df86bf47611e134ffbff7852bc801"
+                    "url": "https://files.pythonhosted.org/packages/8e/1e/94c0a4b8c8c639e91ff6bce375a2c92460a711b9e040b28674ed492d004d/vcs_versioning-2.3.1-py3-none-any.whl",
+                    "sha256": "a11299394e101569a62ab061375260d08bc56cd33d685b7067d85312368f4457"
                 }
             ]
         },
