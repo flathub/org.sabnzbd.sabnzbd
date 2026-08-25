@@ -98,8 +98,8 @@ modules:
       - cargo-sources-maturin.json
       - type: archive
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
-        url: https://files.pythonhosted.org/packages/e7/b3/addd877f871fb1860d46d3a4f206ecb10b946c85846805e6367631926fd3/maturin-1.14.1.tar.gz
-        sha256: 9d6577a62cd08e0ceba7a0db06fb098e0c9b1b3429bad747a4f3a18215a1b3df
+        url: https://files.pythonhosted.org/packages/b9/c8/22e5e21b2679c9bce6415ca578034ca2cc9316be0642ae21e051a2d5198c/maturin-1.15.0.tar.gz
+        sha256: 94b26cc8e8aba61a5f2099715fe640e18c5f678e9a500408b38761263954228a
         x-checker-data:
           type: pypi
           name: maturin
@@ -142,8 +142,8 @@ modules:
       - cargo-sources-cryptography.json
       - type: file
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
-        url: https://files.pythonhosted.org/packages/de/41/6cbdcf9142d00fe82836fbb51e503e58088575cf7a0fe1dbff6695bf0840/cryptography-50.0.0.tar.gz
-        sha256: eeac2acb5a20ed25e0ad6d1df9891a520b78b404266b6d11778f25d5d691a6c9
+        url: https://files.pythonhosted.org/packages/bb/ad/5d6702db60b1e40b41ef513b6967ff5848f307d50f8449baf1634f5908f1/cryptography-50.0.1.tar.gz
+        sha256: 5dd9bda1c12b4162f6ff568eeb5e0ff956c28d14406e875cfe8a63a2d414ff20
         x-checker-data:
           type: pypi
           name: cryptography
@@ -255,8 +255,8 @@ modules:
       - desktop-file-edit --set-key=Exec --set-value="SABnzbd.py --browser 1 %F" /app/share/applications/sabnzbd.desktop
     sources:
       - type: archive
-        url: https://github.com/sabnzbd/sabnzbd/releases/download/5.1.1/SABnzbd-5.1.1-src.tar.gz
-        sha256: 134fa126635c6cc154737fd4ce058fcd52af00fb59347f573064513f12370412
+        url: https://github.com/sabnzbd/sabnzbd/releases/download/5.1.2/SABnzbd-5.1.2-src.tar.gz
+        sha256: bdf1ed947d810b5ac01a2b43b7f39cd11ca6eb6a93b577244a3c021d018d63e4
         x-checker-data:
           type: anitya
           project-id: 44529
