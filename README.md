@@ -17,11 +17,11 @@ The information and commands below describe a completely manual update and build
 ### Generate Python dependencies
 
 1. Install <https://github.com/flatpak/flatpak-builder-tools/tree/master/pip>
-2. `flatpak install flathub org.freedesktop.Platform//25.08 org.freedesktop.Sdk//25.08`
-3. `python3 flatpak-pip-generator.py --runtime='org.freedesktop.Sdk//25.08' --requirements-file=requirements.txt --output pypi-dependencies`
-4. `python3 flatpak-pip-generator.py --runtime='org.freedesktop.Sdk//25.08' --requirements-file=requirements-flatpak.txt --output pypi-dependencies-flatpak`
-5. `python3 flatpak-pip-generator.py --runtime='org.freedesktop.Sdk//25.08' --requirements-file=requirements-cryptography.txt --output pypi-dependencies-cryptography`
-6. `python3 flatpak-pip-generator.py --runtime='org.freedesktop.Sdk//25.08' --requirements-file=requirements-orjson.txt --output pypi-dependencies-orjson`
+2. `flatpak install flathub org.freedesktop.Platform//26.08 org.freedesktop.Sdk//26.08`
+3. `python3 flatpak-pip-generator.py --runtime='org.freedesktop.Sdk//26.08' --requirements-file=requirements.txt --output pypi-dependencies`
+4. `python3 flatpak-pip-generator.py --runtime='org.freedesktop.Sdk//26.08' --requirements-file=requirements-flatpak.txt --output pypi-dependencies-flatpak --ignore-installed packaging`
+5. `python3 flatpak-pip-generator.py --runtime='org.freedesktop.Sdk//26.08' --requirements-file=requirements-cryptography.txt --output pypi-dependencies-cryptography`
+6. `python3 flatpak-pip-generator.py --runtime='org.freedesktop.Sdk//26.08' --requirements-file=requirements-orjson.txt --output pypi-dependencies-orjson`
 
 ### Generate Cargo dependencies
 
@@ -39,9 +39,9 @@ See <https://docs.flatpak.org/en/latest/first-build.html> for details.
 
 ```bash
 flatpak install org.flatpak.Builder
-flatpak install flathub org.freedesktop.Platform//25.08
-flatpak install flathub org.freedesktop.Sdk//25.08
-flatpak install flathub org.freedesktop.Sdk.Extension.rust-stable//25.08
+flatpak install flathub org.freedesktop.Platform//26.08
+flatpak install flathub org.freedesktop.Sdk//26.08
+flatpak install flathub org.freedesktop.Sdk.Extension.rust-stable//26.08
 flatpak run org.flatpak.Builder build-dir org.sabnzbd.sabnzbd.yaml --force-clean
 flatpak run org.flatpak.Builder --user --install --force-clean build-dir org.sabnzbd.sabnzbd.yaml
 flatpak run org.sabnzbd.sabnzbd

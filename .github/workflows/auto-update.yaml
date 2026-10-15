@@ -18,7 +18,7 @@ env:
   CARGO_MODULES: ':pyca/cryptography v:PyO3/maturin :ijl/orjson'
   CLONE_DIR: __checkouts__
   MANIFEST: org.sabnzbd.sabnzbd.yaml
-  SDK_VERSION: '25.08'
+  SDK_VERSION: '26.08'
 
 jobs:
   auto-update:
@@ -32,7 +32,7 @@ jobs:
       )
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/flathub-infra/flatpak-github-actions:freedesktop-25.08
+      image: ghcr.io/flathub-infra/flatpak-github-actions:freedesktop-26.08
       options: --privileged
 
     steps:
@@ -104,14 +104,15 @@ jobs:
           .github/auto-update-helper.sh "${{ env.CLONE_DIR }}/sabnzbd" "no" > requirements.txt
           diff --unified=0 "${{ env.CLONE_DIR }}/master/requirements.txt" requirements.txt || true
 
-      - name: Refresh pypi-dependencies-*.json
+      - name: Refresh pypi-dependencies*.json
         run: |
           for file in requirements*.txt; do
             outfile="$(printf '%s\n' "${file}" | sed -n 's/[^-]*\([^.]*\)\.txt$/pypi-dependencies\1/p')"
             python3 "${{ env.CLONE_DIR }}/flatpak-builder-tools/pip/flatpak-pip-generator.py" \
               --runtime "org.freedesktop.Sdk//${{ env.SDK_VERSION }}" \
               --requirements-file "${file}" \
-              --output "${outfile}"
+              --output "${outfile}" \
+              --ignore-installed packaging
           done
 
       - name: Refresh cargo-sources-*.json

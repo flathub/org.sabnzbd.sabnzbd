@@ -2,7 +2,7 @@ app-id: org.sabnzbd.sabnzbd
 command: SABnzbd.py
 runtime: org.freedesktop.Platform
 # Remember to also update both env and container image in auto-update.yaml on runtime-version bumps
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -165,6 +165,9 @@ modules:
           is-important: true
           stable-only: true
           url-template: https://github.com/ip7z/7zip/archive/refs/tags/$version.tar.gz
+      - type: patch
+        # Stolen from Debian, see https://salsa.debian.org/debian/7zip/-/tree/master/debian/patches
+        path: patches/7zip_workaround_gcc_bug.patch
 
   - name: unrar
     no-autogen: true
