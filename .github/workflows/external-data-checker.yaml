@@ -2,7 +2,7 @@
 name: external-data-checker
 on:
   schedule:
-    - cron: "55 5-20/5 * * *"
+    - cron: "55 3,11,19 * * *"
   workflow_dispatch:
 
 jobs:
