@@ -120,8 +120,8 @@ modules:
       - cargo-sources-orjson.json
       - type: file
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
-        url: https://files.pythonhosted.org/packages/0f/f3/742fb1f62b825f2c010697eaf4e828004bc2a81e7e806666989c132c7c42/orjson-3.12.0.tar.gz
-        sha256: d14203fb1aae2ad9b3d52f8a0e82aeb10197ef1c9bc61da7f358bd70b00123d5
+        url: https://files.pythonhosted.org/packages/f2/72/380b97dc45bd162d23afe5194721ef678d9eac7cfaa549fe2873f7f0a518/orjson-3.13.0.tar.gz
+        sha256: d1de5eb04485110c5da4c657e49168995d55e076b1ce60f1a042e254f4186c4f
         x-checker-data:
           type: pypi
           name: orjson
@@ -157,8 +157,8 @@ modules:
       - install -D -m755 ./_o/7zz -t /app/bin
     sources:
       - type: archive
-        url: https://github.com/ip7z/7zip/archive/refs/tags/26.04.tar.gz
-        sha256: 48fdc6dfe879ee2db867bb07f19c4a9406bfea01d51f48785b6c7a137881e25c
+        url: https://github.com/ip7z/7zip/archive/refs/tags/26.05.tar.gz
+        sha256: 989c658cef4c13124ed1f4ff7330a6ce5ab22cefdbbc9daae9b2c110dde9a63b
         x-checker-data:
           type: anitya
           project-id: 372314
