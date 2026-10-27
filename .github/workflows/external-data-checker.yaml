@@ -1,8 +1,10 @@
 # Based on the custom workflow documented at https://github.com/flathub-infra/flatpak-external-data-checker
 name: external-data-checker
 on:
-  schedule:
-    - cron: "55 3,11,19 * * *"
+# Disable the scheduled runs because the security settings on the flathub org prevent our in-repo
+# "auto-update" workflow from automatically running on pull requests opened by this workflow
+#  schedule:
+#    - cron: "55 3,11,19 * * *"
   workflow_dispatch:
 
 jobs:
