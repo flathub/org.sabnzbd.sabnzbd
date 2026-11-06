@@ -70,11 +70,11 @@ modules:
           url-template: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-$version/dbus-dbus-$version.tar.gz
 
   - name: dbus-python
-    buildsystem: autotools
+    buildsystem: meson
     sources:
       - type: archive
-        url: https://dbus.freedesktop.org/releases/dbus-python/dbus-python-1.4.0.tar.xz
-        sha256: c36b28f10ffcc8f1f798aca973bcc132f91f33eb9b6b8904381b4077766043d5
+        url: https://dbus.freedesktop.org/releases/dbus-python/dbus_python-1.5.1.tar.gz
+        sha256: 57423cf87d09b7d084f420b55b737fe654c33339b06df77945620d97795c6ac4
         x-checker-data:
           type: anitya
           project-id: 402
