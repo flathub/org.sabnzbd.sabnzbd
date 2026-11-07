@@ -98,8 +98,8 @@ modules:
       - cargo-sources-maturin.json
       - type: archive
         # Remember to update the associated Cargo-*.lock and regenerate cargo-sources-*.json on every version bump!
-        url: https://files.pythonhosted.org/packages/b9/c8/22e5e21b2679c9bce6415ca578034ca2cc9316be0642ae21e051a2d5198c/maturin-1.15.0.tar.gz
-        sha256: 94b26cc8e8aba61a5f2099715fe640e18c5f678e9a500408b38761263954228a
+        url: https://files.pythonhosted.org/packages/bd/71/eb078174335ff30bde1be2ad54fb6256db4b160eb3efa81163fa30f8c814/maturin-1.16.0.tar.gz
+        sha256: 13e69ca12542999d8c5467131de72a49bb76e4c284b9a45c5783df7c0fcb3a8a
         x-checker-data:
           type: pypi
           name: maturin
@@ -157,8 +157,8 @@ modules:
       - install -D -m755 ./_o/7zz -t /app/bin
     sources:
       - type: archive
-        url: https://github.com/ip7z/7zip/archive/refs/tags/26.05.tar.gz
-        sha256: 989c658cef4c13124ed1f4ff7330a6ce5ab22cefdbbc9daae9b2c110dde9a63b
+        url: https://github.com/ip7z/7zip/archive/refs/tags/26.06.tar.gz
+        sha256: 63bbf0ede83e4286ec8a2905ed732a12acc36dd4771984d870b054240ce761fa
         x-checker-data:
           type: anitya
           project-id: 372314
